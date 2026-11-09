@@ -1,0 +1,39 @@
+{
+  "network": "ethereum",
+  "chainId": "1",
+  "vaultId": "0",
+  "initialEpoch": "1",
+  "contract": "SchnorrExample",
+  "address": "0xa0df1f57A00c5064ede39a90beE94792faAc3f70",
+  "deployer": "0x628BD20c49EE352506fbfA84b194EED4e3F576dd",
+  "px": "8865491120812211424612630832061818869091694212045874512390446214923729583332",
+  "py": "4833605396067600085167840240861078319748449283973607413798519511333527503452",
+  "rawPy": "17054637475771675137078565504396196768947861873324216248890518383311698705131",
+  "protocol": "DEX_VAULT_WITHDRAW_V1",
+  "compilerVersion": "0.8.20",
+  "compilerSettings": {
+    "evmVersion": "paris",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    }
+  },
+  "creationCodeHash": "0xec3f0c32316ce874bf37f667e8f6601e38fb88e76bbc0c6bc694f66ed70eeb2e",
+  "runtimeCodeHash": "0xaed7ae76b2f9422a4bfe0b604d730e5a01ebf04d791ffe36f6bf81dd9545bd72",
+  "txHash": "0xbb3d7ff6f21d979e353585c75a02a3dd76308124324d270ef77e6fdfd4766734",
+  "deployedAt": "2026-09-08T02:06:04.468Z"
+}

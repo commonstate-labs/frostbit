@@ -1,0 +1,86 @@
+package curve
+
+import (
+	"crypto/elliptic"
+	"math/big"
+
+	"github.com/btcsuite/btcd/btcec/v2"
+)
+
+                                                         
+type Secp256k1Group struct {
+	curve elliptic.Curve
+}
+
+                                                             
+func NewSecp256k1Group() *Secp256k1Group {
+	return &Secp256k1Group{curve: btcec.S256()}
+}
+
+func (g *Secp256k1Group) Order() *big.Int {
+	return g.curve.Params().N
+}
+
+func (g *Secp256k1Group) ScalarBaseMult(k *big.Int) Point {
+	x, y := g.curve.ScalarBaseMult(k.Bytes())
+	return Point{X: x, Y: y}
+}
+
+func (g *Secp256k1Group) ScalarMult(P Point, k *big.Int) Point {
+	x, y := g.curve.ScalarMult(P.X, P.Y, k.Bytes())
+	return Point{X: x, Y: y}
+}
+
+func (g *Secp256k1Group) Add(P, Q Point) Point {
+	x, y := g.curve.Add(P.X, P.Y, Q.X, Q.Y)
+	return Point{X: x, Y: y}
+}
+
+func (g *Secp256k1Group) Modulus() *big.Int {
+	return g.curve.Params().P
+}
+
+func (g *Secp256k1Group) BitSize() int {
+	return g.curve.Params().BitSize
+}
+
+func (g *Secp256k1Group) ScalarBaseMultBytes(k []byte) Point {
+	x, y := g.curve.ScalarBaseMult(k)                                         
+	return Point{X: x, Y: y}
+}
+
+func (g *Secp256k1Group) ScalarMultBytes(P Point, k []byte) Point {
+	x, y := g.curve.ScalarMult(P.X, P.Y, k)
+	return Point{X: x, Y: y}
+}
+
+                                                         
+func (g *Secp256k1Group) SerializePoint(P Point) []byte {
+	result := make([]byte, 33)
+	if P.Y.Bit(0) == 0 {
+		result[0] = 0x02
+	} else {
+		result[0] = 0x03
+	}
+	P.X.FillBytes(result[1:])
+	return result
+}
+
+                                           
+                                                                 
+func (g *Secp256k1Group) DecompressPoint(data []byte) Point {
+	if len(data) != 33 {
+		return Point{}
+	}
+
+	                                  
+	pubKey, err := btcec.ParsePubKey(data)
+	if err != nil {
+		return Point{}
+	}
+
+	return Point{
+		X: pubKey.X(),
+		Y: pubKey.Y(),
+	}
+}

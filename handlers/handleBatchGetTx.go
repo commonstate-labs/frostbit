@@ -1,0 +1,41 @@
+package handlers
+
+import (
+	"dex/pb"
+	"io"
+	"net/http"
+
+	"google.golang.org/protobuf/proto"
+)
+
+                                 
+func (hm *HandlerManager) HandleBatchGetTx(w http.ResponseWriter, r *http.Request) {
+
+	hm.Stats.RecordAPICall("HandleBatchGetTx")
+	if !hm.checkAuth(r) {
+		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		return
+	}
+
+	bodyBytes, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, "Failed to read request body", http.StatusBadRequest)
+		return
+	}
+
+	var req pb.BatchGetShortTxRequest
+	if err := pb.UnmarshalSanitize(bodyBytes, &req); err != nil {
+		http.Error(w, "Invalid BatchGetDataRequest proto", http.StatusBadRequest)
+		return
+	}
+
+	matchedTxs := hm.txPool.GetTxsByShortHashes(req.ShortHashes, true)
+	resp := &pb.BatchGetShortTxResponse{
+		Transactions: matchedTxs,
+	}
+
+	respBytes, _ := proto.Marshal(resp)
+	w.Header().Set("Content-Type", "application/x-protobuf")
+	w.WriteHeader(http.StatusOK)
+	w.Write(respBytes)
+}

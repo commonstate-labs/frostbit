@@ -1,0 +1,36 @@
+[Unit]
+Description=DEX node with short-window remote secret injection
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=dex
+Group=dex
+WorkingDirectory=/var/lib/dex
+EnvironmentFile=/etc/dex/secure-node.env
+ExecStart=/usr/local/sbin/start-dex-secure
+Restart=no
+UMask=0077
+LimitCORE=0
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectClock=true
+RestrictSUIDSGID=true
+LockPersonality=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadWritePaths=/var/lib/dex/miners /var/log/dex
+StandardOutput=null
+StandardError=journal
+TimeoutStopSec=30
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

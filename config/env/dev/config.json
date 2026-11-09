@@ -1,0 +1,21 @@
+{
+  "Network": {
+    "BasePort": 6000,
+    "DefaultNumNodes": 30,
+    "advertise_host": "127.0.0.1"
+  },
+  "Server": {
+    "EnableDebugAPI": true,
+    "EnablePprof": true,
+    "PprofBind": "127.0.0.1"
+  },
+  "Consensus": {
+    "K": 15,
+    "AlphaPreference": 8,
+    "AlphaConfidence": 12,
+    "Beta": 15
+  },
+  "Discovery": {
+    "BootstrapPeers": []
+  }
+}

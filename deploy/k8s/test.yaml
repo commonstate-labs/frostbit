@@ -1,0 +1,181 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dex-test
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: dex-node
+  namespace: dex-test
+spec:
+  serviceName: dex-node
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dex-node
+  template:
+    metadata:
+      labels:
+        app: dex-node
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        runAsGroup: 65532
+        fsGroup: 65532
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: node
+          image: dex:test
+          imagePullPolicy: IfNotPresent
+          command: ["/usr/local/bin/dex-node-entrypoint"]
+          args:
+            - "--config-dir=/app/config/runtime"
+            - "--peers=/app/config/runtime/peers.json"
+            - "--expected-address=$(DEX_MINER_ADDRESS)"
+            - "--data-dir=/data/$(DEX_MINER_ADDRESS)"
+            - "--resume=true"
+            - "--advertise-addr=dex-node.dex-test.svc.cluster.local:6000"
+            - "--no-simulator"
+            - "--enable-debug-api"
+            - "--enable-pprof"
+            - "--pprof-bind=127.0.0.1"
+          env:
+            - name: DEX_ENV
+              value: test
+            - name: DEX_MINER_ADDRESS
+              value: replace-with-canonical-fbc-miner-address
+            - name: DEX_EXPLORER_SERVICE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: dex-miner-address-secrets
+                  key: explorer_service_token
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          ports:
+            - containerPort: 6000
+              name: node
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: public-config
+              mountPath: /app/config/runtime
+              readOnly: true
+            - name: node-secrets
+              mountPath: /run/secrets/dex-miner
+              readOnly: true
+      volumes:
+        - name: public-config
+          configMap:
+            name: dex-test-public-config
+        - name: node-secrets
+          secret:
+                                                                   
+            secretName: dex-miner-address-secrets
+            defaultMode: 0440
+            items:
+              - key: private_key
+                path: private_key
+              - key: frost_wrap_key
+                path: frost_wrap_key
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 20Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dex-node
+  namespace: dex-test
+spec:
+  selector:
+    app: dex-node
+  ports:
+    - name: node
+      port: 6000
+      targetPort: 6000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dex-explorer
+  namespace: dex-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dex-explorer
+  template:
+    metadata:
+      labels:
+        app: dex-explorer
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        runAsGroup: 65532
+        fsGroup: 65532
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: explorer
+          image: dex:test
+          imagePullPolicy: IfNotPresent
+          command: ["/app/explorer"]
+          args:
+            - "--config-dir=/app/config/runtime"
+            - "--peers=/app/config/runtime/peers.json"
+            - "--listen=0.0.0.0:8080"
+            - "--nodes=dex-node.dex-test.svc.cluster.local:6000"
+            - "--sync-node=dex-node.dex-test.svc.cluster.local:6000"
+            - "--web-dir=/app/explorer_web/dist"
+            - "--data-dir=/data/explorer"
+          env:
+            - name: DEX_ENV
+              value: test
+            - name: DEX_EXPLORER_SERVICE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: dex-miner-address-secrets
+                  key: explorer_service_token
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          ports:
+            - containerPort: 8080
+              name: http
+          volumeMounts:
+            - name: explorer-data
+              mountPath: /data
+            - name: public-config
+              mountPath: /app/config/runtime
+              readOnly: true
+      volumes:
+        - name: explorer-data
+          emptyDir: {}
+        - name: public-config
+          configMap:
+            name: dex-test-public-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dex-explorer
+  namespace: dex-test
+spec:
+  selector:
+    app: dex-explorer
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080

@@ -1,0 +1,115 @@
+package types
+
+import (
+	"dex/pb"
+	"encoding/json"
+	"testing"
+)
+
+func TestEncodeDecodeGossipPayloadWithOneofTx(t *testing.T) {
+	tx := &pb.AnyTx{
+		Content: &pb.AnyTx_Transaction{
+			Transaction: &pb.Transaction{
+				To:     "addr-1",
+				Amount: "42",
+			},
+		},
+	}
+	payload := &GossipPayload{
+		Block: &pb.Block{
+			BlockHash: "block-1",
+			Header: &pb.BlockHeader{
+				Height: 1,
+			},
+			Body: []*pb.AnyTx{tx},
+		},
+		RequestID: 99,
+	}
+
+	data, err := EncodeGossipPayload(payload)
+	if err != nil {
+		t.Fatalf("EncodeGossipPayload() error = %v", err)
+	}
+
+	got, err := DecodeGossipPayload(data)
+	if err != nil {
+		t.Fatalf("DecodeGossipPayload() error = %v", err)
+	}
+
+	if got.RequestID != payload.RequestID {
+		t.Fatalf("requestID mismatch: got %d want %d", got.RequestID, payload.RequestID)
+	}
+	if got.Block == nil {
+		t.Fatal("decoded block is nil")
+	}
+	if got.Block.BlockHash != payload.Block.BlockHash {
+		t.Fatalf("block hash mismatch: got %s want %s", got.Block.BlockHash, payload.Block.BlockHash)
+	}
+	if len(got.Block.Body) != 1 {
+		t.Fatalf("tx body count mismatch: got %d want 1", len(got.Block.Body))
+	}
+	if got.Block.Body[0].GetTransaction() == nil {
+		t.Fatal("decoded oneof transaction is nil")
+	}
+	if got.Block.Body[0].GetTransaction().Amount != "42" {
+		t.Fatalf("decoded transaction amount mismatch: got %s want 42", got.Block.Body[0].GetTransaction().Amount)
+	}
+}
+
+func TestEncodeGossipPayloadMissingBlock(t *testing.T) {
+	_, err := EncodeGossipPayload(&GossipPayload{RequestID: 1})
+	if err == nil {
+		t.Fatal("expected error for missing block")
+	}
+}
+
+func TestDecodeGossipPayloadRejectLegacyJSON(t *testing.T) {
+	payload := &GossipPayload{
+		Block: &pb.Block{
+			BlockHash: "legacy-json",
+			Header: &pb.BlockHeader{
+				Height: 7,
+			},
+		},
+		RequestID: 77,
+	}
+
+	data, err := json.Marshal(payload)
+	if err != nil {
+		t.Fatalf("marshal legacy JSON payload error = %v", err)
+	}
+
+	if _, err := DecodeGossipPayload(data); err == nil {
+		t.Fatal("expected decode error for legacy JSON payload")
+	}
+}
+
+func TestPeekGossipPayloadReturnsBlockBytes(t *testing.T) {
+	block := &pb.Block{
+		BlockHash: "peek-block",
+		Header:    &pb.BlockHeader{Height: 10},
+	}
+	data1, err := EncodeGossipPayload(&GossipPayload{Block: block, RequestID: 1})
+	if err != nil {
+		t.Fatalf("encode payload 1: %v", err)
+	}
+	data2, err := EncodeGossipPayload(&GossipPayload{Block: block, RequestID: 2})
+	if err != nil {
+		t.Fatalf("encode payload 2: %v", err)
+	}
+
+	req1, body1, err := PeekGossipPayload(data1)
+	if err != nil {
+		t.Fatalf("peek payload 1: %v", err)
+	}
+	req2, body2, err := PeekGossipPayload(data2)
+	if err != nil {
+		t.Fatalf("peek payload 2: %v", err)
+	}
+	if req1 != 1 || req2 != 2 {
+		t.Fatalf("unexpected request IDs: %d %d", req1, req2)
+	}
+	if string(body1) != string(body2) {
+		t.Fatal("same block should expose identical block bytes despite different request IDs")
+	}
+}

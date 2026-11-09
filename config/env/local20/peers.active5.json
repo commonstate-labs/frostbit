@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "kind": "public-peer-manifest",
+  "_notice": "PUBLIC EXAMPLE ONLY — NO SECRETS OR HOST INVENTORY. This optional profile must be regenerated from fresh operator-local identities.",
+  "chain_id": 1001,
+  "genesis_validators": [],
+  "bootstrap_endpoints": []
+}

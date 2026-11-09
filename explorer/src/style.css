@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+                            
+:root {
+  --color-primary: #6366f1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text-muted-readable: #94a3b8;
+}
+
+                                                                                   
+:where(
+  .id-label,
+  .id-stat .k,
+  .p-label,
+  .section-title,
+  .s-label,
+  .m-label,
+  .mi-label,
+  .setting-item label,
+  .ob-controls label,
+  .ob-table-header,
+  .th-table-header,
+  .o-field label,
+  .balance-strip span,
+  .summary-row span,
+  .summary-note,
+  .field-group label,
+  .vault-key,
+  .ref-table th,
+  .rebate-stat .k,
+  .stake-big .k,
+  .split-cell .k,
+  .bind-row .lbl,
+  .stake-field-label,
+  .stake-hint,
+  .tiny,
+  .kv em,
+  .matrix-label,
+  .filter-group label,
+  .stat-chip em,
+  .premium-table th,
+  .node-data .label,
+  .v-symbol,
+  .tpl-section-title,
+  .tf-k,
+  .signed-debug-item span,
+  .job-info-label,
+  .job-section-label,
+  .asset-meta .chain-name
+) {
+  color: var(--color-text-muted-readable) !important;
+  font-size: 0.75rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.03em !important;
+}
+
+:where(
+  .premium-subtitle,
+  .p-tagline,
+  .pop-label,
+  .nav-group-label,
+  .bp-sub,
+  .tp-sub,
+  .mp-sub,
+  .ua-subtitle,
+  .rtp-subtitle,
+  .field-note,
+  .vault-hint,
+  .hist-height,
+  .hist-peer,
+  .usd-approx,
+  .pair-type,
+  .pair-loading,
+  .pair-empty,
+  .order-notice,
+  .pos-cell-label,
+  .risk-meta span,
+  .margin-pos-id,
+  .asset-preview-label,
+  .vault-fund-caption,
+  .asset-ledger-count,
+  .activity-subline,
+  .i-head,
+  .v-time,
+  .v-footer,
+  .v-tx-line,
+  .timeline-header,
+  .tpl-idx,
+  .tf-v.small,
+  .job-modal-subtitle,
+  .kv-list .k,
+  .signed-meta-row .k
+) {
+  color: var(--color-text-muted-readable) !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+}
+
+                        
+.glass-panel {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+}
+
+                                     
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge.queued {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.status-badge.signed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.status-badge.pending,
+.status-badge.recharge-pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.status-badge.voting,
+.status-badge.recharge-voting {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+
+.status-badge.finalized,
+.status-badge.recharge-finalized {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.status-badge.rejected,
+.status-badge.recharge-rejected {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.status-badge.committing,
+.status-badge.sharing {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+.status-badge.key_ready {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.status-badge.recharge-challenge-period {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+                       
+.data-table {
+  width: 100%;
+}
+
+.data-table thead tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-table tbody tr {
+  transition: background-color 0.15s;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+                                                             
+.app-tooltip {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  max-width: 360px;
+  padding: 7px 11px;
+  border-radius: 10px;
+  background: rgba(12, 16, 24, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(99, 102, 241, 0.15) inset;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #f1f5f9;
+  font-family: var(--font-main, 'Outfit', 'Inter', system-ui, sans-serif);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  white-space: pre-line;
+  word-break: break-word;
+  opacity: 0;
+  transform: translateY(3px) scale(0.98);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.app-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+

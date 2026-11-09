@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: #f4f8ff;
+    background: #07101f;
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 380px;
+    min-height: 540px;
+    overflow-x: hidden;
+}
+
+body.approval-window {
+    width: 520px;
+    min-height: 680px;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid rgba(97, 215, 255, 0.85);
+    outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #31445e;
+    border-radius: 2px;
+}

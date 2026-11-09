@@ -1,0 +1,196 @@
+{
+  "chain_id": 1,
+  "tokens": [
+    {
+      "address": "FB",
+      "total_supply": "1000000000000000000000000",
+      "owner": "0x0",
+      "can_mint": false,
+      "type": "SYSTEM"
+    },
+    {
+      "address": "br_ccaab438b63c9a2913367629acc716c34ca8150e8716ee09b0e7b99b62d10eef",
+      "total_supply": "2100000000000000",
+      "owner": "system",
+      "can_mint": false,
+      "type": "BRIDGED",
+      "native_chain": "btc"
+    },
+    {
+      "address": "br_a153833490eecf5ae32863cbe5530924df7090f38cc5dc0b78a0902cd4e1d523",
+      "total_supply": "120000000000000000000000000",
+      "owner": "system",
+      "can_mint": false,
+      "type": "BRIDGED",
+      "native_chain": "eth"
+    },
+    {
+      "address": "br_564c190d78ad8821849346fe31191ebae3cc9c632b0453d3e3da2814408b0cac",
+      "total_supply": "200000000000000000000000000",
+      "owner": "system",
+      "can_mint": false,
+      "type": "BRIDGED",
+      "native_chain": "bnb"
+    },
+    {
+      "address": "br_7e019f1cf2f59bd3eb11b1a70fbb43722b2fdfce2ed1ec303f4baeb5eebbcb59",
+      "total_supply": "120000000000000000000000000",
+      "owner": "system",
+      "can_mint": false,
+      "type": "BRIDGED",
+      "native_chain": "base"
+    },
+    {
+      "address": "br_98c6c97b3bd3ce355c895e34c3b377c7c6871bf332e5f716f056416f5ec28781",
+      "total_supply": "120000000000000000000000000",
+      "owner": "system",
+      "can_mint": false,
+      "type": "BRIDGED",
+      "native_chain": "arb"
+    },
+    {
+      "address": "br_d31024e716e6ee951fa0ae81582c15f4fc94277a862c82933bce05b440106a80",
+      "total_supply": "87000000000000000",
+      "owner": "system",
+      "can_mint": false,
+      "type": "BRIDGED",
+      "native_chain": "trx"
+    },
+    {
+      "address": "br_0b63cbe952e7eecff35617de184ffc5ef1f30edd5dc5e0f25a68a1d309f4f711",
+      "total_supply": "1000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "eth",
+      "native_contract": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    },
+    {
+      "address": "br_988fcc87a61c5c002dc6366918177eb29f20f1b580bd268faced1bea060bfb3f",
+      "total_supply": "1000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "eth",
+      "native_contract": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    },
+    {
+      "address": "br_9c31e0c8cae1900a9981294cc1a7ac21baec7fed08dbcb5b216bc9a8df0c2fe9",
+      "total_supply": "1000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "trx",
+      "native_contract": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
+    },
+    {
+      "address": "br_718d932d6adfb5e61bfbbbb7b266e13884b6604908067bbe8d5bad1a7159159c",
+      "total_supply": "1000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "base",
+      "native_contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    },
+    {
+      "address": "br_1ca2d9f343b88dc4b28709084ee17579446f3d11136d9c0e987d84630988af34",
+      "total_supply": "1000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "arb",
+      "native_contract": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    },
+    {
+      "address": "br_f3afdf03b2095db42ca286f2cd89ac532d269528e00f5fb73c84199e21be4b52",
+      "total_supply": "1000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "arb",
+      "native_contract": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    },
+    {
+      "address": "br_eec49f4a77457ec6759408320f869364981bedec9419bcefa9a62e1cb3a00426",
+      "total_supply": "1000000000000000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "eth",
+      "native_contract": "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+    },
+    {
+      "address": "br_47f9c19894776f5aa8386cd3302eec75d69e7aa2fc54fa7fa8c3a6900c2f3cff",
+      "total_supply": "1000000000000000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "bnb",
+      "native_contract": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    },
+    {
+      "address": "br_ae5cb03ede5e3fcea7fe0b5ba32ee7562813d1d2ab923143bbd48da6d5d8714a",
+      "total_supply": "1000000000000000000000000",
+      "owner": "system",
+      "can_mint": true,
+      "type": "BRIDGED",
+      "native_chain": "bnb",
+      "native_contract": "0x55d398326f99059fF775485246999027B3197955"
+    }
+  ],
+  "alloc": {
+    "default": {
+      "balances": {
+        "FB": {
+          "balance": "1000000000000000000",
+          "miner_locked_balance": "100000000000000000"
+        },
+        "br_ccaab438b63c9a2913367629acc716c34ca8150e8716ee09b0e7b99b62d10eef": {
+          "balance": "10000000000"
+        },
+        "br_a153833490eecf5ae32863cbe5530924df7090f38cc5dc0b78a0902cd4e1d523": {
+          "balance": "10000000000000000000"
+        },
+        "br_564c190d78ad8821849346fe31191ebae3cc9c632b0453d3e3da2814408b0cac": {
+          "balance": "10000000000000000000"
+        },
+        "br_7e019f1cf2f59bd3eb11b1a70fbb43722b2fdfce2ed1ec303f4baeb5eebbcb59": {
+          "balance": "10000000000000000000"
+        },
+        "br_98c6c97b3bd3ce355c895e34c3b377c7c6871bf332e5f716f056416f5ec28781": {
+          "balance": "10000000000000000000"
+        },
+        "br_d31024e716e6ee951fa0ae81582c15f4fc94277a862c82933bce05b440106a80": {
+          "balance": "10000000000000"
+        },
+        "br_0b63cbe952e7eecff35617de184ffc5ef1f30edd5dc5e0f25a68a1d309f4f711": {
+          "balance": "500000000000"
+        },
+        "br_988fcc87a61c5c002dc6366918177eb29f20f1b580bd268faced1bea060bfb3f": {
+          "balance": "500000000000"
+        },
+        "br_9c31e0c8cae1900a9981294cc1a7ac21baec7fed08dbcb5b216bc9a8df0c2fe9": {
+          "balance": "500000000000"
+        },
+        "br_718d932d6adfb5e61bfbbbb7b266e13884b6604908067bbe8d5bad1a7159159c": {
+          "balance": "500000000000"
+        },
+        "br_1ca2d9f343b88dc4b28709084ee17579446f3d11136d9c0e987d84630988af34": {
+          "balance": "500000000000"
+        },
+        "br_f3afdf03b2095db42ca286f2cd89ac532d269528e00f5fb73c84199e21be4b52": {
+          "balance": "500000000000"
+        },
+        "br_eec49f4a77457ec6759408320f869364981bedec9419bcefa9a62e1cb3a00426": {
+          "balance": "500000000000000000000000"
+        },
+        "br_47f9c19894776f5aa8386cd3302eec75d69e7aa2fc54fa7fa8c3a6900c2f3cff": {
+          "balance": "500000000000000000000000"
+        },
+        "br_ae5cb03ede5e3fcea7fe0b5ba32ee7562813d1d2ab923143bbd48da6d5d8714a": {
+          "balance": "500000000000000000000000"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "network": "tron-mainnet",
+  "chainId": "728126428",
+  "vaultId": "0",
+  "initialEpoch": "1",
+  "contract": "SchnorrExampleTron",
+  "address": "TYgUNXGeg9orBcVi1npF3Rr2XZq3btr793",
+  "deployer": "TSqQQDnd9KraaGdBDB1kkrPZbLCtyFiPG8",
+  "px": "4256256731214398958270719132028974900920579221666288851176906129549991985538",
+  "py": "3970058552789858470601730875634197124923340508056906697480954297462366824997",
+  "rawPy": "3970058552789858470601730875634197124923340508056906697480954297462366824997",
+  "protocol": "DEX_VAULT_WITHDRAW_V1",
+  "compilerVersion": "0.8.18",
+  "compilerSettings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    }
+  },
+  "creationCodeHash": "0x3e7de8a64aa16c12a720f8641dd6ce6aafec7442dd4a129bb5885e64a8f7594d",
+  "runtimeCodeHash": "0x3a314be9731b688864925bc5c4129464a84bf6db2c4fa3e0044effd766016a6f",
+  "txHash": "487dd542fc7f1d2da61cdf4ee6dba6e7f14799ba5279879db2387f2328fe3359",
+  "deployedAt": "2026-09-08T02:47:03.000Z",
+  "nonstandardToken": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
+}

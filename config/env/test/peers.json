@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "kind": "public-peer-manifest",
+  "_notice": "PUBLIC EXAMPLE ONLY — NO SECRETS. Populate with newly generated disposable test identities outside Git before starting this profile.",
+  "chain_id": 1002,
+  "genesis_validators": [],
+  "bootstrap_endpoints": []
+}

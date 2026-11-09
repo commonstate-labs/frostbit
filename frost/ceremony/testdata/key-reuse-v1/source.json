@@ -1,0 +1,327 @@
+{
+  "enabled": true,
+  "committee": {
+    "topN": 100,
+    "thresholdRatio": 1,
+    "epochBlocks": 100
+  },
+  "vault": {
+    "defaultK": 4,
+    "minK": 4,
+    "count": 1,
+    "maxK": 4,
+    "thresholdRatio": 0.75
+  },
+  "timeouts": {
+    "nonceCommitBlocks": 2,
+    "sigShareBlocks": 3,
+    "aggregatorRotateBlocks": 5,
+    "sessionMaxBlocks": 60
+  },
+  "withdraw": {
+    "maxInFlightPerChainAsset": 1
+  },
+  "transition": {
+    "triggerChangeRatio": 0.2,
+    "pauseWithdrawDuringSwitch": true,
+    "dkgCommitWindowBlocks": 5,
+    "dkgSharingWindowBlocks": 5,
+    "dkgDisputeWindowBlocks": 5
+  },
+  "chains": {
+    "arb": {
+      "signAlgo": "SCHNORR_ALT_BN128",
+      "frostVariant": "frost-bn128",
+      "vaultsPerChain": 1,
+      "vaultRefs": [
+        "0x555f149112e45fd95856fcb4fE7840b4CA9f9842"
+      ],
+      "initialGroupPubkeys": [
+        "1e1f613d0752895f2c1765b3c01f35bd26c9a7392f25898ef3056149dcde98dd180fbb67314f76248b0cbebff941f9bea6a229db32dc68dfa4d1c3ad2a0e7f1e"
+      ],
+      "chainId": 42161,
+      "depositDexChainId": 51025,
+      "depositProtocol": 2,
+      "gasPriceGwei": 1,
+      "gasLimit": 180000
+    },
+    "base": {
+      "signAlgo": "SCHNORR_ALT_BN128",
+      "frostVariant": "frost-bn128",
+      "vaultsPerChain": 1,
+      "vaultRefs": [
+        "0xF50A357da0A9b4Dc5dA084BD79F4225E418D223c"
+      ],
+      "initialGroupPubkeys": [
+        "22c79a6652b2bf2aff96526a6867422e3a4008ff89618498f731830128eca49f2e2fe5e565952a1d29d364deae3ba893d1ec96405b453858a450b8c9b76a1c5c"
+      ],
+      "chainId": 8453,
+      "depositDexChainId": 51025,
+      "depositProtocol": 2,
+      "gasPriceGwei": 1,
+      "gasLimit": 180000
+    },
+    "bnb": {
+      "signAlgo": "SCHNORR_ALT_BN128",
+      "frostVariant": "frost-bn128",
+      "vaultsPerChain": 1,
+      "vaultRefs": [
+        "0x4c423E2936e383D9E25B7ADF169971743f01aa81"
+      ],
+      "initialGroupPubkeys": [
+        "15e74665acbb2c7b3f224278f2ffaa095ea9d3303fd452d9aa26128cf44cd79d0e2f6a4ca1dee8fd96b4bd249ed46b0ac58e8e0ab3979943678f98a8b9916774"
+      ],
+      "chainId": 56,
+      "depositDexChainId": 51025,
+      "depositProtocol": 2,
+      "gasPriceGwei": 3,
+      "gasLimit": 180000
+    },
+    "btc": {
+      "signAlgo": "SCHNORR_SECP256K1_BIP340",
+      "frostVariant": "frost-secp256k1",
+      "vaultsPerChain": 1,
+      "initialGroupPubkeys": [
+        "034ab2160cdbf1764fa43f21e08c7208e8d164298491f713ccdee1a0b077d44262"
+      ],
+      "btcNetwork": "mainnet",
+      "feeSatsPerVByte": 25
+    },
+    "eth": {
+      "signAlgo": "SCHNORR_ALT_BN128",
+      "frostVariant": "frost-bn128",
+      "vaultsPerChain": 1,
+      "vaultRefs": [
+        "0x450314749692024C337296240dac805d0ed0E4F2"
+      ],
+      "initialGroupPubkeys": [
+        "1399b0adf11ab4d9a67a7fc96f591e2eb2dcc1825e0dea3a9c1dfbcf9ab93ce425b4952e3a905723230373d092547e01ac8a59bcc4484c291adde15f73f2baeb"
+      ],
+      "chainId": 1,
+      "depositDexChainId": 51025,
+      "depositProtocol": 2,
+      "gasPriceGwei": 30,
+      "gasLimit": 180000
+    },
+    "trx": {
+      "signAlgo": "SCHNORR_ALT_BN128",
+      "frostVariant": "frost-bn128",
+      "vaultsPerChain": 1,
+      "vaultRefs": [
+        "0x523C9ae01CC450285a66f874dBa27fDD94D990b9"
+      ],
+      "initialGroupPubkeys": [
+        "0968f4b87697acc4481be3e216f7b0962b6beabab3c27c032842a46c6e61c18208c6f93806a63252c2b30edb4d88231acc4b9eee5e53c34b2525762eed8e6a25"
+      ],
+      "chainId": 728126428,
+      "depositDexChainId": 51025,
+      "depositProtocol": 2,
+      "feeLimitSun": 30000000
+    }
+  },
+  "genesisDeploymentManifest": {
+    "version": 1,
+    "statement": {
+      "version": 1,
+      "ceremony_manifest_digest": "KnwJ/5KRovStpkT7Z9Sz7wslrRXViJMruAjrm7atJQ4=",
+      "plan_digest": "F8X5NvIneqJQPitYz8yvqhM+JKIyWY7zn+TQImjGsjo=",
+      "network_chain_id": 51025,
+      "peer_manifest_digest": "NM4E1S9jehlR1aL/aujMD2irr86V6LEXCRF1FIjMQ0A=",
+      "epoch": 1,
+      "configured_frost_digest": "vEBJeEzi9eCJf+9tW5+YeBBCWmAUur/uAXADLagEDNY=",
+      "participants": [
+        "fbc1q8jqq8pxfwtcjt5c4q4mkmmswec4lk7587vj4vr",
+        "fbc1qrp2yqectt96lztyyw26rn982vm03uhx750y3pq",
+        "fbc1qsprcmguf3u78g728xm3vjdms4tgr6v48xcrktz",
+        "fbc1qssgyq3l5fu9d7t6sk0a4v6gfls68jd0qgt63ha",
+        "fbc1qztf442acw35yyee4c0tfqvkhsqhtnrgymh76ml"
+      ],
+      "vaults": [
+        {
+          "chain": "arb",
+          "vault_id": 0,
+          "epoch": 1,
+          "sign_algo": 4,
+          "committee_digest": "F0EjEy/Tpad8m2AjraP/OkoXUE1HZ/S6ybVBMeSCNnU=",
+          "raw_group_pubkey": "Hh9hPQdSiV8sF2WzwB81vSbJpzkvJYmO8wVhSdzemN0YD7tnMU92JIsMvr/5Qfm+pqIp2zLcaN+k0cOtKg5/Hg==",
+          "canonical_authority": "Hh9hPQdSiV8sF2WzwB81vSbJpzkvJYmO8wVhSdzemN0YD7tnMU92JIsMvr/5Qfm+pqIp2zLcaN+k0cOtKg5/Hg==",
+          "kind": "contract",
+          "external_chain_id": 42161,
+          "vault_ref": "0x555f149112e45fd95856fcb4fE7840b4CA9f9842",
+          "contract": "SchnorrExample",
+          "protocol": "DEX_VAULT_WITHDRAW_V1",
+          "deposit_protocol": "DEX_VAULT_DEPOSIT_V1",
+          "dex_chain_id": 51025,
+          "deployer": "0xbbc61Ba7560D634dF77C68AC2109f624C9E887fD",
+          "transaction_hash": "mxj4UczkP8w9yRH05b2Rbg4hNuEpTXonlIzeG7SzJqs=",
+          "deployment_block_number": 506310205,
+          "deployment_block_hash": "Uf5X9LmWl9X/QlD7yRlGojmsptvEWL2GvpJXzuFZSIA=",
+          "creation_code_hash": "p5r9E3hnR3/80BaZDFLmUyBzFSkMkkxy+wv2NOLWQ+Q=",
+          "runtime_code_hash": "AueiKzVCSt+wI5n4QXVreeDwz2571wQOA8eG88g4mpI=",
+          "artifact_digest": "JbYgWSFdYcJ/jsfQF4Mf3uPL7ZC36Abp7r1NZISmzzo=",
+          "compiler_provenance_digest": "tcGdrYdekcgkA5kR7mzPBvdCVd0aLmGtbCQuhjpbODg=",
+          "finality_policy": "rpc-finalized",
+          "finality_block_number": 506310205,
+          "finality_block_hash": "Uf5X9LmWl9X/QlD7yRlGojmsptvEWL2GvpJXzuFZSIA=",
+          "minimum_confirmations": 1
+        },
+        {
+          "chain": "base",
+          "vault_id": 0,
+          "epoch": 1,
+          "sign_algo": 4,
+          "committee_digest": "c/SIaP0sdKnDSsvl6pLiMYjLTjhMV3+dEEUpa07L6gI=",
+          "raw_group_pubkey": "IseaZlKyvyr/llJqaGdCLjpACP+JYYSY9zGDASjspJ8uL+XlZZUqHSnTZN6uO6iT0eyWQFtFOFikULjJt2ocXA==",
+          "canonical_authority": "IseaZlKyvyr/llJqaGdCLjpACP+JYYSY9zGDASjspJ8CNGiNe5x2DI584NfTRa/JxZTUUQ0skjSXz9NNIRLg6w==",
+          "kind": "contract",
+          "external_chain_id": 8453,
+          "vault_ref": "0xF50A357da0A9b4Dc5dA084BD79F4225E418D223c",
+          "contract": "SchnorrExample",
+          "protocol": "DEX_VAULT_WITHDRAW_V1",
+          "deposit_protocol": "DEX_VAULT_DEPOSIT_V1",
+          "dex_chain_id": 51025,
+          "deployer": "0x771D7995e887fA0E5e0d51e4c1cf83EeF5Cc7F69",
+          "transaction_hash": "TlU+2anq4wthyIw7PVltOmcJvSPv0z57LFODVtKEQVE=",
+          "deployment_block_number": 51456679,
+          "deployment_block_hash": "cZDOuGOAsgs19WumNwR2Jpzl9dXkaPhQrRhJ2yw3oWw=",
+          "creation_code_hash": "p5r9E3hnR3/80BaZDFLmUyBzFSkMkkxy+wv2NOLWQ+Q=",
+          "runtime_code_hash": "AueiKzVCSt+wI5n4QXVreeDwz2571wQOA8eG88g4mpI=",
+          "artifact_digest": "JbYgWSFdYcJ/jsfQF4Mf3uPL7ZC36Abp7r1NZISmzzo=",
+          "compiler_provenance_digest": "tcGdrYdekcgkA5kR7mzPBvdCVd0aLmGtbCQuhjpbODg=",
+          "finality_policy": "rpc-finalized",
+          "finality_block_number": 51456679,
+          "finality_block_hash": "cZDOuGOAsgs19WumNwR2Jpzl9dXkaPhQrRhJ2yw3oWw=",
+          "minimum_confirmations": 1
+        },
+        {
+          "chain": "bnb",
+          "vault_id": 0,
+          "epoch": 1,
+          "sign_algo": 4,
+          "committee_digest": "U8m1gvIKkbXDLxu8y7KBQaVlegJ4OYz47roCT8XOduE=",
+          "raw_group_pubkey": "FedGZay7LHs/IkJ48v+qCV6p0zA/1FLZqiYSjPRM150OL2pMod7o/Za0vSSe1GsKxY6OCrOXmUNnj5iouZFndA==",
+          "canonical_authority": "FedGZay7LHs/IkJ48v+qCV6p0zA/1FLZqiYSjPRM150OL2pMod7o/Za0vSSe1GsKxY6OCrOXmUNnj5iouZFndA==",
+          "kind": "contract",
+          "external_chain_id": 56,
+          "vault_ref": "0x4c423E2936e383D9E25B7ADF169971743f01aa81",
+          "contract": "SchnorrExample",
+          "protocol": "DEX_VAULT_WITHDRAW_V1",
+          "deposit_protocol": "DEX_VAULT_DEPOSIT_V1",
+          "dex_chain_id": 51025,
+          "deployer": "0x3499d998139bcf25e3Ec64fE1f4d5FA5D2f4c8EE",
+          "transaction_hash": "vegI4RzHg1U6jnF61h7V9x42GW6KjvJY6W1AsV78SEQ=",
+          "deployment_block_number": 122534793,
+          "deployment_block_hash": "B7QmerC9gDtXg9Ghs2TR6ars63OtLXm6j/k3MlT9TVM=",
+          "creation_code_hash": "p5r9E3hnR3/80BaZDFLmUyBzFSkMkkxy+wv2NOLWQ+Q=",
+          "runtime_code_hash": "AueiKzVCSt+wI5n4QXVreeDwz2571wQOA8eG88g4mpI=",
+          "artifact_digest": "JbYgWSFdYcJ/jsfQF4Mf3uPL7ZC36Abp7r1NZISmzzo=",
+          "compiler_provenance_digest": "tcGdrYdekcgkA5kR7mzPBvdCVd0aLmGtbCQuhjpbODg=",
+          "finality_policy": "bnb-confirmations",
+          "finality_block_number": 122534856,
+          "finality_block_hash": "YYhYYP4FbtaH/AE89qgqxh4j5O+qZ6ZqkNgUiCwzMQ4=",
+          "minimum_confirmations": 64
+        },
+        {
+          "chain": "btc",
+          "vault_id": 0,
+          "epoch": 1,
+          "sign_algo": 3,
+          "committee_digest": "Lxp5Spg+fcYXvDgymEKCSM426+kSaYgvWF686dL0WXE=",
+          "raw_group_pubkey": "A0qyFgzb8XZPpD8h4IxyCOjRZCmEkfcTzN7hoLB31EJi",
+          "kind": "derived",
+          "external_chain_id": 0
+        },
+        {
+          "chain": "eth",
+          "vault_id": 0,
+          "epoch": 1,
+          "sign_algo": 4,
+          "committee_digest": "UZ9kAptCeLu0JTHLgUZnteO+PKtnfd7u19VNSQHlQtQ=",
+          "raw_group_pubkey": "E5mwrfEatNmmen/Jb1keLrLcwYJeDeo6nB37z5q5POQltJUuOpBXIyMDc9CSVH4BrIpZvMRITCka3eFfc/K66w==",
+          "canonical_authority": "E5mwrfEatNmmen/Jb1keLrLcwYJeDeo6nB37z5q5POQKr7lEpqFJBpVM0eXvLNpb6vcQ1KQpfmQhQqq3ZIpCXA==",
+          "kind": "contract",
+          "external_chain_id": 1,
+          "vault_ref": "0x450314749692024C337296240dac805d0ed0E4F2",
+          "contract": "SchnorrExample",
+          "protocol": "DEX_VAULT_WITHDRAW_V1",
+          "deposit_protocol": "DEX_VAULT_DEPOSIT_V1",
+          "dex_chain_id": 51025,
+          "deployer": "0x628BD20c49EE352506fbfA84b194EED4e3F576dd",
+          "transaction_hash": "S0I95tls7556Gl8Nd89X/tIs2e6sVVu/f+jBKugt3vk=",
+          "deployment_block_number": 26001744,
+          "deployment_block_hash": "mvR3nlwbXJCX0BxTyJmKqUIfkSSnIFPWuSaijZ2Rxqk=",
+          "creation_code_hash": "p5r9E3hnR3/80BaZDFLmUyBzFSkMkkxy+wv2NOLWQ+Q=",
+          "runtime_code_hash": "AueiKzVCSt+wI5n4QXVreeDwz2571wQOA8eG88g4mpI=",
+          "artifact_digest": "JbYgWSFdYcJ/jsfQF4Mf3uPL7ZC36Abp7r1NZISmzzo=",
+          "compiler_provenance_digest": "tcGdrYdekcgkA5kR7mzPBvdCVd0aLmGtbCQuhjpbODg=",
+          "finality_policy": "rpc-finalized",
+          "finality_block_number": 26001744,
+          "finality_block_hash": "mvR3nlwbXJCX0BxTyJmKqUIfkSSnIFPWuSaijZ2Rxqk=",
+          "minimum_confirmations": 1
+        },
+        {
+          "chain": "trx",
+          "vault_id": 0,
+          "epoch": 1,
+          "sign_algo": 4,
+          "committee_digest": "lV+PUDRH61EhmHnBEKMME9fxthOPuE+nwMX0czKw24g=",
+          "raw_group_pubkey": "CWj0uHaXrMRIG+PiFvewlitr6rqzwnwDKEKkbG5hwYIIxvk4BqYyUsKzDttNiCMazEue7l5Tw0slJXYu7Y5qJQ==",
+          "canonical_authority": "CWj0uHaXrMRIG+PiFvewlitr6rqzwnwDKEKkbG5hwYIIxvk4BqYyUsKzDttNiCMazEue7l5Tw0slJXYu7Y5qJQ==",
+          "kind": "contract",
+          "external_chain_id": 728126428,
+          "vault_ref": "0x523C9ae01CC450285a66f874dBa27fDD94D990b9",
+          "contract": "SchnorrExampleTron",
+          "protocol": "DEX_VAULT_WITHDRAW_V1",
+          "deposit_protocol": "DEX_VAULT_DEPOSIT_V1",
+          "dex_chain_id": 51025,
+          "deployer": "0xB900538A36DB5Ec1d4C5240cC989479Bc5C71F3D",
+          "transaction_hash": "fVdxeNmS1gWh006ANIbjcCIY5MwPV5RNI7dErn+4H2M=",
+          "deployment_block_number": 86343512,
+          "deployment_block_hash": "AAAAAAUlf1jqd4wpyqdVoEJGuaRx/fZTvCiRZzaUJvQ=",
+          "creation_code_hash": "9Vc8tVApepinwMrE9LbWGKmMhW1GMJ5EhpXBn5C4uJ8=",
+          "runtime_code_hash": "aHVq3tDn3j3mAT/9IxH4IJVfq5ZAlIsg26lStH05DaY=",
+          "artifact_digest": "wVySnnfvQjLUQ90TPLuJhI4tIwydOCmFYFHT4ZhQ094=",
+          "compiler_provenance_digest": "58UyEn/C5j9vhhsasGNB3L7sqUJRhxzZoiw/bE96BW8=",
+          "nonstandard_token": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+          "finality_policy": "tron-solidity",
+          "finality_block_number": 86343512,
+          "finality_block_hash": "AAAAAAUlf1jqd4wpyqdVoEJGuaRx/fZTvCiRZzaUJvQ=",
+          "minimum_confirmations": 1
+        }
+      ]
+    },
+    "statement_digest": "zIWif6n7QCEb41s1sow9u08iDZav0eV5oXcAsodBbxo=",
+    "approvals": [
+      {
+        "version": 1,
+        "statement_digest": "zIWif6n7QCEb41s1sow9u08iDZav0eV5oXcAsodBbxo=",
+        "participant_id": "fbc1q8jqq8pxfwtcjt5c4q4mkmmswec4lk7587vj4vr",
+        "signature": "+Kwo9sV9xsxzsKnVKsXFfMkMQv4jLjgUnG6P0ELy1y8efNhMMhdOuWNOtaVAMNAIXFI/cCnCAoyM/mot3Z2FaA=="
+      },
+      {
+        "version": 1,
+        "statement_digest": "zIWif6n7QCEb41s1sow9u08iDZav0eV5oXcAsodBbxo=",
+        "participant_id": "fbc1qrp2yqectt96lztyyw26rn982vm03uhx750y3pq",
+        "signature": "z1bvHoiscD/OEo51XBhmZHD3gr53h4huUwODAzhPfOQp30CR5swHH42xIifgdLlGhyYkMXnuPBth2g5S3Ek4tQ=="
+      },
+      {
+        "version": 1,
+        "statement_digest": "zIWif6n7QCEb41s1sow9u08iDZav0eV5oXcAsodBbxo=",
+        "participant_id": "fbc1qsprcmguf3u78g728xm3vjdms4tgr6v48xcrktz",
+        "signature": "6hcZWuVCghE6ZFP7w2mawvLhBngyt3S26Phch9p07zNGcxYeSEqzpqsPGxB+Rpusz75uqDR+Qe/MJckSSjxnHw=="
+      },
+      {
+        "version": 1,
+        "statement_digest": "zIWif6n7QCEb41s1sow9u08iDZav0eV5oXcAsodBbxo=",
+        "participant_id": "fbc1qssgyq3l5fu9d7t6sk0a4v6gfls68jd0qgt63ha",
+        "signature": "Ao+TqwjcOVNIDlQPvg+t+ucZhpItQ9kurfr5gBf6s7g39UJyK74i1XIKP1qYHlkFjn7Rhk0V6gXrwDC2MCD3hw=="
+      },
+      {
+        "version": 1,
+        "statement_digest": "zIWif6n7QCEb41s1sow9u08iDZav0eV5oXcAsodBbxo=",
+        "participant_id": "fbc1qztf442acw35yyee4c0tfqvkhsqhtnrgymh76ml",
+        "signature": "5/CeKAqfUrcDMaHwHDvc5v4/oqqcd5UTcc6iw7yVYOxDU7gDAWrU+uZg73awzieGKBKkjrMNXrZ59brVrjE1og=="
+      }
+    ]
+  }
+}

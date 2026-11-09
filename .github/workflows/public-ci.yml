@@ -1,0 +1,50 @@
+name: public-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: public source verification
+    runs-on: ubuntu-latest
+    env:
+      GOFLAGS: -buildvcs=false
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: setup go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache: true
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            explorer/package-lock.json
+            wallet/package-lock.json
+
+      - name: verify public source
+        shell: bash
+        run: |
+          if [[ -f scripts/package/main.go && -f scripts/publicguard/main.go ]]; then
+            export_root="$(mktemp -d)"
+            trap 'rm -rf "$export_root"' EXIT
+            go -C scripts run ./package -root .. -out "$export_root"
+            go -C scripts run ./publicguard -root "$export_root"
+            bash "$export_root/scripts/verify-public.sh"
+          elif [[ -e scripts/package/main.go || -e scripts/publicguard/main.go ]]; then
+            echo "FAILED: incomplete publication tooling" >&2
+            exit 1
+          else
+            bash scripts/verify-public.sh
+          fi

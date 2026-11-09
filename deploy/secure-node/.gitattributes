@@ -1,0 +1,9 @@
+trusted-server/dex-secretctl text eol=lf
+trusted-server/install.sh text eol=lf
+trusted-server/sshd-dex-secrets.conf text eol=lf
+trusted-server/authorized_keys text eol=lf
+vps/start-dex-secure text eol=lf
+vps/install.sh text eol=lf
+vps/dex-node-secure.service text eol=lf
+vps/secure-node.defaults text eol=lf
+vps/trusted-server-known-hosts.defaults text eol=lf

@@ -1,0 +1,30 @@
+{
+    "enabled": true,
+    "consensusThreshold": 60,
+    "abstainThreshold": 20,
+    "votingPeriodBlocks": 10,
+    "voteGracePeriodBlocks": 1,
+    "challengePeriodBlocks": 20,
+    "arbitrationPeriodBlocks": 20,
+    "arbitrationTimingProfile": "dev",
+    "unstakeLockBlocks": 50,
+    "retryIntervalBlocks": 20,
+    "minStakeAmount": "3200000000",
+    "challengeStakeAmount": "1000000000",
+    "challengeStakeRatioBps": 1000,
+    "challengeArbitrationBaseCost": "0",
+    "maxChallengeStakeAmount": "0",
+    "initialWitnessCount": 4,
+    "minSelectedWitnessCount": 4,
+    "expandMultiplier": 2,
+    "witnessRewardRatio": 0.5,
+    "slashRatio": 1.0,
+    "challengerReward": 0.2,
+    "silenceSlashRatio": 0,
+    "ordinaryCommitteeSizes": [
+        4,
+        8,
+        16
+    ],
+    "ordinaryThresholdBps": 7500
+}

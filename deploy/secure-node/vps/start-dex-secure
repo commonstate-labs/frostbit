@@ -1,0 +1,208 @@
+#!/usr/bin/env bash
+set +x
+set -euo pipefail
+umask 077
+ulimit -c 0
+
+die() {
+    printf 'start-dex-secure: %s\n' "$1" >&2
+    exit 1
+}
+
+require_value() {
+    local name=$1
+    [[ -n "${!name:-}" ]] || die "$name is required"
+}
+
+require_absolute_path() {
+    local name=$1
+    local value=${!name:-}
+    [[ "$value" == /* ]] || die "$name must be an absolute path"
+}
+
+for name in DEX_MINER_ADDRESS DEX_BIN DEX_CONFIG_DIR DEX_PEERS_FILE DEX_DATA_DIR \
+    DEX_BOOTSTRAP_MODE DEX_SECRET_HOST DEX_SECRET_PORT \
+    DEX_SECRET_IDENTITY_FILE DEX_SECRET_KNOWN_HOSTS; do
+    require_value "$name"
+done
+
+for name in DEX_BIN DEX_CONFIG_DIR DEX_PEERS_FILE DEX_DATA_DIR \
+    DEX_SECRET_IDENTITY_FILE DEX_SECRET_KNOWN_HOSTS; do
+    require_absolute_path "$name"
+done
+
+[[ "$DEX_MINER_ADDRESS" =~ ^fbc1[023456789acdefghjklmnpqrstuvwxyz]{39}$ ]] || \
+    die 'DEX_MINER_ADDRESS must be one canonical lowercase fbc address'
+[[ "${DEX_DATA_DIR##*/}" == "$DEX_MINER_ADDRESS" ]] || \
+    die 'DEX_DATA_DIR must use DEX_MINER_ADDRESS as its final path component'
+[[ "${DEX_SECRET_IDENTITY_FILE##*/}" == "$DEX_MINER_ADDRESS.secret_fetch" ]] || \
+    die 'DEX_SECRET_IDENTITY_FILE must be named from DEX_MINER_ADDRESS'
+[[ "$DEX_SECRET_PORT" =~ ^[0-9]+$ ]] || die 'DEX_SECRET_PORT must be numeric'
+(( DEX_SECRET_PORT >= 1 && DEX_SECRET_PORT <= 65535 )) || die 'DEX_SECRET_PORT is out of range'
+
+case "$DEX_BOOTSTRAP_MODE" in
+    genesis) ;;
+    latejoin) ;;
+    *) die 'DEX_BOOTSTRAP_MODE must be genesis or latejoin' ;;
+esac
+
+case "$DEX_SECRET_HOST" in
+    -*|*[!A-Za-z0-9._-]*) die 'DEX_SECRET_HOST must be a hostname or IPv4 address without a user or port' ;;
+esac
+
+fetch_timeout=${DEX_SECRET_FETCH_TIMEOUT_SECONDS:-20}
+[[ "$fetch_timeout" =~ ^[0-9]+$ ]] || die 'DEX_SECRET_FETCH_TIMEOUT_SECONDS must be numeric'
+(( fetch_timeout >= 5 && fetch_timeout <= 60 )) || die 'DEX_SECRET_FETCH_TIMEOUT_SECONDS must be 5..60'
+
+[[ -x "$DEX_BIN" ]] || die "DEX binary is not executable: $DEX_BIN"
+[[ -d "$DEX_CONFIG_DIR" ]] || die "config directory not found: $DEX_CONFIG_DIR"
+[[ -r "$DEX_PEERS_FILE" ]] || die "peers file not readable: $DEX_PEERS_FILE"
+[[ -r "$DEX_CONFIG_DIR/genesis.json" ]] || die 'genesis.json is not readable'
+[[ -r "$DEX_CONFIG_DIR/frost_default.json" ]] || die 'frost_default.json is not readable'
+[[ -d "$DEX_DATA_DIR" && -w "$DEX_DATA_DIR" ]] || die "data directory not writable: $DEX_DATA_DIR"
+[[ -r "$DEX_SECRET_IDENTITY_FILE" ]] || die 'VPS fetch identity is not readable'
+[[ -s "$DEX_SECRET_KNOWN_HOSTS" ]] || die 'pinned trusted-server known_hosts file is missing or empty'
+
+for tool in /usr/bin/jq /usr/bin/ssh /usr/bin/timeout; do
+    [[ -x "$tool" ]] || die "required executable not found: $tool"
+done
+
+/usr/bin/jq -e --arg miner "$DEX_MINER_ADDRESS" --arg mode "$DEX_BOOTSTRAP_MODE" '
+    def fbc_address:
+        type == "string" and test("^fbc1[023456789acdefghjklmnpqrstuvwxyz]{39}$");
+    def public_hex:
+        type == "string" and length > 0 and (length % 2 == 0) and test("^[0-9A-Fa-f]+$");
+    def secret_field:
+        ascii_downcase | gsub("[_ -]"; "") |
+        . == "privatekey" or . == "frostwrapkey" or . == "mnemonic" or
+        . == "seed" or . == "seedphrase" or . == "secret" or
+        . == "secretkey" or . == "password" or . == "passphrase";
+    def public_endpoint:
+        type == "string" and
+        (test("^[A-Za-z0-9.-]+:[0-9]{1,5}$") or test("^\\[[0-9A-Fa-f:]+\\]:[0-9]{1,5}$")) and
+        ((capture(":(?<port>[0-9]{1,5})$").port | tonumber) as $port |
+            $port >= 1 and $port <= 65535);
+    def only_keys($allowed):
+        all(keys[]; . as $key | $allowed | index($key) != null);
+    (.genesis_validators // [] | map(.address)) as $validator_addresses |
+    (
+        (.schema_version == 1) and
+        (.kind == "public-peer-manifest") and
+        ((._notice | type) == "string") and
+        (._notice | ascii_upcase | contains("NO SECRETS")) and
+        (.chain_id | type == "number" and . > 0) and
+        (.genesis_validators | type == "array" and length > 0) and
+        (.bootstrap_endpoints | type == "array" and length > 0) and
+        (only_keys(["_notice", "schema_version", "kind", "chain_id",
+            "genesis_validators", "bootstrap_endpoints"])) and
+        ([.. | objects | keys[] | select(secret_field)] | length == 0) and
+        (all(.genesis_validators[];
+            only_keys(["address", "reward_address", "secp_public_key", "bls_public_key", "is_miner"]) and
+            (.address | fbc_address) and
+            (.reward_address | fbc_address) and
+            (.secp_public_key | type == "string" and test("^(02|03)[0-9A-Fa-f]{64}$")) and
+            (.bls_public_key | public_hex) and
+            (.is_miner == true))) and
+        ([.genesis_validators[].address] | length == (unique | length)) and
+        (all(.bootstrap_endpoints[];
+            . as $route |
+            ($route | only_keys(["address", "endpoint"])) and
+            ($route.address | fbc_address) and
+            ($route.endpoint | public_endpoint) and
+            ($validator_addresses | index($route.address) != null))) and
+        ([.bootstrap_endpoints[].address] | length == (unique | length)) and
+        ([.bootstrap_endpoints[].endpoint] | length == (unique | length)) and
+        ([.bootstrap_endpoints[].address] | sort == ($validator_addresses | sort)) and
+        (if $mode == "genesis" then
+            ([.genesis_validators[] | select(.address == $miner)] | length == 1)
+        else
+            ([.bootstrap_endpoints[] | select(.address != $miner)] | length > 0)
+        end)
+    )
+' "$DEX_PEERS_FILE" >/dev/null || \
+    die 'peers.json must contain complete address/reward/secp/BLS/is_miner public records, valid bootstrap routes, and no secrets; genesis mode must also contain this miner'
+manifest_chain=$(/usr/bin/jq -er '.chain_id | select(type == "number" and . > 0 and . == floor)' \
+    "$DEX_PEERS_FILE") || die 'peers.json chain_id must be a positive integer'
+genesis_chain=$(/usr/bin/jq -er '.chain_id | select(type == "number" and . > 0 and . == floor)' \
+    "$DEX_CONFIG_DIR/genesis.json") || die 'genesis.json chain_id must be a positive integer'
+[[ "$manifest_chain" == "$genesis_chain" ]] || die 'genesis.json and peers.json chain_id values differ'
+/usr/bin/jq -e '.enabled == true' "$DEX_CONFIG_DIR/frost_default.json" >/dev/null || \
+    die 'this secure miner wrapper requires FROST enabled=true'
+default_k=$(/usr/bin/jq -er '.vault.defaultK | select(type == "number" and . >= 1 and . == floor)' \
+    "$DEX_CONFIG_DIR/frost_default.json") || die 'frost vault.defaultK must be a positive integer'
+miner_count=$(/usr/bin/jq -er '[.genesis_validators[] | select(.is_miner == true)] | length' \
+    "$DEX_PEERS_FILE") || die 'cannot count FROST miners in peers.json'
+(( miner_count >= default_k )) || die "peers.json has $miner_count miners but FROST defaultK requires $default_k"
+local_is_genesis=$(/usr/bin/jq -er --arg miner "$DEX_MINER_ADDRESS" \
+    '[.genesis_validators[] | select(.address == $miner)] | length' "$DEX_PEERS_FILE") || \
+    die 'cannot resolve DEX_MINER_ADDRESS in peers.json'
+manifest_endpoint=$(/usr/bin/jq -r --arg miner "$DEX_MINER_ADDRESS" \
+    '[.bootstrap_endpoints[] | select(.address == $miner) | .endpoint][0] // ""' "$DEX_PEERS_FILE") || \
+    die 'cannot resolve the local manifest endpoint'
+if [[ "$local_is_genesis" == 1 && -n "${DEX_ADVERTISE_ADDR:-}" && \
+    "$DEX_ADVERTISE_ADDR" != "$manifest_endpoint" ]]; then
+    die 'DEX_ADVERTISE_ADDR conflicts with the endpoint bound to DEX_MINER_ADDRESS in peers.json'
+fi
+
+ssh_command=(
+    /usr/bin/timeout --foreground "${fetch_timeout}s"
+    /usr/bin/ssh
+    -F /dev/null
+    -n
+    -T
+    -p "$DEX_SECRET_PORT"
+    -o BatchMode=yes
+    -o PasswordAuthentication=no
+    -o KbdInteractiveAuthentication=no
+    -o PreferredAuthentications=publickey
+    -o IdentitiesOnly=yes
+    -o IdentityAgent=none
+    -o StrictHostKeyChecking=yes
+    -o "UserKnownHostsFile=$DEX_SECRET_KNOWN_HOSTS"
+    -o GlobalKnownHostsFile=/dev/null
+    -o ClearAllForwardings=yes
+    -o PermitLocalCommand=no
+    -o ConnectTimeout=10
+    -o ConnectionAttempts=1
+    -o ServerAliveInterval=5
+    -o ServerAliveCountMax=1
+    -o LogLevel=ERROR
+    -i "$DEX_SECRET_IDENTITY_FILE"
+)
+
+fetch_secret() {
+    local kind=$1
+    local value
+    if ! value=$("${ssh_command[@]}" "dex-secrets@$DEX_SECRET_HOST" "$kind"); then
+        die "trusted-server refused or failed the $kind request"
+    fi
+    [[ "$value" =~ ^[0-9A-Fa-f]{64}$ ]] || die "trusted-server returned an invalid $kind token"
+    printf '%s' "$value"
+}
+
+private_key=$(fetch_secret private)
+wrap_key=$(fetch_secret wrap)
+[[ "$private_key" != "$wrap_key" ]] || die 'private key and wrap key must be independent values'
+
+# Bash process substitution creates anonymous inherited pipe descriptors on Linux.
+# The validated secrets are never placed in argv, exported environment variables,
+# or named temporary files.
+exec 3< <(printf '%s\n' "$private_key")
+exec 4< <(printf '%s\n' "$wrap_key")
+unset private_key wrap_key
+
+node_args=(
+    "--bootstrap-mode=$DEX_BOOTSTRAP_MODE"
+    "--config-dir=$DEX_CONFIG_DIR"
+    "--peers=$DEX_PEERS_FILE"
+    "--expected-address=$DEX_MINER_ADDRESS"
+    "--data-dir=$DEX_DATA_DIR"
+    --private-key-fd=3
+    --frost-wrap-key-fd=4
+    --no-simulator
+)
+
+if [[ -n "${DEX_ADVERTISE_ADDR:-}" ]]; then
+    node_args+=("--advertise-addr=$DEX_ADVERTISE_ADDR")
+fi
+exec "$DEX_BIN" "${node_args[@]}"

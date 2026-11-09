@@ -1,0 +1,15 @@
+deploy/physical20 export-ignore
+deploy/physical20/** export-ignore
+dev export-ignore
+dev/** export-ignore
+deploy/physical20/*.ps1 text eol=lf
+deploy/physical20/*.sh text eol=lf
+deploy/container-node-entrypoint.sh text eol=lf
+deploy/quick-node.sh text eol=lf
+dev/chain-nodes/*.sh text eol=lf
+dev/chain-nodes/**/*.sh text eol=lf
+dev/chain-nodes/**/Dockerfile text eol=lf
+dev/chain-nodes/*.yml text eol=lf
+wallet/lib/data_proto.js text eol=lf
+dev/server5/install-public-explorer.sh text eol=lf
+dev/server5/restrict-public-intent.sh text eol=lf

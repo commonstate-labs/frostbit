@@ -1,0 +1,536 @@
+name: dex-local20
+
+                                                                        
+                                                                    
+                                                                           
+                                                                            
+configs:
+  local20-config:
+    file: ../config/env/local20/config.json
+  local20-genesis:
+    file: ../config/env/local20/genesis.json
+  local20-frost:
+    file: ../config/env/local20/frost_default.json
+  local20-witness:
+    file: ../config/env/local20/witness_default.json
+  local20-peers:
+    file: ../config/env/local20/peers.json
+
+x-node-common: &node-common
+  build:
+    context: ..
+    dockerfile: Dockerfile
+    args:
+      BUILD_TAG: local20
+  image: dex-local20-node:latest
+  init: true
+  environment:
+    DEX_ENV: local20
+    DEX_EXPLORER_SERVICE_TOKEN: ${DEX_EXPLORER_SERVICE_TOKEN:?set a shared 32..512 character Explorer service token}
+    GOMAXPROCS: "1"
+    GOMEMLIMIT: 640MiB
+  configs:
+    - source: local20-config
+      target: /app/config/env/local20/config.json
+      mode: 0444
+    - source: local20-genesis
+      target: /app/config/env/local20/genesis.json
+      mode: 0444
+    - source: local20-frost
+      target: /app/config/env/local20/frost_default.json
+      mode: 0444
+    - source: local20-witness
+      target: /app/config/env/local20/witness_default.json
+      mode: 0444
+    - source: local20-peers
+      target: /app/config/env/local20/peers.json
+      mode: 0444
+  cpus: "1.0"
+  mem_limit: 768m
+  memswap_limit: 768m
+  storage_opt:
+    size: "20G"
+  stop_grace_period: 30s
+
+services:
+  node00:
+    <<: *node-common
+    container_name: dex-local20-node00
+    hostname: node00
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_00:?set DEX_MINER_ADDRESS_00}", "--data-dir=/data/${DEX_MINER_ADDRESS_00:?set DEX_MINER_ADDRESS_00}", "--resume=true", "--advertise-addr=198.18.0.11:6000", "--no-simulator"]
+    ports: ["6000:6000/tcp", "6000:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_00:?set DEX_MINER_ADDRESS_00}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_00:?set DEX_MINER_ADDRESS_00}
+        target: /data/${DEX_MINER_ADDRESS_00:?set DEX_MINER_ADDRESS_00}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.11
+
+  node01:
+    <<: *node-common
+    container_name: dex-local20-node01
+    hostname: node01
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_01:?set DEX_MINER_ADDRESS_01}", "--data-dir=/data/${DEX_MINER_ADDRESS_01:?set DEX_MINER_ADDRESS_01}", "--resume=true", "--advertise-addr=198.18.0.12:6000", "--no-simulator"]
+    ports: ["6001:6000/tcp", "6001:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_01:?set DEX_MINER_ADDRESS_01}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_01:?set DEX_MINER_ADDRESS_01}
+        target: /data/${DEX_MINER_ADDRESS_01:?set DEX_MINER_ADDRESS_01}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.12
+
+  node02:
+    <<: *node-common
+    container_name: dex-local20-node02
+    hostname: node02
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_02:?set DEX_MINER_ADDRESS_02}", "--data-dir=/data/${DEX_MINER_ADDRESS_02:?set DEX_MINER_ADDRESS_02}", "--resume=true", "--advertise-addr=198.18.0.13:6000", "--no-simulator"]
+    ports: ["6002:6000/tcp", "6002:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_02:?set DEX_MINER_ADDRESS_02}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_02:?set DEX_MINER_ADDRESS_02}
+        target: /data/${DEX_MINER_ADDRESS_02:?set DEX_MINER_ADDRESS_02}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.13
+
+  node03:
+    <<: *node-common
+    container_name: dex-local20-node03
+    hostname: node03
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_03:?set DEX_MINER_ADDRESS_03}", "--data-dir=/data/${DEX_MINER_ADDRESS_03:?set DEX_MINER_ADDRESS_03}", "--resume=true", "--advertise-addr=198.18.0.14:6000", "--no-simulator"]
+    ports: ["6003:6000/tcp", "6003:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_03:?set DEX_MINER_ADDRESS_03}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_03:?set DEX_MINER_ADDRESS_03}
+        target: /data/${DEX_MINER_ADDRESS_03:?set DEX_MINER_ADDRESS_03}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.14
+
+  node04:
+    <<: *node-common
+    container_name: dex-local20-node04
+    hostname: node04
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_04:?set DEX_MINER_ADDRESS_04}", "--data-dir=/data/${DEX_MINER_ADDRESS_04:?set DEX_MINER_ADDRESS_04}", "--resume=true", "--advertise-addr=198.18.0.15:6000", "--no-simulator"]
+    ports: ["6004:6000/tcp", "6004:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_04:?set DEX_MINER_ADDRESS_04}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_04:?set DEX_MINER_ADDRESS_04}
+        target: /data/${DEX_MINER_ADDRESS_04:?set DEX_MINER_ADDRESS_04}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.15
+
+  node05:
+    <<: *node-common
+    container_name: dex-local20-node05
+    hostname: node05
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_05:?set DEX_MINER_ADDRESS_05}", "--data-dir=/data/${DEX_MINER_ADDRESS_05:?set DEX_MINER_ADDRESS_05}", "--resume=true", "--advertise-addr=198.18.0.16:6000", "--no-simulator"]
+    ports: ["6005:6000/tcp", "6005:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_05:?set DEX_MINER_ADDRESS_05}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_05:?set DEX_MINER_ADDRESS_05}
+        target: /data/${DEX_MINER_ADDRESS_05:?set DEX_MINER_ADDRESS_05}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.16
+
+  node06:
+    <<: *node-common
+    container_name: dex-local20-node06
+    hostname: node06
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_06:?set DEX_MINER_ADDRESS_06}", "--data-dir=/data/${DEX_MINER_ADDRESS_06:?set DEX_MINER_ADDRESS_06}", "--resume=true", "--advertise-addr=198.18.0.17:6000", "--no-simulator"]
+    ports: ["6006:6000/tcp", "6006:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_06:?set DEX_MINER_ADDRESS_06}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_06:?set DEX_MINER_ADDRESS_06}
+        target: /data/${DEX_MINER_ADDRESS_06:?set DEX_MINER_ADDRESS_06}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.17
+
+  node07:
+    <<: *node-common
+    container_name: dex-local20-node07
+    hostname: node07
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_07:?set DEX_MINER_ADDRESS_07}", "--data-dir=/data/${DEX_MINER_ADDRESS_07:?set DEX_MINER_ADDRESS_07}", "--resume=true", "--advertise-addr=198.18.0.18:6000", "--no-simulator"]
+    ports: ["6007:6000/tcp", "6007:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_07:?set DEX_MINER_ADDRESS_07}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_07:?set DEX_MINER_ADDRESS_07}
+        target: /data/${DEX_MINER_ADDRESS_07:?set DEX_MINER_ADDRESS_07}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.18
+
+  node08:
+    <<: *node-common
+    container_name: dex-local20-node08
+    hostname: node08
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_08:?set DEX_MINER_ADDRESS_08}", "--data-dir=/data/${DEX_MINER_ADDRESS_08:?set DEX_MINER_ADDRESS_08}", "--resume=true", "--advertise-addr=198.18.0.19:6000", "--no-simulator"]
+    ports: ["6008:6000/tcp", "6008:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_08:?set DEX_MINER_ADDRESS_08}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_08:?set DEX_MINER_ADDRESS_08}
+        target: /data/${DEX_MINER_ADDRESS_08:?set DEX_MINER_ADDRESS_08}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.19
+
+  node09:
+    <<: *node-common
+    container_name: dex-local20-node09
+    hostname: node09
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_09:?set DEX_MINER_ADDRESS_09}", "--data-dir=/data/${DEX_MINER_ADDRESS_09:?set DEX_MINER_ADDRESS_09}", "--resume=true", "--advertise-addr=198.18.0.20:6000", "--no-simulator"]
+    ports: ["6009:6000/tcp", "6009:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_09:?set DEX_MINER_ADDRESS_09}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_09:?set DEX_MINER_ADDRESS_09}
+        target: /data/${DEX_MINER_ADDRESS_09:?set DEX_MINER_ADDRESS_09}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.20
+
+  node10:
+    <<: *node-common
+    container_name: dex-local20-node10
+    hostname: node10
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_10:?set DEX_MINER_ADDRESS_10}", "--data-dir=/data/${DEX_MINER_ADDRESS_10:?set DEX_MINER_ADDRESS_10}", "--resume=true", "--advertise-addr=198.18.0.21:6000", "--no-simulator"]
+    ports: ["6010:6000/tcp", "6010:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_10:?set DEX_MINER_ADDRESS_10}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_10:?set DEX_MINER_ADDRESS_10}
+        target: /data/${DEX_MINER_ADDRESS_10:?set DEX_MINER_ADDRESS_10}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.21
+
+  node11:
+    <<: *node-common
+    container_name: dex-local20-node11
+    hostname: node11
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_11:?set DEX_MINER_ADDRESS_11}", "--data-dir=/data/${DEX_MINER_ADDRESS_11:?set DEX_MINER_ADDRESS_11}", "--resume=true", "--advertise-addr=198.18.0.22:6000", "--no-simulator"]
+    ports: ["6011:6000/tcp", "6011:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_11:?set DEX_MINER_ADDRESS_11}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_11:?set DEX_MINER_ADDRESS_11}
+        target: /data/${DEX_MINER_ADDRESS_11:?set DEX_MINER_ADDRESS_11}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.22
+
+  node12:
+    <<: *node-common
+    container_name: dex-local20-node12
+    hostname: node12
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_12:?set DEX_MINER_ADDRESS_12}", "--data-dir=/data/${DEX_MINER_ADDRESS_12:?set DEX_MINER_ADDRESS_12}", "--resume=true", "--advertise-addr=198.18.0.23:6000", "--no-simulator"]
+    ports: ["6012:6000/tcp", "6012:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_12:?set DEX_MINER_ADDRESS_12}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_12:?set DEX_MINER_ADDRESS_12}
+        target: /data/${DEX_MINER_ADDRESS_12:?set DEX_MINER_ADDRESS_12}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.23
+
+  node13:
+    <<: *node-common
+    container_name: dex-local20-node13
+    hostname: node13
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_13:?set DEX_MINER_ADDRESS_13}", "--data-dir=/data/${DEX_MINER_ADDRESS_13:?set DEX_MINER_ADDRESS_13}", "--resume=true", "--advertise-addr=198.18.0.24:6000", "--no-simulator"]
+    ports: ["6013:6000/tcp", "6013:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_13:?set DEX_MINER_ADDRESS_13}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_13:?set DEX_MINER_ADDRESS_13}
+        target: /data/${DEX_MINER_ADDRESS_13:?set DEX_MINER_ADDRESS_13}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.24
+
+  node14:
+    <<: *node-common
+    container_name: dex-local20-node14
+    hostname: node14
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_14:?set DEX_MINER_ADDRESS_14}", "--data-dir=/data/${DEX_MINER_ADDRESS_14:?set DEX_MINER_ADDRESS_14}", "--resume=true", "--advertise-addr=198.18.0.25:6000", "--no-simulator"]
+    ports: ["6014:6000/tcp", "6014:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_14:?set DEX_MINER_ADDRESS_14}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_14:?set DEX_MINER_ADDRESS_14}
+        target: /data/${DEX_MINER_ADDRESS_14:?set DEX_MINER_ADDRESS_14}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.25
+
+  node15:
+    <<: *node-common
+    container_name: dex-local20-node15
+    hostname: node15
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_15:?set DEX_MINER_ADDRESS_15}", "--data-dir=/data/${DEX_MINER_ADDRESS_15:?set DEX_MINER_ADDRESS_15}", "--resume=true", "--advertise-addr=198.18.0.26:6000", "--no-simulator"]
+    ports: ["6015:6000/tcp", "6015:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_15:?set DEX_MINER_ADDRESS_15}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_15:?set DEX_MINER_ADDRESS_15}
+        target: /data/${DEX_MINER_ADDRESS_15:?set DEX_MINER_ADDRESS_15}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.26
+
+  node16:
+    <<: *node-common
+    container_name: dex-local20-node16
+    hostname: node16
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_16:?set DEX_MINER_ADDRESS_16}", "--data-dir=/data/${DEX_MINER_ADDRESS_16:?set DEX_MINER_ADDRESS_16}", "--resume=true", "--advertise-addr=198.18.0.27:6000", "--no-simulator"]
+    ports: ["6016:6000/tcp", "6016:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_16:?set DEX_MINER_ADDRESS_16}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_16:?set DEX_MINER_ADDRESS_16}
+        target: /data/${DEX_MINER_ADDRESS_16:?set DEX_MINER_ADDRESS_16}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.27
+
+  node17:
+    <<: *node-common
+    container_name: dex-local20-node17
+    hostname: node17
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_17:?set DEX_MINER_ADDRESS_17}", "--data-dir=/data/${DEX_MINER_ADDRESS_17:?set DEX_MINER_ADDRESS_17}", "--resume=true", "--advertise-addr=198.18.0.28:6000", "--no-simulator"]
+    ports: ["6017:6000/tcp", "6017:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_17:?set DEX_MINER_ADDRESS_17}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_17:?set DEX_MINER_ADDRESS_17}
+        target: /data/${DEX_MINER_ADDRESS_17:?set DEX_MINER_ADDRESS_17}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.28
+
+  node18:
+    <<: *node-common
+    container_name: dex-local20-node18
+    hostname: node18
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_18:?set DEX_MINER_ADDRESS_18}", "--data-dir=/data/${DEX_MINER_ADDRESS_18:?set DEX_MINER_ADDRESS_18}", "--resume=true", "--advertise-addr=198.18.0.29:6000", "--no-simulator"]
+    ports: ["6018:6000/tcp", "6018:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_18:?set DEX_MINER_ADDRESS_18}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_18:?set DEX_MINER_ADDRESS_18}
+        target: /data/${DEX_MINER_ADDRESS_18:?set DEX_MINER_ADDRESS_18}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.29
+
+  node19:
+    <<: *node-common
+    container_name: dex-local20-node19
+    hostname: node19
+    command: ["--config-dir=/app/config/env/local20", "--peers=/app/config/env/local20/peers.json", "--expected-address=${DEX_MINER_ADDRESS_19:?set DEX_MINER_ADDRESS_19}", "--data-dir=/data/${DEX_MINER_ADDRESS_19:?set DEX_MINER_ADDRESS_19}", "--resume=true", "--advertise-addr=198.18.0.30:6000", "--no-simulator"]
+    ports: ["6019:6000/tcp", "6019:6000/udp"]
+    volumes:
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS_19:?set DEX_MINER_ADDRESS_19}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ${DEX_NODE_DATA_ROOT:?set DEX_NODE_DATA_ROOT}/${DEX_MINER_ADDRESS_19:?set DEX_MINER_ADDRESS_19}
+        target: /data/${DEX_MINER_ADDRESS_19:?set DEX_MINER_ADDRESS_19}
+        bind: { create_host_path: false }
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.30
+
+  explorer:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      args:
+        BUILD_TAG: local20
+    image: dex-local20-node:latest
+    entrypoint: ["/app/explorer"]
+    container_name: dex-local20-explorer
+    hostname: explorer
+    environment:
+      DEX_ENV: local20
+      DEX_EXPLORER_SERVICE_TOKEN: ${DEX_EXPLORER_SERVICE_TOKEN:?set the same Explorer service token used by the nodes}
+      EXPLORER_ENABLE_OPERATOR_NODE_CONTROL: "true"
+      EXPLORER_PUBLIC_ORIGIN: ${EXPLORER_PUBLIC_ORIGIN:-http://localhost:8080}
+      EXPLORER_SIMULATOR_OPERATOR_ADDRESSES: ${EXPLORER_SIMULATOR_OPERATOR_ADDRESSES:?set the comma-separated wallet operator allowlist}
+    configs:
+      - source: local20-config
+        target: /app/config/env/local20/config.json
+        mode: 0444
+      - source: local20-genesis
+        target: /app/config/env/local20/genesis.json
+        mode: 0444
+      - source: local20-frost
+        target: /app/config/env/local20/frost_default.json
+        mode: 0444
+      - source: local20-witness
+        target: /app/config/env/local20/witness_default.json
+        mode: 0444
+      - source: local20-peers
+        target: /app/config/env/local20/peers.json
+        mode: 0444
+    command:
+      - --config-dir=/app/config/env/local20
+      - --peers=/app/config/env/local20/peers.json
+      - --listen=0.0.0.0:8080
+      - --sync-node=198.18.0.11:6000
+      - --web-dir=/app/explorer_web/dist
+      - --data-dir=/data/explorer
+    cpus: "1.0"
+    mem_limit: 512m
+    memswap_limit: 512m
+    ports:
+      - "8080:8080"
+    volumes:
+      - explorer-data:/data
+    depends_on:
+      - node00
+      - node01
+      - node02
+      - node03
+      - node04
+      - node05
+      - node06
+      - node07
+      - node08
+      - node09
+      - node10
+      - node11
+      - node12
+      - node13
+      - node14
+      - node15
+      - node16
+      - node17
+      - node18
+      - node19
+    networks:
+      dexnet:
+        ipv4_address: 198.18.0.40
+
+networks:
+  dexnet:
+    name: dex-local20-net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 198.18.0.0/24
+
+volumes:
+  explorer-data:

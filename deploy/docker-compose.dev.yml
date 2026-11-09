@@ -1,0 +1,76 @@
+                                                                                  
+                                                                            
+                                                                                 
+services:
+  node:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      args:
+        BUILD_TAG: dev
+    environment:
+      DEX_ENV: dev
+      DEX_MINER_ADDRESS: ${DEX_MINER_ADDRESS:?set DEX_MINER_ADDRESS to the canonical fbc miner address}
+      DEX_EXPLORER_SERVICE_TOKEN: ${DEX_EXPLORER_SERVICE_TOKEN:?set a 32..512 character Explorer service token}
+    command:
+      - --config-dir=/app/config/env/dev
+      - --peers=/app/config/env/dev/peers.json
+      - --expected-address=${DEX_MINER_ADDRESS:?set DEX_MINER_ADDRESS}
+      - --data-dir=/data/${DEX_MINER_ADDRESS:?set DEX_MINER_ADDRESS}
+      - --resume=true
+      - --advertise-addr=node:6000
+      - --no-simulator
+      - --enable-debug-api
+      - --enable-pprof
+      - --pprof-bind=127.0.0.1
+    ports:
+      - "6000:6000"
+    volumes:
+      - dex-node-dev:/data
+      - type: bind
+        source: ../config/env/dev
+        target: /app/config/env/dev
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${DEX_NODE_SECRET_ROOT:?set DEX_NODE_SECRET_ROOT}/${DEX_MINER_ADDRESS:?set DEX_MINER_ADDRESS}
+        target: /run/secrets/dex-miner
+        read_only: true
+        bind:
+          create_host_path: false
+
+  explorer:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      args:
+        BUILD_TAG: dev
+    entrypoint: ["/app/explorer"]
+    environment:
+      DEX_ENV: dev
+      DEX_EXPLORER_SERVICE_TOKEN: ${DEX_EXPLORER_SERVICE_TOKEN:?set the same Explorer service token used by the node}
+    command:
+      - --config-dir=/app/config/env/dev
+      - --peers=/app/config/env/dev/peers.json
+      - --listen=0.0.0.0:8080
+      - --nodes=node:6000
+      - --sync-node=node:6000
+      - --web-dir=/app/explorer_web/dist
+      - --data-dir=/data/explorer
+    ports:
+      - "8080:8080"
+    volumes:
+      - dex-explorer-dev:/data
+      - type: bind
+        source: ../config/env/dev
+        target: /app/config/env/dev
+        read_only: true
+        bind:
+          create_host_path: false
+    depends_on:
+      - node
+
+volumes:
+  dex-node-dev:
+  dex-explorer-dev:

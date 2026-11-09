@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "FrostBit Wallet",
+  "version": "0.2.6",
+  "description": "FrostBit DEX 原生钱包 — 私钥管理、转账、DApp 签名",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.frostbit.io/*",
+        "http://localhost/*",
+        "http://localhost:*/*",
+        "http://127.0.0.1/*",
+        "http://127.0.0.1:*/*"
+      ],
+      "js": [
+        "content/content_script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/inpage.js"
+      ],
+      "matches": [
+        "https://*.frostbit.io/*",
+        "http://localhost/*",
+        "http://localhost:*/*",
+        "http://127.0.0.1/*",
+        "http://127.0.0.1:*/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*.frostbit.io/*",
+    "http://localhost/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1/*",
+    "http://127.0.0.1:*/*"
+  ]
+}

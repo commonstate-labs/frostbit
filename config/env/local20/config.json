@@ -1,0 +1,45 @@
+{
+  "Network": {
+    "BasePort": 6000,
+    "DefaultNumNodes": 20,
+    "advertise_host": "127.0.0.1"
+  },
+  "Server": {
+    "EnableDebugAPI": true,
+    "EnablePprof": false,
+    "PprofBind": "127.0.0.1"
+  },
+  "Consensus": {
+    "K": 15,
+    "AlphaPreference": 8,
+    "AlphaConfidence": 12,
+    "Beta": 15
+  },
+  "TxPool": {
+    "PendingTxCacheSize": 50000,
+    "ShortPendingTxCacheSize": 50000,
+    "CacheTxSize": 50000,
+    "ShortTxCacheSize": 50000,
+    "MessageQueueSize": 50000,
+    "MaxPendingTxs": 30000,
+    "TargetTxsPerBlock": 5000,
+    "MaxTxsPerBlock": 5000,
+    "MaxTxsLimitPerBlock": 5000
+  },
+  "Sender": {
+    "QueueCapacity": 5000,
+    "TxGossipFanout": 20,
+    "TxGossipInputCapacity": 50000,
+    "TxGossipMaxPendingPerPeer": 20000
+  },
+  "PeerGate": {
+    "trustedRPS": 5000,
+    "trustedBurst": 10000,
+    "syncRPS": 5000,
+    "syncBurst": 10000,
+    "unknownRPS": 5000,
+    "unknownBurst": 10000,
+    "txBatchMaxInflight": 64,
+    "banThreshold": 100000
+  }
+}

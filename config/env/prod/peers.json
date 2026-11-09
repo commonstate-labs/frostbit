@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "kind": "public-peer-manifest",
+  "_notice": "PUBLIC TEMPLATE ONLY — NO SECRETS. Insert a newly audited genesis trust set and bootstrap routes before production; private keys must remain in the operator secret store.",
+  "chain_id": 51025,
+  "genesis_validators": [],
+  "bootstrap_endpoints": []
+}

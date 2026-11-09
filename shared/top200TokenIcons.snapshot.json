@@ -1,0 +1,3306 @@
+{
+  "capturedAt": "2026-09-24T10:51:13.980Z",
+  "rankingURL": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false",
+  "platformsURL": "https://api.coingecko.com/api/v3/coins/list?include_platform=true",
+  "marketSha256": "5690718eea3aca84a85d585af4d2c9a4f1c5602ae51182c0444ce5ac45ee32bd",
+  "top200": [
+    {
+      "rank": 1,
+      "id": "bitcoin",
+      "symbol": "btc",
+      "name": "Bitcoin"
+    },
+    {
+      "rank": 2,
+      "id": "ethereum",
+      "symbol": "eth",
+      "name": "Ethereum"
+    },
+    {
+      "rank": 3,
+      "id": "tether",
+      "symbol": "usdt",
+      "name": "Tether"
+    },
+    {
+      "rank": 4,
+      "id": "binancecoin",
+      "symbol": "bnb",
+      "name": "BNB"
+    },
+    {
+      "rank": 5,
+      "id": "ripple",
+      "symbol": "xrp",
+      "name": "XRP"
+    },
+    {
+      "rank": 6,
+      "id": "usd-coin",
+      "symbol": "usdc",
+      "name": "USDC"
+    },
+    {
+      "rank": 7,
+      "id": "solana",
+      "symbol": "sol",
+      "name": "Solana"
+    },
+    {
+      "rank": 8,
+      "id": "tron",
+      "symbol": "trx",
+      "name": "TRON"
+    },
+    {
+      "rank": 9,
+      "id": "zcash",
+      "symbol": "zec",
+      "name": "Zcash"
+    },
+    {
+      "rank": 10,
+      "id": "figure-heloc",
+      "symbol": "figr_heloc",
+      "name": "Figure Heloc"
+    },
+    {
+      "rank": 11,
+      "id": "hyperliquid",
+      "symbol": "hype",
+      "name": "Hyperliquid"
+    },
+    {
+      "rank": 12,
+      "id": "dogecoin",
+      "symbol": "doge",
+      "name": "Dogecoin"
+    },
+    {
+      "rank": 13,
+      "id": "monero",
+      "symbol": "xmr",
+      "name": "Monero"
+    },
+    {
+      "rank": 14,
+      "id": "whitebit",
+      "symbol": "wbt",
+      "name": "WhiteBIT Coin"
+    },
+    {
+      "rank": 15,
+      "id": "usds",
+      "symbol": "usds",
+      "name": "USDS"
+    },
+    {
+      "rank": 16,
+      "id": "chainlink",
+      "symbol": "link",
+      "name": "Chainlink"
+    },
+    {
+      "rank": 17,
+      "id": "cardano",
+      "symbol": "ada",
+      "name": "Cardano"
+    },
+    {
+      "rank": 18,
+      "id": "rain",
+      "symbol": "rain",
+      "name": "Rain"
+    },
+    {
+      "rank": 19,
+      "id": "leo-token",
+      "symbol": "leo",
+      "name": "LEO Token"
+    },
+    {
+      "rank": 20,
+      "id": "stellar",
+      "symbol": "xlm",
+      "name": "Stellar"
+    },
+    {
+      "rank": 21,
+      "id": "bitcoin-cash",
+      "symbol": "bch",
+      "name": "Bitcoin Cash"
+    },
+    {
+      "rank": 22,
+      "id": "uniswap",
+      "symbol": "uni",
+      "name": "Uniswap"
+    },
+    {
+      "rank": 23,
+      "id": "near",
+      "symbol": "near",
+      "name": "NEAR Protocol"
+    },
+    {
+      "rank": 24,
+      "id": "litecoin",
+      "symbol": "ltc",
+      "name": "Litecoin"
+    },
+    {
+      "rank": 25,
+      "id": "ethena-usde",
+      "symbol": "usde",
+      "name": "Ethena USDe"
+    },
+    {
+      "rank": 26,
+      "id": "dai",
+      "symbol": "dai",
+      "name": "Dai"
+    },
+    {
+      "rank": 27,
+      "id": "avalanche-2",
+      "symbol": "avax",
+      "name": "Avalanche"
+    },
+    {
+      "rank": 28,
+      "id": "usd1-wlfi",
+      "symbol": "usd1",
+      "name": "USD1"
+    },
+    {
+      "rank": 29,
+      "id": "canton-network",
+      "symbol": "cc",
+      "name": "Canton"
+    },
+    {
+      "rank": 30,
+      "id": "the-open-network",
+      "symbol": "gram",
+      "name": "Gram (prev. Toncoin)"
+    },
+    {
+      "rank": 31,
+      "id": "hedera-hashgraph",
+      "symbol": "hbar",
+      "name": "Hedera"
+    },
+    {
+      "rank": 32,
+      "id": "sui",
+      "symbol": "sui",
+      "name": "Sui"
+    },
+    {
+      "rank": 33,
+      "id": "shiba-inu",
+      "symbol": "shib",
+      "name": "Shiba Inu"
+    },
+    {
+      "rank": 34,
+      "id": "global-dollar",
+      "symbol": "usdg",
+      "name": "Global Dollar"
+    },
+    {
+      "rank": 35,
+      "id": "bittensor",
+      "symbol": "tao",
+      "name": "Bittensor"
+    },
+    {
+      "rank": 36,
+      "id": "crypto-com-chain",
+      "symbol": "cro",
+      "name": "Cronos"
+    },
+    {
+      "rank": 37,
+      "id": "memecore",
+      "symbol": "m",
+      "name": "MemeCore"
+    },
+    {
+      "rank": 38,
+      "id": "bitway",
+      "symbol": "btw",
+      "name": "Bitway"
+    },
+    {
+      "rank": 39,
+      "id": "paypal-usd",
+      "symbol": "pyusd",
+      "name": "PayPal USD"
+    },
+    {
+      "rank": 40,
+      "id": "tether-gold",
+      "symbol": "xaut",
+      "name": "Tether Gold"
+    },
+    {
+      "rank": 41,
+      "id": "okb",
+      "symbol": "okb",
+      "name": "OKB"
+    },
+    {
+      "rank": 42,
+      "id": "hashnote-usyc",
+      "symbol": "usyc",
+      "name": "Circle USYC"
+    },
+    {
+      "rank": 43,
+      "id": "ripple-usd",
+      "symbol": "rlusd",
+      "name": "Ripple USD"
+    },
+    {
+      "rank": 44,
+      "id": "blackrock-usd-institutional-digital-liquidity-fund",
+      "symbol": "buidl",
+      "name": "BlackRock USD Institutional Digital Liquidity Fund"
+    },
+    {
+      "rank": 45,
+      "id": "ondo-us-dollar-yield",
+      "symbol": "usdy",
+      "name": "Ondo US Dollar Yield"
+    },
+    {
+      "rank": 46,
+      "id": "mantle",
+      "symbol": "mnt",
+      "name": "Mantle"
+    },
+    {
+      "rank": 47,
+      "id": "aave",
+      "symbol": "aave",
+      "name": "Aave"
+    },
+    {
+      "rank": 48,
+      "id": "ondo-finance",
+      "symbol": "ondo",
+      "name": "Ondo"
+    },
+    {
+      "rank": 49,
+      "id": "ethena",
+      "symbol": "ena",
+      "name": "Ethena"
+    },
+    {
+      "rank": 50,
+      "id": "aster-2",
+      "symbol": "aster",
+      "name": "Aster"
+    },
+    {
+      "rank": 51,
+      "id": "polkadot",
+      "symbol": "dot",
+      "name": "Polkadot"
+    },
+    {
+      "rank": 52,
+      "id": "morpho",
+      "symbol": "morpho",
+      "name": "Morpho"
+    },
+    {
+      "rank": 53,
+      "id": "pax-gold",
+      "symbol": "paxg",
+      "name": "PAX Gold"
+    },
+    {
+      "rank": 54,
+      "id": "pepe",
+      "symbol": "pepe",
+      "name": "Pepe"
+    },
+    {
+      "rank": 55,
+      "id": "pump-fun",
+      "symbol": "pump",
+      "name": "Pump.fun"
+    },
+    {
+      "rank": 56,
+      "id": "world-liberty-financial",
+      "symbol": "wlfi",
+      "name": "World Liberty Financial"
+    },
+    {
+      "rank": 57,
+      "id": "internet-computer",
+      "symbol": "icp",
+      "name": "Internet Computer"
+    },
+    {
+      "rank": 58,
+      "id": "sky",
+      "symbol": "sky",
+      "name": "Sky"
+    },
+    {
+      "rank": 59,
+      "id": "htx-dao",
+      "symbol": "htx",
+      "name": "HTX DAO"
+    },
+    {
+      "rank": 60,
+      "id": "usdd",
+      "symbol": "usdd",
+      "name": "USDD"
+    },
+    {
+      "rank": 61,
+      "id": "worldcoin-wld",
+      "symbol": "wld",
+      "name": "Worldcoin"
+    },
+    {
+      "rank": 62,
+      "id": "ethereum-classic",
+      "symbol": "etc",
+      "name": "Ethereum Classic"
+    },
+    {
+      "rank": 63,
+      "id": "united-stables",
+      "symbol": "u",
+      "name": "United Stables"
+    },
+    {
+      "rank": 64,
+      "id": "spiko-amundi-overnight-swap-fund-eur",
+      "symbol": "eursafo",
+      "name": "Spiko Amundi Overnight Swap Fund (EUR)"
+    },
+    {
+      "rank": 65,
+      "id": "arbitrum",
+      "symbol": "arb",
+      "name": "Arbitrum"
+    },
+    {
+      "rank": 66,
+      "id": "bitget-token",
+      "symbol": "bgb",
+      "name": "Bitget Token"
+    },
+    {
+      "rank": 67,
+      "id": "usdgo",
+      "symbol": "usdgo",
+      "name": "USDGO"
+    },
+    {
+      "rank": 68,
+      "id": "venice-token",
+      "symbol": "vvv",
+      "name": "Venice Token"
+    },
+    {
+      "rank": 69,
+      "id": "falcon-finance",
+      "symbol": "usdf",
+      "name": "Falcon USD"
+    },
+    {
+      "rank": 70,
+      "id": "bfusd",
+      "symbol": "bfusd",
+      "name": "BFUSD"
+    },
+    {
+      "rank": 71,
+      "id": "lighter",
+      "symbol": "lit",
+      "name": "Lighter"
+    },
+    {
+      "rank": 72,
+      "id": "gatechain-token",
+      "symbol": "gt",
+      "name": "Gate"
+    },
+    {
+      "rank": 73,
+      "id": "polygon-ecosystem-token",
+      "symbol": "pol",
+      "name": "POL (ex-MATIC)"
+    },
+    {
+      "rank": 74,
+      "id": "kaspa",
+      "symbol": "kas",
+      "name": "Kaspa"
+    },
+    {
+      "rank": 75,
+      "id": "quant-network",
+      "symbol": "qnt",
+      "name": "Quant"
+    },
+    {
+      "rank": 76,
+      "id": "blockchain-capital",
+      "symbol": "bcap",
+      "name": "Blockchain Capital"
+    },
+    {
+      "rank": 77,
+      "id": "kucoin-shares",
+      "symbol": "kcs",
+      "name": "KuCoin"
+    },
+    {
+      "rank": 78,
+      "id": "pi-network",
+      "symbol": "pi",
+      "name": "Pi Network"
+    },
+    {
+      "rank": 79,
+      "id": "akedo",
+      "symbol": "ake",
+      "name": "Akedo"
+    },
+    {
+      "rank": 80,
+      "id": "algorand",
+      "symbol": "algo",
+      "name": "Algorand"
+    },
+    {
+      "rank": 81,
+      "id": "jupiter-exchange-solana",
+      "symbol": "jup",
+      "name": "Jupiter"
+    },
+    {
+      "rank": 82,
+      "id": "render-token",
+      "symbol": "render",
+      "name": "Render"
+    },
+    {
+      "rank": 83,
+      "id": "just",
+      "symbol": "jst",
+      "name": "JUST"
+    },
+    {
+      "rank": 84,
+      "id": "cosmos",
+      "symbol": "atom",
+      "name": "Cosmos Hub"
+    },
+    {
+      "rank": 85,
+      "id": "nexo",
+      "symbol": "nexo",
+      "name": "NEXO"
+    },
+    {
+      "rank": 86,
+      "id": "pancakeswap-token",
+      "symbol": "cake",
+      "name": "PancakeSwap"
+    },
+    {
+      "rank": 87,
+      "id": "filecoin",
+      "symbol": "fil",
+      "name": "Filecoin"
+    },
+    {
+      "rank": 88,
+      "id": "injective-protocol",
+      "symbol": "inj",
+      "name": "Injective"
+    },
+    {
+      "rank": 89,
+      "id": "vechain",
+      "symbol": "vet",
+      "name": "VeChain"
+    },
+    {
+      "rank": 90,
+      "id": "eutbl",
+      "symbol": "eutbl",
+      "name": "Spiko EU T-Bills Money Market Fund"
+    },
+    {
+      "rank": 91,
+      "id": "dash",
+      "symbol": "dash",
+      "name": "Dash"
+    },
+    {
+      "rank": 92,
+      "id": "superstate-short-duration-us-government-securities-fund-ustb",
+      "symbol": "ustb",
+      "name": "Invesco Short Duration US Government Securities Fund"
+    },
+    {
+      "rank": 93,
+      "id": "gho",
+      "symbol": "gho",
+      "name": "GHO"
+    },
+    {
+      "rank": 94,
+      "id": "stable-2",
+      "symbol": "stable",
+      "name": "​​Stable"
+    },
+    {
+      "rank": 95,
+      "id": "aerodrome-finance",
+      "symbol": "aero",
+      "name": "Aerodrome Finance"
+    },
+    {
+      "rank": 96,
+      "id": "aptos",
+      "symbol": "apt",
+      "name": "Aptos"
+    },
+    {
+      "rank": 97,
+      "id": "ether-fi",
+      "symbol": "ethfi",
+      "name": "Ether.fi"
+    },
+    {
+      "rank": 98,
+      "id": "pudgy-penguins",
+      "symbol": "pengu",
+      "name": "Pudgy Penguins"
+    },
+    {
+      "rank": 99,
+      "id": "flare-networks",
+      "symbol": "flr",
+      "name": "Flare"
+    },
+    {
+      "rank": 100,
+      "id": "beldex",
+      "symbol": "bdx",
+      "name": "Beldex"
+    },
+    {
+      "rank": 101,
+      "id": "xdce-crowd-sale",
+      "symbol": "xdc",
+      "name": "XDC Network"
+    },
+    {
+      "rank": 102,
+      "id": "janus-henderson-anemoy-aaa-clo-fund",
+      "symbol": "jaaa",
+      "name": "Janus Henderson Anemoy AAA CLO Fund"
+    },
+    {
+      "rank": 103,
+      "id": "blockstack",
+      "symbol": "stx",
+      "name": "Stacks"
+    },
+    {
+      "rank": 104,
+      "id": "official-trump",
+      "symbol": "trump",
+      "name": "Official Trump"
+    },
+    {
+      "rank": 105,
+      "id": "usual-usd",
+      "symbol": "usd0",
+      "name": "Usual USD"
+    },
+    {
+      "rank": 106,
+      "id": "layerzero",
+      "symbol": "zro",
+      "name": "LayerZero"
+    },
+    {
+      "rank": 107,
+      "id": "raydium",
+      "symbol": "ray",
+      "name": "Raydium"
+    },
+    {
+      "rank": 108,
+      "id": "curve-dao-token",
+      "symbol": "crv",
+      "name": "Curve DAO"
+    },
+    {
+      "rank": 109,
+      "id": "ylds",
+      "symbol": "ylds",
+      "name": "YLDS"
+    },
+    {
+      "rank": 110,
+      "id": "bianrensheng",
+      "symbol": "币安人生",
+      "name": "币安人生 (BinanceLife)"
+    },
+    {
+      "rank": 111,
+      "id": "pyth-network",
+      "symbol": "pyth",
+      "name": "Pyth Network"
+    },
+    {
+      "rank": 112,
+      "id": "true-usd",
+      "symbol": "tusd",
+      "name": "TrueUSD"
+    },
+    {
+      "rank": 113,
+      "id": "usdtb",
+      "symbol": "usdtb",
+      "name": "USDtb"
+    },
+    {
+      "rank": 114,
+      "id": "a7a5",
+      "symbol": "a7a5",
+      "name": "A7A5"
+    },
+    {
+      "rank": 115,
+      "id": "euro-coin",
+      "symbol": "eurc",
+      "name": "EURC"
+    },
+    {
+      "rank": 116,
+      "id": "virtual-protocol",
+      "symbol": "virtual",
+      "name": "Virtuals Protocol"
+    },
+    {
+      "rank": 117,
+      "id": "fetch-ai",
+      "symbol": "fet",
+      "name": "Artificial Superintelligence Alliance"
+    },
+    {
+      "rank": 118,
+      "id": "pieverse",
+      "symbol": "pieverse",
+      "name": "Pieverse"
+    },
+    {
+      "rank": 119,
+      "id": "celestia",
+      "symbol": "tia",
+      "name": "Celestia"
+    },
+    {
+      "rank": 120,
+      "id": "derive",
+      "symbol": "drv",
+      "name": "Derive"
+    },
+    {
+      "rank": 121,
+      "id": "bitcoin-cash-sv",
+      "symbol": "bsv",
+      "name": "Bitcoin SV"
+    },
+    {
+      "rank": 122,
+      "id": "pons",
+      "symbol": "pons",
+      "name": "Pons"
+    },
+    {
+      "rank": 123,
+      "id": "pendle",
+      "symbol": "pendle",
+      "name": "Pendle"
+    },
+    {
+      "rank": 124,
+      "id": "falcon-finance-ff",
+      "symbol": "ff",
+      "name": "Falcon Finance"
+    },
+    {
+      "rank": 125,
+      "id": "spx6900",
+      "symbol": "spx",
+      "name": "SPX6900"
+    },
+    {
+      "rank": 126,
+      "id": "sei-network",
+      "symbol": "sei",
+      "name": "Sei"
+    },
+    {
+      "rank": 127,
+      "id": "midnight-3",
+      "symbol": "night",
+      "name": "Midnight"
+    },
+    {
+      "rank": 128,
+      "id": "hash-2",
+      "symbol": "hash",
+      "name": "Provenance Blockchain"
+    },
+    {
+      "rank": 129,
+      "id": "bittorrent",
+      "symbol": "btt",
+      "name": "BitTorrent"
+    },
+    {
+      "rank": 130,
+      "id": "tezos",
+      "symbol": "xtz",
+      "name": "Tezos"
+    },
+    {
+      "rank": 131,
+      "id": "unibase",
+      "symbol": "ub",
+      "name": "Unibase"
+    },
+    {
+      "rank": 132,
+      "id": "sun-token",
+      "symbol": "sun",
+      "name": "Sun Token"
+    },
+    {
+      "rank": 133,
+      "id": "janus-henderson-anemoy-treasury-fund",
+      "symbol": "jtrsy",
+      "name": "Janus Henderson Anemoy Treasury Fund"
+    },
+    {
+      "rank": 134,
+      "id": "kinesis-gold",
+      "symbol": "kau",
+      "name": "Kinesis Gold"
+    },
+    {
+      "rank": 135,
+      "id": "first-digital-usd",
+      "symbol": "fdusd",
+      "name": "First Digital USD"
+    },
+    {
+      "rank": 136,
+      "id": "lido-dao",
+      "symbol": "ldo",
+      "name": "Lido DAO"
+    },
+    {
+      "rank": 137,
+      "id": "sofiusd",
+      "symbol": "sofid",
+      "name": "SoFiUSD"
+    },
+    {
+      "rank": 138,
+      "id": "ousg",
+      "symbol": "ousg",
+      "name": "Ondo Short-Term U.S. Government Bond Fund"
+    },
+    {
+      "rank": 139,
+      "id": "apxusd",
+      "symbol": "apxusd",
+      "name": "apxUSD"
+    },
+    {
+      "rank": 140,
+      "id": "decred",
+      "symbol": "dcr",
+      "name": "Decred"
+    },
+    {
+      "rank": 141,
+      "id": "kite-2",
+      "symbol": "kite",
+      "name": "Kite"
+    },
+    {
+      "rank": 142,
+      "id": "bedrock-token",
+      "symbol": "br",
+      "name": "Bedrock"
+    },
+    {
+      "rank": 143,
+      "id": "bonk",
+      "symbol": "bonk",
+      "name": "Bonk"
+    },
+    {
+      "rank": 144,
+      "id": "olympus",
+      "symbol": "ohm",
+      "name": "Olympus"
+    },
+    {
+      "rank": 145,
+      "id": "gnosis",
+      "symbol": "gno",
+      "name": "Gnosis"
+    },
+    {
+      "rank": 146,
+      "id": "terra-luna",
+      "symbol": "lunc",
+      "name": "Terra Luna Classic"
+    },
+    {
+      "rank": 147,
+      "id": "grass",
+      "symbol": "grass",
+      "name": "Grass"
+    },
+    {
+      "rank": 148,
+      "id": "re-protocol-reusd",
+      "symbol": "reusd",
+      "name": "Re Protocol reUSD"
+    },
+    {
+      "rank": 149,
+      "id": "arweave",
+      "symbol": "ar",
+      "name": "Arweave"
+    },
+    {
+      "rank": 150,
+      "id": "starknet",
+      "symbol": "strk",
+      "name": "Starknet"
+    },
+    {
+      "rank": 151,
+      "id": "ethereum-name-service",
+      "symbol": "ens",
+      "name": "Ethereum Name Service"
+    },
+    {
+      "rank": 152,
+      "id": "optimism",
+      "symbol": "op",
+      "name": "Optimism"
+    },
+    {
+      "rank": 153,
+      "id": "monad",
+      "symbol": "mon",
+      "name": "Monad"
+    },
+    {
+      "rank": 154,
+      "id": "stonk-3",
+      "symbol": "stonk",
+      "name": "STONK"
+    },
+    {
+      "rank": 155,
+      "id": "useless-3",
+      "symbol": "useless",
+      "name": "Useless Coin"
+    },
+    {
+      "rank": 156,
+      "id": "the-graph",
+      "symbol": "grt",
+      "name": "The Graph"
+    },
+    {
+      "rank": 157,
+      "id": "conflux-token",
+      "symbol": "cfx",
+      "name": "Conflux"
+    },
+    {
+      "rank": 158,
+      "id": "floki",
+      "symbol": "floki",
+      "name": "FLOKI"
+    },
+    {
+      "rank": 159,
+      "id": "ape-and-pepe",
+      "symbol": "apepe",
+      "name": "Ape and Pepe"
+    },
+    {
+      "rank": 160,
+      "id": "plasma",
+      "symbol": "xpl",
+      "name": "Plasma"
+    },
+    {
+      "rank": 161,
+      "id": "ribbita-by-virtuals",
+      "symbol": "tibbir",
+      "name": "Ribbita by Virtuals"
+    },
+    {
+      "rank": 162,
+      "id": "apenft",
+      "symbol": "nft",
+      "name": "AINFT"
+    },
+    {
+      "rank": 163,
+      "id": "jito-governance-token",
+      "symbol": "jto",
+      "name": "Jito"
+    },
+    {
+      "rank": 164,
+      "id": "kinesis-silver",
+      "symbol": "kag",
+      "name": "Kinesis Silver"
+    },
+    {
+      "rank": 165,
+      "id": "syrup",
+      "symbol": "syrup",
+      "name": "Maple Finance"
+    },
+    {
+      "rank": 166,
+      "id": "compound-governance-token",
+      "symbol": "comp",
+      "name": "Compound"
+    },
+    {
+      "rank": 167,
+      "id": "bnb48-club-token",
+      "symbol": "koge",
+      "name": "KOGE"
+    },
+    {
+      "rank": 168,
+      "id": "dogwifcoin",
+      "symbol": "wif",
+      "name": "dogwifhat"
+    },
+    {
+      "rank": 169,
+      "id": "trust-wallet-token",
+      "symbol": "twt",
+      "name": "Trust Wallet"
+    },
+    {
+      "rank": 170,
+      "id": "artificial-inu-3",
+      "symbol": "ai",
+      "name": "Artificial Inu"
+    },
+    {
+      "rank": 171,
+      "id": "crvusd",
+      "symbol": "crvusd",
+      "name": "crvUSD"
+    },
+    {
+      "rank": 172,
+      "id": "agora-dollar",
+      "symbol": "ausd",
+      "name": "AUSD"
+    },
+    {
+      "rank": 173,
+      "id": "zama",
+      "symbol": "zama",
+      "name": "Zama"
+    },
+    {
+      "rank": 174,
+      "id": "usx",
+      "symbol": "usx",
+      "name": "USX"
+    },
+    {
+      "rank": 175,
+      "id": "frax",
+      "symbol": "frax",
+      "name": "Legacy Frax Dollar"
+    },
+    {
+      "rank": 176,
+      "id": "jasmycoin",
+      "symbol": "jasmy",
+      "name": "JasmyCoin"
+    },
+    {
+      "rank": 177,
+      "id": "eigenlayer",
+      "symbol": "eigen",
+      "name": "EigenCloud (prev. EigenLayer)"
+    },
+    {
+      "rank": 178,
+      "id": "iota",
+      "symbol": "iota",
+      "name": "IOTA"
+    },
+    {
+      "rank": 179,
+      "id": "akash-network",
+      "symbol": "akt",
+      "name": "Akash Network"
+    },
+    {
+      "rank": 180,
+      "id": "theta-token",
+      "symbol": "theta",
+      "name": "Theta Network"
+    },
+    {
+      "rank": 181,
+      "id": "safo",
+      "symbol": "safo",
+      "name": "Spiko Amundi Overnight Swap Fund"
+    },
+    {
+      "rank": 182,
+      "id": "usdai",
+      "symbol": "usdai",
+      "name": "USDai"
+    },
+    {
+      "rank": 183,
+      "id": "backpack",
+      "symbol": "bp",
+      "name": "Backpack"
+    },
+    {
+      "rank": 184,
+      "id": "build-on",
+      "symbol": "b",
+      "name": "BUILDon"
+    },
+    {
+      "rank": 185,
+      "id": "kaia",
+      "symbol": "kaia",
+      "name": "Kaia"
+    },
+    {
+      "rank": 186,
+      "id": "zebec-network",
+      "symbol": "zbcn",
+      "name": "Zebec Network"
+    },
+    {
+      "rank": 187,
+      "id": "tradable-na-rent-financing-platform-sstn",
+      "symbol": "pc0000031",
+      "name": "Tradable NA Rent Financing Platform SSTN"
+    },
+    {
+      "rank": 188,
+      "id": "thorchain",
+      "symbol": "rune",
+      "name": "THORChain"
+    },
+    {
+      "rank": 189,
+      "id": "kamino",
+      "symbol": "kmno",
+      "name": "Kamino"
+    },
+    {
+      "rank": 190,
+      "id": "edgex",
+      "symbol": "edge",
+      "name": "edgeX"
+    },
+    {
+      "rank": 191,
+      "id": "societe-generale-forge-eurcv",
+      "symbol": "eurcv",
+      "name": "EUR CoinVertible"
+    },
+    {
+      "rank": 192,
+      "id": "mina-protocol",
+      "symbol": "mina",
+      "name": "Mina Protocol"
+    },
+    {
+      "rank": 193,
+      "id": "chain-2",
+      "symbol": "xcn",
+      "name": "Onyxcoin"
+    },
+    {
+      "rank": 194,
+      "id": "usa",
+      "symbol": "usat",
+      "name": "USAT"
+    },
+    {
+      "rank": 195,
+      "id": "meteora",
+      "symbol": "met",
+      "name": "Meteora"
+    },
+    {
+      "rank": 196,
+      "id": "non-playable-coin",
+      "symbol": "npc",
+      "name": "Non-Playable Coin"
+    },
+    {
+      "rank": 197,
+      "id": "fartcoin",
+      "symbol": "fartcoin",
+      "name": "Fartcoin"
+    },
+    {
+      "rank": 198,
+      "id": "convex-finance",
+      "symbol": "cvx",
+      "name": "Convex Finance"
+    },
+    {
+      "rank": 199,
+      "id": "doublezero",
+      "symbol": "2z",
+      "name": "DoubleZero"
+    },
+    {
+      "rank": 200,
+      "id": "axie-infinity",
+      "symbol": "axs",
+      "name": "Axie Infinity"
+    }
+  ],
+  "accepted": [
+    {
+      "rank": 3,
+      "id": "tether",
+      "symbol": "USDT",
+      "chain": "eth",
+      "contract": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "icon": "tether.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png"
+    },
+    {
+      "rank": 3,
+      "id": "tether",
+      "symbol": "USDT",
+      "chain": "trx",
+      "contract": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+      "icon": "tether.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t/logo.png"
+    },
+    {
+      "rank": 4,
+      "id": "binancecoin",
+      "symbol": "BNB",
+      "chain": "eth",
+      "contract": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+      "icon": "binancecoin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xB8c77482e45F1F44dE1745F52C74426C631bDD52/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xB8c77482e45F1F44dE1745F52C74426C631bDD52/logo.png"
+    },
+    {
+      "rank": 6,
+      "id": "usd-coin",
+      "symbol": "USDC",
+      "chain": "arb",
+      "contract": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "icon": "usd-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xaf88d065e77c8cC2239327C5EDb3A432268e5831/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xaf88d065e77c8cC2239327C5EDb3A432268e5831/logo.png"
+    },
+    {
+      "rank": 6,
+      "id": "usd-coin",
+      "symbol": "USDC",
+      "chain": "base",
+      "contract": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "icon": "usd-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913/logo.png"
+    },
+    {
+      "rank": 6,
+      "id": "usd-coin",
+      "symbol": "USDC",
+      "chain": "eth",
+      "contract": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "icon": "usd-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"
+    },
+    {
+      "rank": 6,
+      "id": "usd-coin",
+      "symbol": "USDC",
+      "chain": "trx",
+      "contract": "TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8",
+      "icon": "usd-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8/logo.png"
+    },
+    {
+      "rank": 15,
+      "id": "usds",
+      "symbol": "USDS",
+      "chain": "arb",
+      "contract": "0x6491c05a82219b8d1479057361ff1654749b876b",
+      "icon": "usds.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x6491c05A82219b8D1479057361ff1654749b876b/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x6491c05A82219b8D1479057361ff1654749b876b/logo.png"
+    },
+    {
+      "rank": 15,
+      "id": "usds",
+      "symbol": "USDS",
+      "chain": "base",
+      "contract": "0x820c137fa70c8691f0e44dc420a5e53c168921dc",
+      "icon": "usds.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x820C137fa70C8691f0e44Dc420a5e53c168921Dc/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x820C137fa70C8691f0e44Dc420a5e53c168921Dc/logo.png"
+    },
+    {
+      "rank": 15,
+      "id": "usds",
+      "symbol": "USDS",
+      "chain": "eth",
+      "contract": "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+      "icon": "usds.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdC035D45d973E3EC169d2276DDab16f1e407384F/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdC035D45d973E3EC169d2276DDab16f1e407384F/logo.png"
+    },
+    {
+      "rank": 16,
+      "id": "chainlink",
+      "symbol": "LINK",
+      "chain": "arb",
+      "contract": "0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
+      "icon": "chainlink.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xf97f4df75117a78c1A5a0DBb814Af92458539FB4/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xf97f4df75117a78c1A5a0DBb814Af92458539FB4/logo.png"
+    },
+    {
+      "rank": 16,
+      "id": "chainlink",
+      "symbol": "LINK",
+      "chain": "bnb",
+      "contract": "0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd",
+      "icon": "chainlink.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD/logo.png"
+    },
+    {
+      "rank": 16,
+      "id": "chainlink",
+      "symbol": "LINK",
+      "chain": "eth",
+      "contract": "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "icon": "chainlink.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png"
+    },
+    {
+      "rank": 19,
+      "id": "leo-token",
+      "symbol": "LEO",
+      "chain": "eth",
+      "contract": "0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3",
+      "icon": "leo-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2AF5D2aD76741191D15Dfe7bF6aC92d4Bd912Ca3/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2AF5D2aD76741191D15Dfe7bF6aC92d4Bd912Ca3/logo.png"
+    },
+    {
+      "rank": 22,
+      "id": "uniswap",
+      "symbol": "UNI",
+      "chain": "arb",
+      "contract": "0xfa7f8980b0f1e64a2062791cc3b0871572f1f7f0",
+      "icon": "uniswap.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0/logo.png"
+    },
+    {
+      "rank": 22,
+      "id": "uniswap",
+      "symbol": "UNI",
+      "chain": "base",
+      "contract": "0xc3de830ea07524a0761646a6a4e4be0e114a3c83",
+      "icon": "uniswap.png",
+      "assetSource": "https://developers.uniswap.org/docs/ecosystem/governance/uni",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png"
+    },
+    {
+      "rank": 22,
+      "id": "uniswap",
+      "symbol": "UNI",
+      "chain": "bnb",
+      "contract": "0x06e8bde95be4ce5cb1134bd47ad18a79ffb35822",
+      "icon": "uniswap.png",
+      "assetSource": "https://developers.uniswap.org/docs/ecosystem/governance/uni",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png"
+    },
+    {
+      "rank": 22,
+      "id": "uniswap",
+      "symbol": "UNI",
+      "chain": "bnb",
+      "contract": "0xbf5140a22578168fd562dccf235e5d43a02ce9b1",
+      "icon": "uniswap.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xBf5140A22578168FD562DCcF235E5D43A02ce9B1/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xBf5140A22578168FD562DCcF235E5D43A02ce9B1/logo.png"
+    },
+    {
+      "rank": 22,
+      "id": "uniswap",
+      "symbol": "UNI",
+      "chain": "eth",
+      "contract": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+      "icon": "uniswap.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png"
+    },
+    {
+      "rank": 25,
+      "id": "ethena-usde",
+      "symbol": "USDE",
+      "chain": "eth",
+      "contract": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "icon": "ethena-usde.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4c9EDD5852cd905f086C759E8383e09bff1E68B3/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4c9EDD5852cd905f086C759E8383e09bff1E68B3/logo.png"
+    },
+    {
+      "rank": 26,
+      "id": "dai",
+      "symbol": "DAI",
+      "chain": "eth",
+      "contract": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "icon": "dai.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png"
+    },
+    {
+      "rank": 28,
+      "id": "usd1-wlfi",
+      "symbol": "USD1",
+      "chain": "bnb",
+      "contract": "0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d",
+      "icon": "usd1-wlfi.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d/logo.png"
+    },
+    {
+      "rank": 28,
+      "id": "usd1-wlfi",
+      "symbol": "USD1",
+      "chain": "eth",
+      "contract": "0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d",
+      "icon": "usd1-wlfi.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d/logo.png"
+    },
+    {
+      "rank": 28,
+      "id": "usd1-wlfi",
+      "symbol": "USD1",
+      "chain": "trx",
+      "contract": "TPFqcBAaaUMCSVRCqPaQ9QnzKhmuoLR6Rc",
+      "icon": "usd1-wlfi.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TPFqcBAaaUMCSVRCqPaQ9QnzKhmuoLR6Rc/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TPFqcBAaaUMCSVRCqPaQ9QnzKhmuoLR6Rc/logo.png"
+    },
+    {
+      "rank": 33,
+      "id": "shiba-inu",
+      "symbol": "SHIB",
+      "chain": "eth",
+      "contract": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+      "icon": "shiba-inu.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE/logo.png"
+    },
+    {
+      "rank": 34,
+      "id": "global-dollar",
+      "symbol": "USDG",
+      "chain": "eth",
+      "contract": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+      "icon": "global-dollar.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xe343167631d89B6Ffc58B88d6b7fB0228795491D/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xe343167631d89B6Ffc58B88d6b7fB0228795491D/logo.png"
+    },
+    {
+      "rank": 36,
+      "id": "crypto-com-chain",
+      "symbol": "CRO",
+      "chain": "eth",
+      "contract": "0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b",
+      "icon": "crypto-com-chain.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b/logo.png"
+    },
+    {
+      "rank": 39,
+      "id": "paypal-usd",
+      "symbol": "PYUSD",
+      "chain": "eth",
+      "contract": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+      "icon": "paypal-usd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6c3ea9036406852006290770BEdFcAbA0e23A0e8/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6c3ea9036406852006290770BEdFcAbA0e23A0e8/logo.png"
+    },
+    {
+      "rank": 40,
+      "id": "tether-gold",
+      "symbol": "XAUT",
+      "chain": "eth",
+      "contract": "0x68749665ff8d2d112fa859aa293f07a622782f38",
+      "icon": "tether-gold.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x68749665FF8D2d112Fa859AA293F07A622782F38/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x68749665FF8D2d112Fa859AA293F07A622782F38/logo.png"
+    },
+    {
+      "rank": 41,
+      "id": "okb",
+      "symbol": "OKB",
+      "chain": "eth",
+      "contract": "0x75231f58b43240c9718dd58b4967c5114342a86c",
+      "icon": "okb.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x75231F58b43240C9718Dd58B4967c5114342a86c/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x75231F58b43240C9718Dd58B4967c5114342a86c/logo.png"
+    },
+    {
+      "rank": 45,
+      "id": "ondo-us-dollar-yield",
+      "symbol": "USDY",
+      "chain": "arb",
+      "contract": "0x35e050d3c0ec2d29d269a8ecea763a183bdf9a9d",
+      "icon": "ondo-us-dollar-yield.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x35e050d3C0eC2d29D269a8EcEa763a183bDF9A9D/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x35e050d3C0eC2d29D269a8EcEa763a183bDF9A9D/logo.png"
+    },
+    {
+      "rank": 45,
+      "id": "ondo-us-dollar-yield",
+      "symbol": "USDY",
+      "chain": "bnb",
+      "contract": "0x608593d17a2decbbc4399e4185be4922f97ed32e",
+      "icon": "ondo-us-dollar-yield.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x608593d17A2decBbc4399e4185bE4922F97eD32E/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x608593d17A2decBbc4399e4185bE4922F97eD32E/logo.png"
+    },
+    {
+      "rank": 45,
+      "id": "ondo-us-dollar-yield",
+      "symbol": "USDY",
+      "chain": "eth",
+      "contract": "0x96f6ef951840721adbf46ac996b59e0235cb985c",
+      "icon": "ondo-us-dollar-yield.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x96F6eF951840721AdBF46Ac996b59E0235CB985C/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x96F6eF951840721AdBF46Ac996b59E0235CB985C/logo.png"
+    },
+    {
+      "rank": 46,
+      "id": "mantle",
+      "symbol": "MNT",
+      "chain": "eth",
+      "contract": "0x3c3a81e81dc49a522a592e7622a7e711c06bf354",
+      "icon": "mantle.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x3c3a81e81dc49A522A592e7622A7E711c06bf354/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x3c3a81e81dc49A522A592e7622A7E711c06bf354/logo.png"
+    },
+    {
+      "rank": 47,
+      "id": "aave",
+      "symbol": "AAVE",
+      "chain": "arb",
+      "contract": "0xba5ddd1f9d7f570dc94a51479a000e3bce967196",
+      "icon": "aave.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xba5DdD1f9d7F570dc94a51479a000E3BCE967196/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xba5DdD1f9d7F570dc94a51479a000E3BCE967196/logo.png"
+    },
+    {
+      "rank": 47,
+      "id": "aave",
+      "symbol": "AAVE",
+      "chain": "bnb",
+      "contract": "0xfb6115445bff7b52feb98650c87f44907e58f802",
+      "icon": "aave.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xfb6115445Bff7b52FeB98650C87f44907E58f802/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xfb6115445Bff7b52FeB98650C87f44907E58f802/logo.png"
+    },
+    {
+      "rank": 47,
+      "id": "aave",
+      "symbol": "AAVE",
+      "chain": "eth",
+      "contract": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+      "icon": "aave.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png"
+    },
+    {
+      "rank": 48,
+      "id": "ondo-finance",
+      "symbol": "ONDO",
+      "chain": "eth",
+      "contract": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "icon": "ondo-finance.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3/logo.png"
+    },
+    {
+      "rank": 49,
+      "id": "ethena",
+      "symbol": "ENA",
+      "chain": "eth",
+      "contract": "0x57e114b691db790c35207b2e685d4a43181e6061",
+      "icon": "ethena.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x57e114B691Db790C35207b2e685D4A43181e6061/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x57e114B691Db790C35207b2e685D4A43181e6061/logo.png"
+    },
+    {
+      "rank": 50,
+      "id": "aster-2",
+      "symbol": "ASTER",
+      "chain": "bnb",
+      "contract": "0x000ae314e2a2172a039b26378814c252734f556a",
+      "icon": "aster-2.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x000Ae314E2A2172a039B26378814C252734f556A/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x000Ae314E2A2172a039B26378814C252734f556A/logo.png"
+    },
+    {
+      "rank": 52,
+      "id": "morpho",
+      "symbol": "MORPHO",
+      "chain": "base",
+      "contract": "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842",
+      "icon": "morpho.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842/logo.png"
+    },
+    {
+      "rank": 52,
+      "id": "morpho",
+      "symbol": "MORPHO",
+      "chain": "eth",
+      "contract": "0x58d97b57bb95320f9a05dc918aef65434969c2b2",
+      "icon": "morpho.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x58D97B57BB95320F9a05dC918Aef65434969c2B2/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x58D97B57BB95320F9a05dC918Aef65434969c2B2/logo.png"
+    },
+    {
+      "rank": 53,
+      "id": "pax-gold",
+      "symbol": "PAXG",
+      "chain": "eth",
+      "contract": "0x45804880de22913dafe09f4980848ece6ecbaf78",
+      "icon": "pax-gold.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x45804880De22913dAFE09f4980848ECE6EcbAf78/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x45804880De22913dAFE09f4980848ECE6EcbAf78/logo.png"
+    },
+    {
+      "rank": 54,
+      "id": "pepe",
+      "symbol": "PEPE",
+      "chain": "eth",
+      "contract": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "icon": "pepe.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6982508145454Ce325dDbE47a25d4ec3d2311933/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6982508145454Ce325dDbE47a25d4ec3d2311933/logo.png"
+    },
+    {
+      "rank": 56,
+      "id": "world-liberty-financial",
+      "symbol": "WLFI",
+      "chain": "eth",
+      "contract": "0xda5e1988097297dcdc1f90d4dfe7909e847cbef6",
+      "icon": "world-liberty-financial.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdA5e1988097297dCdc1f90D4dFE7909e847CBeF6/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdA5e1988097297dCdc1f90D4dFE7909e847CBeF6/logo.png"
+    },
+    {
+      "rank": 58,
+      "id": "sky",
+      "symbol": "SKY",
+      "chain": "eth",
+      "contract": "0x56072c95faa701256059aa122697b133aded9279",
+      "icon": "sky.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x56072C95FAA701256059aa122697B133aDEd9279/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x56072C95FAA701256059aa122697B133aDEd9279/logo.png"
+    },
+    {
+      "rank": 59,
+      "id": "htx-dao",
+      "symbol": "HTX",
+      "chain": "trx",
+      "contract": "TUPM7K8REVzD2UdV4R5fe5M8XbnR2DdoJ6",
+      "icon": "htx-dao.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TUPM7K8REVzD2UdV4R5fe5M8XbnR2DdoJ6/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TUPM7K8REVzD2UdV4R5fe5M8XbnR2DdoJ6/logo.png"
+    },
+    {
+      "rank": 60,
+      "id": "usdd",
+      "symbol": "USDD",
+      "chain": "eth",
+      "contract": "0x4f8e5de400de08b164e7421b3ee387f461becd1a",
+      "icon": "usdd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4f8e5DE400DE08B164E7421B3EE387f461beCD1A/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4f8e5DE400DE08B164E7421B3EE387f461beCD1A/logo.png"
+    },
+    {
+      "rank": 60,
+      "id": "usdd",
+      "symbol": "USDD",
+      "chain": "trx",
+      "contract": "TXDk8mbtRbXeYuMNS83CfKPaYYT8XWv9Hz",
+      "icon": "usdd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TXDk8mbtRbXeYuMNS83CfKPaYYT8XWv9Hz/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TXDk8mbtRbXeYuMNS83CfKPaYYT8XWv9Hz/logo.png"
+    },
+    {
+      "rank": 61,
+      "id": "worldcoin-wld",
+      "symbol": "WLD",
+      "chain": "eth",
+      "contract": "0x163f8c2467924be0ae7b5347228cabf260318753",
+      "icon": "worldcoin-wld.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x163f8C2467924be0ae7B5347228CABF260318753/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x163f8C2467924be0ae7B5347228CABF260318753/logo.png"
+    },
+    {
+      "rank": 63,
+      "id": "united-stables",
+      "symbol": "U",
+      "chain": "bnb",
+      "contract": "0xce24439f2d9c6a2289f741120fe202248b666666",
+      "icon": "united-stables.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xcE24439F2D9C6a2289F741120FE202248B666666/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xcE24439F2D9C6a2289F741120FE202248B666666/logo.png"
+    },
+    {
+      "rank": 63,
+      "id": "united-stables",
+      "symbol": "U",
+      "chain": "eth",
+      "contract": "0xce24439f2d9c6a2289f741120fe202248b666666",
+      "icon": "united-stables.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xcE24439F2D9C6a2289F741120FE202248B666666/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xcE24439F2D9C6a2289F741120FE202248B666666/logo.png"
+    },
+    {
+      "rank": 63,
+      "id": "united-stables",
+      "symbol": "U",
+      "chain": "trx",
+      "contract": "TFNirp6PbqYE1ZTtWuCMUKJWLNZkoCoeFJ",
+      "icon": "united-stables.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TFNirp6PbqYE1ZTtWuCMUKJWLNZkoCoeFJ/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TFNirp6PbqYE1ZTtWuCMUKJWLNZkoCoeFJ/logo.png"
+    },
+    {
+      "rank": 65,
+      "id": "arbitrum",
+      "symbol": "ARB",
+      "chain": "arb",
+      "contract": "0x912ce59144191c1204e64559fe8253a0e49e6548",
+      "icon": "arbitrum.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x912CE59144191C1204E64559FE8253a0e49E6548/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x912CE59144191C1204E64559FE8253a0e49E6548/logo.png"
+    },
+    {
+      "rank": 65,
+      "id": "arbitrum",
+      "symbol": "ARB",
+      "chain": "eth",
+      "contract": "0xb50721bcf8d664c30412cfbc6cf7a15145234ad1",
+      "icon": "arbitrum.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1/logo.png"
+    },
+    {
+      "rank": 68,
+      "id": "venice-token",
+      "symbol": "VVV",
+      "chain": "base",
+      "contract": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+      "icon": "venice-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0xacfE6019Ed1A7Dc6f7B508C02d1b04ec88cC21bf/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0xacfE6019Ed1A7Dc6f7B508C02d1b04ec88cC21bf/logo.png"
+    },
+    {
+      "rank": 69,
+      "id": "falcon-finance",
+      "symbol": "USDF",
+      "chain": "eth",
+      "contract": "0xfa2b947eec368f42195f24f36d2af29f7c24cec2",
+      "icon": "falcon-finance.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xFa2B947eEc368f42195f24F36d2aF29f7c24CeC2/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xFa2B947eEc368f42195f24F36d2aF29f7c24CeC2/logo.png"
+    },
+    {
+      "rank": 72,
+      "id": "gatechain-token",
+      "symbol": "GT",
+      "chain": "eth",
+      "contract": "0xe66747a101bff2dba3697199dcce5b743b454759",
+      "icon": "gatechain-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xE66747a101bFF2dBA3697199DCcE5b743b454759/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xE66747a101bFF2dBA3697199DCcE5b743b454759/logo.png"
+    },
+    {
+      "rank": 73,
+      "id": "polygon-ecosystem-token",
+      "symbol": "POL",
+      "chain": "eth",
+      "contract": "0x455e53cbb86018ac2b8092fdcd39d8444affc3f6",
+      "icon": "polygon-ecosystem-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6/logo.png"
+    },
+    {
+      "rank": 75,
+      "id": "quant-network",
+      "symbol": "QNT",
+      "chain": "eth",
+      "contract": "0x4a220e6096b25eadb88358cb44068a3248254675",
+      "icon": "quant-network.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4a220E6096B25EADb88358cb44068A3248254675/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4a220E6096B25EADb88358cb44068A3248254675/logo.png"
+    },
+    {
+      "rank": 83,
+      "id": "just",
+      "symbol": "JST",
+      "chain": "trx",
+      "contract": "TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9",
+      "icon": "just.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9/logo.png"
+    },
+    {
+      "rank": 84,
+      "id": "cosmos",
+      "symbol": "ATOM",
+      "chain": "bnb",
+      "contract": "0x0eb3a705fc54725037cc9e008bdede697f62f335",
+      "icon": "cosmos.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x0Eb3a705fc54725037CC9e008bDede697f62F335/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x0Eb3a705fc54725037CC9e008bDede697f62F335/logo.png"
+    },
+    {
+      "rank": 85,
+      "id": "nexo",
+      "symbol": "NEXO",
+      "chain": "eth",
+      "contract": "0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206",
+      "icon": "nexo.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xB62132e35a6c13ee1EE0f84dC5d40bad8d815206/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xB62132e35a6c13ee1EE0f84dC5d40bad8d815206/logo.png"
+    },
+    {
+      "rank": 86,
+      "id": "pancakeswap-token",
+      "symbol": "CAKE",
+      "chain": "base",
+      "contract": "0x3055913c90fcc1a6ce9a358911721eeb942013a1",
+      "icon": "pancakeswap-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x3055913c90Fcc1A6CE9a358911721eEb942013A1/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x3055913c90Fcc1A6CE9a358911721eEb942013A1/logo.png"
+    },
+    {
+      "rank": 86,
+      "id": "pancakeswap-token",
+      "symbol": "CAKE",
+      "chain": "bnb",
+      "contract": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
+      "icon": "pancakeswap-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/logo.png"
+    },
+    {
+      "rank": 86,
+      "id": "pancakeswap-token",
+      "symbol": "CAKE",
+      "chain": "eth",
+      "contract": "0x152649ea73beab28c5b49b26eb48f7ead6d4c898",
+      "icon": "pancakeswap-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x152649eA73beAb28c5b49B26eb48f7EAD6d4c898/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x152649eA73beAb28c5b49B26eb48f7EAD6d4c898/logo.png"
+    },
+    {
+      "rank": 88,
+      "id": "injective-protocol",
+      "symbol": "INJ",
+      "chain": "bnb",
+      "contract": "0xa2b726b1145a4773f68593cf171187d8ebe4d495",
+      "icon": "injective-protocol.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xa2B726B1145A4773F68593CF171187d8EBe4d495/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xa2B726B1145A4773F68593CF171187d8EBe4d495/logo.png"
+    },
+    {
+      "rank": 88,
+      "id": "injective-protocol",
+      "symbol": "INJ",
+      "chain": "eth",
+      "contract": "0xe28b3b32b6c345a34ff64674606124dd5aceca30",
+      "icon": "injective-protocol.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xe28b3B32B6c345A34Ff64674606124Dd5Aceca30/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xe28b3B32B6c345A34Ff64674606124Dd5Aceca30/logo.png"
+    },
+    {
+      "rank": 93,
+      "id": "gho",
+      "symbol": "GHO",
+      "chain": "eth",
+      "contract": "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+      "icon": "gho.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f/logo.png"
+    },
+    {
+      "rank": 95,
+      "id": "aerodrome-finance",
+      "symbol": "AERO",
+      "chain": "base",
+      "contract": "0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "icon": "aerodrome-finance.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x940181a94A35A4569E4529A3CDfB74e38FD98631/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x940181a94A35A4569E4529A3CDfB74e38FD98631/logo.png"
+    },
+    {
+      "rank": 97,
+      "id": "ether-fi",
+      "symbol": "ETHFI",
+      "chain": "eth",
+      "contract": "0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb",
+      "icon": "ether-fi.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xFe0c30065B384F05761f15d0CC899D4F9F9Cc0eB/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xFe0c30065B384F05761f15d0CC899D4F9F9Cc0eB/logo.png"
+    },
+    {
+      "rank": 105,
+      "id": "usual-usd",
+      "symbol": "USD0",
+      "chain": "eth",
+      "contract": "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5",
+      "icon": "usual-usd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x73A15FeD60Bf67631dC6cd7Bc5B6e8da8190aCF5/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x73A15FeD60Bf67631dC6cd7Bc5B6e8da8190aCF5/logo.png"
+    },
+    {
+      "rank": 106,
+      "id": "layerzero",
+      "symbol": "ZRO",
+      "chain": "arb",
+      "contract": "0x6985884c4392d348587b19cb9eaaf157f13271cd",
+      "icon": "layerzero.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/logo.png"
+    },
+    {
+      "rank": 106,
+      "id": "layerzero",
+      "symbol": "ZRO",
+      "chain": "base",
+      "contract": "0x6985884c4392d348587b19cb9eaaf157f13271cd",
+      "icon": "layerzero.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/logo.png"
+    },
+    {
+      "rank": 106,
+      "id": "layerzero",
+      "symbol": "ZRO",
+      "chain": "bnb",
+      "contract": "0x6985884c4392d348587b19cb9eaaf157f13271cd",
+      "icon": "layerzero.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/logo.png"
+    },
+    {
+      "rank": 106,
+      "id": "layerzero",
+      "symbol": "ZRO",
+      "chain": "eth",
+      "contract": "0x6985884c4392d348587b19cb9eaaf157f13271cd",
+      "icon": "layerzero.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6985884C4392D348587B19cb9eAAf157F13271cd/logo.png"
+    },
+    {
+      "rank": 108,
+      "id": "curve-dao-token",
+      "symbol": "CRV",
+      "chain": "arb",
+      "contract": "0x11cdb42b0eb46d95f990bedd4695a6e3fa034978",
+      "icon": "curve-dao-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x11cDb42B0EB46D95f990BeDD4695A6e3fA034978/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x11cDb42B0EB46D95f990BeDD4695A6e3fA034978/logo.png"
+    },
+    {
+      "rank": 108,
+      "id": "curve-dao-token",
+      "symbol": "CRV",
+      "chain": "base",
+      "contract": "0x8ee73c484a26e0a5df2ee2a4960b789967dd0415",
+      "icon": "curve-dao-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x8Ee73c484A26e0A5df2Ee2a4960B789967dd0415/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x8Ee73c484A26e0A5df2Ee2a4960B789967dd0415/logo.png"
+    },
+    {
+      "rank": 108,
+      "id": "curve-dao-token",
+      "symbol": "CRV",
+      "chain": "eth",
+      "contract": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+      "icon": "curve-dao-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png"
+    },
+    {
+      "rank": 112,
+      "id": "true-usd",
+      "symbol": "TUSD",
+      "chain": "bnb",
+      "contract": "0x40af3827f39d0eacbf4a168f8d4ee67c121d11c9",
+      "icon": "true-usd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x40af3827F39D0EAcBF4A168f8D4ee67c121D11c9/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x40af3827F39D0EAcBF4A168f8D4ee67c121D11c9/logo.png"
+    },
+    {
+      "rank": 112,
+      "id": "true-usd",
+      "symbol": "TUSD",
+      "chain": "eth",
+      "contract": "0x0000000000085d4780b73119b644ae5ecd22b376",
+      "icon": "true-usd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0000000000085d4780B73119b644AE5ecd22b376/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0000000000085d4780B73119b644AE5ecd22b376/logo.png"
+    },
+    {
+      "rank": 113,
+      "id": "usdtb",
+      "symbol": "USDTB",
+      "chain": "eth",
+      "contract": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+      "icon": "usdtb.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC139190F447e929f090Edeb554D95AbB8b18aC1C/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC139190F447e929f090Edeb554D95AbB8b18aC1C/logo.png"
+    },
+    {
+      "rank": 114,
+      "id": "a7a5",
+      "symbol": "A7A5",
+      "chain": "eth",
+      "contract": "0x6fa0be17e4bea2fcfa22ef89bf8ac9aab0ab0fc9",
+      "icon": "a7a5.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6fA0BE17e4beA2fCfA22ef89BF8ac9aab0AB0fc9/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6fA0BE17e4beA2fCfA22ef89BF8ac9aab0AB0fc9/logo.png"
+    },
+    {
+      "rank": 114,
+      "id": "a7a5",
+      "symbol": "A7A5",
+      "chain": "trx",
+      "contract": "TLeVfrdym8RoJreJ23dAGyfJDygRtiWKBZ",
+      "icon": "a7a5.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TLeVfrdym8RoJreJ23dAGyfJDygRtiWKBZ/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TLeVfrdym8RoJreJ23dAGyfJDygRtiWKBZ/logo.png"
+    },
+    {
+      "rank": 115,
+      "id": "euro-coin",
+      "symbol": "EURC",
+      "chain": "base",
+      "contract": "0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42",
+      "icon": "euro-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42/logo.png"
+    },
+    {
+      "rank": 115,
+      "id": "euro-coin",
+      "symbol": "EURC",
+      "chain": "eth",
+      "contract": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "icon": "euro-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c/logo.png"
+    },
+    {
+      "rank": 116,
+      "id": "virtual-protocol",
+      "symbol": "VIRTUAL",
+      "chain": "base",
+      "contract": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "icon": "virtual-protocol.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x0b3e328455c4059EEb9e3f84b5543F74E24e7E1b/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x0b3e328455c4059EEb9e3f84b5543F74E24e7E1b/logo.png"
+    },
+    {
+      "rank": 116,
+      "id": "virtual-protocol",
+      "symbol": "VIRTUAL",
+      "chain": "eth",
+      "contract": "0x44ff8620b8ca30902395a7bd3f2407e1a091bf73",
+      "icon": "virtual-protocol.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x44ff8620b8cA30902395A7bD3F2407e1A091BF73/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x44ff8620b8cA30902395A7bD3F2407e1A091BF73/logo.png"
+    },
+    {
+      "rank": 117,
+      "id": "fetch-ai",
+      "symbol": "FET",
+      "chain": "bnb",
+      "contract": "0x031b41e504677879370e9dbcf937283a8691fa7f",
+      "icon": "fetch-ai.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x031b41e504677879370e9DBcF937283A8691Fa7f/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x031b41e504677879370e9DBcF937283A8691Fa7f/logo.png"
+    },
+    {
+      "rank": 117,
+      "id": "fetch-ai",
+      "symbol": "FET",
+      "chain": "eth",
+      "contract": "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+      "icon": "fetch-ai.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85/logo.png"
+    },
+    {
+      "rank": 123,
+      "id": "pendle",
+      "symbol": "PENDLE",
+      "chain": "arb",
+      "contract": "0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8",
+      "icon": "pendle.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x0c880f6761F1af8d9Aa9C466984b80DAb9a8c9e8/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x0c880f6761F1af8d9Aa9C466984b80DAb9a8c9e8/logo.png"
+    },
+    {
+      "rank": 123,
+      "id": "pendle",
+      "symbol": "PENDLE",
+      "chain": "bnb",
+      "contract": "0xb3ed0a426155b79b898849803e3b36552f7ed507",
+      "icon": "pendle.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xb3Ed0A426155B79B898849803E3B36552f7ED507/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xb3Ed0A426155B79B898849803E3B36552f7ED507/logo.png"
+    },
+    {
+      "rank": 123,
+      "id": "pendle",
+      "symbol": "PENDLE",
+      "chain": "eth",
+      "contract": "0x808507121b80c02388fad14726482e061b8da827",
+      "icon": "pendle.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x808507121B80c02388fAd14726482e061B8da827/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x808507121B80c02388fAd14726482e061B8da827/logo.png"
+    },
+    {
+      "rank": 125,
+      "id": "spx6900",
+      "symbol": "SPX",
+      "chain": "base",
+      "contract": "0x50da645f148798f68ef2d7db7c1cb22a6819bb2c",
+      "icon": "spx6900.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x50dA645f148798F68EF2d7dB7C1CB22A6819bb2C/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x50dA645f148798F68EF2d7dB7C1CB22A6819bb2C/logo.png"
+    },
+    {
+      "rank": 125,
+      "id": "spx6900",
+      "symbol": "SPX",
+      "chain": "eth",
+      "contract": "0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c",
+      "icon": "spx6900.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C/logo.png"
+    },
+    {
+      "rank": 129,
+      "id": "bittorrent",
+      "symbol": "BTT",
+      "chain": "bnb",
+      "contract": "0x352cb5e19b12fc216548a2677bd0fce83bae434b",
+      "icon": "bittorrent.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x352Cb5E19b12FC216548a2677bD0fce83BaE434B/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x352Cb5E19b12FC216548a2677bD0fce83BaE434B/logo.png"
+    },
+    {
+      "rank": 129,
+      "id": "bittorrent",
+      "symbol": "BTT",
+      "chain": "eth",
+      "contract": "0xc669928185dbce49d2230cc9b0979be6dc797957",
+      "icon": "bittorrent.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC669928185DbCE49d2230CC9B0979BE6DC797957/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC669928185DbCE49d2230CC9B0979BE6DC797957/logo.png"
+    },
+    {
+      "rank": 129,
+      "id": "bittorrent",
+      "symbol": "BTT",
+      "chain": "trx",
+      "contract": "TAFjULxiVgT4qWk6UZwjqwZXTSaGaqnVp4",
+      "icon": "bittorrent.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TAFjULxiVgT4qWk6UZwjqwZXTSaGaqnVp4/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TAFjULxiVgT4qWk6UZwjqwZXTSaGaqnVp4/logo.png"
+    },
+    {
+      "rank": 132,
+      "id": "sun-token",
+      "symbol": "SUN",
+      "chain": "trx",
+      "contract": "TSSMHYeV2uE9qYH95DqyoCuNCzEL1NvU3S",
+      "icon": "sun-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TSSMHYeV2uE9qYH95DqyoCuNCzEL1NvU3S/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TSSMHYeV2uE9qYH95DqyoCuNCzEL1NvU3S/logo.png"
+    },
+    {
+      "rank": 135,
+      "id": "first-digital-usd",
+      "symbol": "FDUSD",
+      "chain": "bnb",
+      "contract": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+      "icon": "first-digital-usd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xc5f0f7b66764F6ec8C8Dff7BA683102295E16409/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xc5f0f7b66764F6ec8C8Dff7BA683102295E16409/logo.png"
+    },
+    {
+      "rank": 135,
+      "id": "first-digital-usd",
+      "symbol": "FDUSD",
+      "chain": "eth",
+      "contract": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+      "icon": "first-digital-usd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc5f0f7b66764F6ec8C8Dff7BA683102295E16409/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc5f0f7b66764F6ec8C8Dff7BA683102295E16409/logo.png"
+    },
+    {
+      "rank": 136,
+      "id": "lido-dao",
+      "symbol": "LDO",
+      "chain": "arb",
+      "contract": "0x13ad51ed4f1b7e9dc168d8a00cb3f4ddd85efa60",
+      "icon": "lido-dao.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x13Ad51ed4F1B7e9Dc168d8a00cB3f4dDD85EfA60/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x13Ad51ed4F1B7e9Dc168d8a00cB3f4dDD85EfA60/logo.png"
+    },
+    {
+      "rank": 136,
+      "id": "lido-dao",
+      "symbol": "LDO",
+      "chain": "eth",
+      "contract": "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+      "icon": "lido-dao.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png"
+    },
+    {
+      "rank": 142,
+      "id": "bedrock-token",
+      "symbol": "BR",
+      "chain": "bnb",
+      "contract": "0xff7d6a96ae471bbcd7713af9cb1feeb16cf56b41",
+      "icon": "bedrock-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xFf7d6A96ae471BbCD7713aF9CB1fEeB16cf56B41/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xFf7d6A96ae471BbCD7713aF9CB1fEeB16cf56B41/logo.png"
+    },
+    {
+      "rank": 143,
+      "id": "bonk",
+      "symbol": "BONK",
+      "chain": "eth",
+      "contract": "0x1151cb3d861920e07a38e03eead12c32178567f6",
+      "icon": "bonk.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1151CB3d861920e07a38e03eEAd12C32178567F6/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1151CB3d861920e07a38e03eEAd12C32178567F6/logo.png"
+    },
+    {
+      "rank": 145,
+      "id": "gnosis",
+      "symbol": "GNO",
+      "chain": "arb",
+      "contract": "0xa0b862f60edef4452f25b4160f177db44deb6cf1",
+      "icon": "gnosis.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xa0b862F60edEf4452F25B4160F177db44DeB6Cf1/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0xa0b862F60edEf4452F25B4160F177db44DeB6Cf1/logo.png"
+    },
+    {
+      "rank": 145,
+      "id": "gnosis",
+      "symbol": "GNO",
+      "chain": "eth",
+      "contract": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+      "icon": "gnosis.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6810e776880C02933D47DB1b9fc05908e5386b96/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6810e776880C02933D47DB1b9fc05908e5386b96/logo.png"
+    },
+    {
+      "rank": 150,
+      "id": "starknet",
+      "symbol": "STRK",
+      "chain": "eth",
+      "contract": "0xca14007eff0db1f8135f4c25b34de49ab0d42766",
+      "icon": "starknet.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xCa14007Eff0dB1f8135f4C25B34De49AB0d42766/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xCa14007Eff0dB1f8135f4C25B34De49AB0d42766/logo.png"
+    },
+    {
+      "rank": 151,
+      "id": "ethereum-name-service",
+      "symbol": "ENS",
+      "chain": "eth",
+      "contract": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+      "icon": "ethereum-name-service.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72/logo.png"
+    },
+    {
+      "rank": 156,
+      "id": "the-graph",
+      "symbol": "GRT",
+      "chain": "arb",
+      "contract": "0x9623063377ad1b27544c965ccd7342f7ea7e88c7",
+      "icon": "the-graph.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x9623063377AD1B27544C965cCd7342f7EA7e88C7/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x9623063377AD1B27544C965cCd7342f7EA7e88C7/logo.png"
+    },
+    {
+      "rank": 156,
+      "id": "the-graph",
+      "symbol": "GRT",
+      "chain": "eth",
+      "contract": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
+      "icon": "the-graph.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/logo.png"
+    },
+    {
+      "rank": 158,
+      "id": "floki",
+      "symbol": "FLOKI",
+      "chain": "bnb",
+      "contract": "0xfb5b838b6cfeedc2873ab27866079ac55363d37e",
+      "icon": "floki.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xfb5B838b6cfEEdC2873aB27866079AC55363D37E/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xfb5B838b6cfEEdC2873aB27866079AC55363D37E/logo.png"
+    },
+    {
+      "rank": 158,
+      "id": "floki",
+      "symbol": "FLOKI",
+      "chain": "eth",
+      "contract": "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+      "icon": "floki.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E/logo.png"
+    },
+    {
+      "rank": 162,
+      "id": "apenft",
+      "symbol": "NFT",
+      "chain": "bnb",
+      "contract": "0x20ee7b720f4e4c4ffcb00c4065cdae55271aecca",
+      "icon": "apenft.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x20eE7B720f4E4c4FFcB00C4065cdae55271aECCa/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x20eE7B720f4E4c4FFcB00C4065cdae55271aECCa/logo.png"
+    },
+    {
+      "rank": 162,
+      "id": "apenft",
+      "symbol": "NFT",
+      "chain": "eth",
+      "contract": "0x198d14f2ad9ce69e76ea330b374de4957c3f850a",
+      "icon": "apenft.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x198d14F2Ad9CE69E76ea330B374DE4957C3F850a/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x198d14F2Ad9CE69E76ea330B374DE4957C3F850a/logo.png"
+    },
+    {
+      "rank": 162,
+      "id": "apenft",
+      "symbol": "NFT",
+      "chain": "trx",
+      "contract": "TFczxzPhnThNSqr5by8tvxsdCFRRz6cPNq",
+      "icon": "apenft.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TFczxzPhnThNSqr5by8tvxsdCFRRz6cPNq/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/tron/assets/TFczxzPhnThNSqr5by8tvxsdCFRRz6cPNq/logo.png"
+    },
+    {
+      "rank": 165,
+      "id": "syrup",
+      "symbol": "SYRUP",
+      "chain": "eth",
+      "contract": "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+      "icon": "syrup.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66/logo.png"
+    },
+    {
+      "rank": 166,
+      "id": "compound-governance-token",
+      "symbol": "COMP",
+      "chain": "bnb",
+      "contract": "0x52ce071bd9b1c4b00a0b92d298c512478cad67e8",
+      "icon": "compound-governance-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x52CE071Bd9b1C4B00A0b92D298c512478CaD67e8/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x52CE071Bd9b1C4B00A0b92D298c512478CaD67e8/logo.png"
+    },
+    {
+      "rank": 166,
+      "id": "compound-governance-token",
+      "symbol": "COMP",
+      "chain": "eth",
+      "contract": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+      "icon": "compound-governance-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png"
+    },
+    {
+      "rank": 167,
+      "id": "bnb48-club-token",
+      "symbol": "KOGE",
+      "chain": "bnb",
+      "contract": "0xe6df05ce8c8301223373cf5b969afcb1498c5528",
+      "icon": "bnb48-club-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xe6DF05CE8C8301223373CF5B969AFCb1498c5528/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xe6DF05CE8C8301223373CF5B969AFCb1498c5528/logo.png"
+    },
+    {
+      "rank": 169,
+      "id": "trust-wallet-token",
+      "symbol": "TWT",
+      "chain": "bnb",
+      "contract": "0x4b0f1812e5df2a09796481ff14017e6005508003",
+      "icon": "trust-wallet-token.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x4B0F1812e5Df2A09796481Ff14017e6005508003/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x4B0F1812e5Df2A09796481Ff14017e6005508003/logo.png"
+    },
+    {
+      "rank": 171,
+      "id": "crvusd",
+      "symbol": "CRVUSD",
+      "chain": "eth",
+      "contract": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+      "icon": "crvusd.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E/logo.png"
+    },
+    {
+      "rank": 172,
+      "id": "agora-dollar",
+      "symbol": "AUSD",
+      "chain": "arb",
+      "contract": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "icon": "agora-dollar.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a/logo.png"
+    },
+    {
+      "rank": 172,
+      "id": "agora-dollar",
+      "symbol": "AUSD",
+      "chain": "bnb",
+      "contract": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "icon": "agora-dollar.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a/logo.png"
+    },
+    {
+      "rank": 172,
+      "id": "agora-dollar",
+      "symbol": "AUSD",
+      "chain": "eth",
+      "contract": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "icon": "agora-dollar.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a/logo.png"
+    },
+    {
+      "rank": 175,
+      "id": "frax",
+      "symbol": "FRAX",
+      "chain": "arb",
+      "contract": "0x17fc002b466eec40dae837fc4be5c67993ddbd6f",
+      "icon": "frax.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/assets/0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F/logo.png"
+    },
+    {
+      "rank": 175,
+      "id": "frax",
+      "symbol": "FRAX",
+      "chain": "eth",
+      "contract": "0x853d955acef822db058eb8505911ed77f175b99e",
+      "icon": "frax.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x853d955aCEf822Db058eb8505911ED77F175b99e/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x853d955aCEf822Db058eb8505911ED77F175b99e/logo.png"
+    },
+    {
+      "rank": 176,
+      "id": "jasmycoin",
+      "symbol": "JASMY",
+      "chain": "eth",
+      "contract": "0x7420b4b9a0110cdc71fb720908340c03f9bc03ec",
+      "icon": "jasmycoin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC/logo.png"
+    },
+    {
+      "rank": 177,
+      "id": "eigenlayer",
+      "symbol": "EIGEN",
+      "chain": "eth",
+      "contract": "0xec53bf9167f50cdeb3ae105f56099aaab9061f83",
+      "icon": "eigenlayer.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83/logo.png"
+    },
+    {
+      "rank": 193,
+      "id": "chain-2",
+      "symbol": "XCN",
+      "chain": "base",
+      "contract": "0x9c632e6aaa3ea73f91554f8a3cb2ed2f29605e0c",
+      "icon": "chain-2.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x9c632E6Aaa3eA73f91554f8A3cB2ED2F29605e0C/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0x9c632E6Aaa3eA73f91554f8A3cB2ED2F29605e0C/logo.png"
+    },
+    {
+      "rank": 193,
+      "id": "chain-2",
+      "symbol": "XCN",
+      "chain": "bnb",
+      "contract": "0x7324c7c0d95cebc73eea7e85cbaac0dbdf88a05b",
+      "icon": "chain-2.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x7324c7C0d95CEBC73eEa7E85CbAac0dBdf88a05b/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x7324c7C0d95CEBC73eEa7E85CbAac0dBdf88a05b/logo.png"
+    },
+    {
+      "rank": 193,
+      "id": "chain-2",
+      "symbol": "XCN",
+      "chain": "eth",
+      "contract": "0xa2cd3d43c775978a96bdbf12d733d5a1ed94fb18",
+      "icon": "chain-2.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18/logo.png"
+    },
+    {
+      "rank": 196,
+      "id": "non-playable-coin",
+      "symbol": "NPC",
+      "chain": "base",
+      "contract": "0xb166e8b140d35d9d8226e40c09f757bac5a4d87d",
+      "icon": "non-playable-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0xB166E8B140D35D9D8226E40C09f757BAC5A4d87d/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/assets/0xB166E8B140D35D9D8226E40C09f757BAC5A4d87d/logo.png"
+    },
+    {
+      "rank": 196,
+      "id": "non-playable-coin",
+      "symbol": "NPC",
+      "chain": "bnb",
+      "contract": "0xfebfa339e44c28e2aa9e62ea1027c9cb4e378605",
+      "icon": "non-playable-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xFEbfA339E44c28E2aa9E62Ea1027C9CB4e378605/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xFEbfA339E44c28E2aa9E62Ea1027C9CB4e378605/logo.png"
+    },
+    {
+      "rank": 196,
+      "id": "non-playable-coin",
+      "symbol": "NPC",
+      "chain": "eth",
+      "contract": "0x8ed97a637a790be1feff5e888d43629dc05408f6",
+      "icon": "non-playable-coin.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x8eD97a637A790Be1feff5e888d43629dc05408F6/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x8eD97a637A790Be1feff5e888d43629dc05408F6/logo.png"
+    },
+    {
+      "rank": 198,
+      "id": "convex-finance",
+      "symbol": "CVX",
+      "chain": "eth",
+      "contract": "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+      "icon": "convex-finance.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B/logo.png"
+    },
+    {
+      "rank": 200,
+      "id": "axie-infinity",
+      "symbol": "AXS",
+      "chain": "bnb",
+      "contract": "0x715d400f88c167884bbcc41c5fea407ed4d2f8a0",
+      "icon": "axie-infinity.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x715D400F88C167884bbCc41C5FeA407ed4D2f8A0/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x715D400F88C167884bbCc41C5FeA407ed4D2f8A0/logo.png"
+    },
+    {
+      "rank": 200,
+      "id": "axie-infinity",
+      "symbol": "AXS",
+      "chain": "eth",
+      "contract": "0xbb0e17ef65f82ab018d8edd776e8dd940327b28b",
+      "icon": "axie-infinity.png",
+      "assetSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b/info.json",
+      "iconSource": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b/logo.png"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "aave",
+      "chain": "base",
+      "contract": "0x63706e401c06ac8513145b7687A14804d17f814b",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "agora-dollar",
+      "chain": "base",
+      "contract": "0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "akedo",
+      "chain": "bnb",
+      "contract": "0x2c3a8Ee94dDD97244a93Bc48298f97d2C412F7Db",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "apxusd",
+      "chain": "base",
+      "contract": "0xD993935E13851dd7517af10687EC7e5022127228",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "apxusd",
+      "chain": "bnb",
+      "contract": "0x6b3788Fd6604BBF03c5378D24e57BB334BAAD4aF",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "apxusd",
+      "chain": "eth",
+      "contract": "0x98A878b1Cd98131B271883B390f68D2c90674665",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bedrock-token",
+      "chain": "base",
+      "contract": "0xd6122ddADa244913521F3d62006eaF756c157660",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bedrock-token",
+      "chain": "eth",
+      "contract": "0x9B61879e91a0b1322F3d61c23Aaf936231882096",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "beldex",
+      "chain": "bnb",
+      "contract": "0x9d10a1ec41Fe7878429BB457e31F9b050D38c633",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bianrensheng",
+      "chain": "bnb",
+      "contract": "0x924fa68a0FC644485b8df8AbfA0A41C2e7744444",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bitget-token",
+      "chain": "eth",
+      "contract": "0x54D2252757e1672EEaD234D27B1270728fF90581",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bitway",
+      "chain": "bnb",
+      "contract": "0x444045B0EE1ee319A660a5E3d604CA0ffA35ACaA",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bitway",
+      "chain": "eth",
+      "contract": "0x3A63DE3572c69a1307ff08394f3Ee7702C16d25d",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "blackrock-usd-institutional-digital-liquidity-fund",
+      "chain": "arb",
+      "contract": "0xA6525Ae43eDCd03dC08E775774dCAbd3bb925872",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "blackrock-usd-institutional-digital-liquidity-fund",
+      "chain": "bnb",
+      "contract": "0x2D5BdC96D9C8AabBDB38c9A27398513e7E5ef84F",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "blackrock-usd-institutional-digital-liquidity-fund",
+      "chain": "eth",
+      "contract": "0x7712c34205737192402172409a8F7ccef8aA2AEc",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "blockchain-capital",
+      "chain": "eth",
+      "contract": "0x8347FfFB3abeb2fAe5C21b09E983bdEFa1A047dc",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bonk",
+      "chain": "arb",
+      "contract": "0x09199d9A5F4448D0848e4395D065e1ad9c4a1F74",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "bonk",
+      "chain": "bnb",
+      "contract": "0xA697e272a73744b343528C3Bc4702F2565b2F422",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "build-on",
+      "chain": "bnb",
+      "contract": "0x6bdcCe4A559076e37755a78Ce0c06214E59e4444",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "chainlink",
+      "chain": "base",
+      "contract": "0x88Fb150BDc53A65fe94Dea0c9BA0a6dAf8C6e196",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "compound-governance-token",
+      "chain": "arb",
+      "contract": "0x354A6dA3fcde098F8389cad84b0182725c6C91dE",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "compound-governance-token",
+      "chain": "base",
+      "contract": "0x9e1028F5F1D5eDE59748FFceE5532509976840E0",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "crvusd",
+      "chain": "arb",
+      "contract": "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "crvusd",
+      "chain": "base",
+      "contract": "0x417Ac0e078398C154EdFadD9Ef675d30Be60Af93",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "crvusd",
+      "chain": "bnb",
+      "contract": "0xe2fb3F127f5450DeE44afe054385d74C392BdeF4",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "derive",
+      "chain": "arb",
+      "contract": "0x77b7787a09818502305C95d68A2571F090abb135",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "derive",
+      "chain": "base",
+      "contract": "0x9d0E8f5b25384C7310CB8C6aE32C8fbeb645d083",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "derive",
+      "chain": "eth",
+      "contract": "0xB1D1eae60EEA9525032a6DCb4c1CE336a1dE71BE",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "edgex",
+      "chain": "eth",
+      "contract": "0xB0076DE78Dc50581770BBa1D211dDc0aD4F2a241",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "eigenlayer",
+      "chain": "base",
+      "contract": "0x2081Ab0D9EC9e4303234Ab26D86b20B3367946ee",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ethena",
+      "chain": "arb",
+      "contract": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ethena",
+      "chain": "base",
+      "contract": "0x58538e6A46E07434d7E7375Bc268D3cb839C0133",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ethena-usde",
+      "chain": "arb",
+      "contract": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ethena-usde",
+      "chain": "base",
+      "contract": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ethena-usde",
+      "chain": "bnb",
+      "contract": "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ether-fi",
+      "chain": "arb",
+      "contract": "0x7189fb5B6504bbfF6a852B13B7B82a3c118fDc27",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ether-fi",
+      "chain": "base",
+      "contract": "0x6C240DDA6b5c336DF09A4D011139beAAa1eA2Aa2",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "eutbl",
+      "chain": "arb",
+      "contract": "0xCBeb19549054CC0a6257A77736FC78C367216cE7",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "eutbl",
+      "chain": "base",
+      "contract": "0xa0769f7A8fC65e47dE93797b4e21C073c117Fc80",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "eutbl",
+      "chain": "eth",
+      "contract": "0xa0769f7A8fC65e47dE93797b4e21C073c117Fc80",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "falcon-finance",
+      "chain": "bnb",
+      "contract": "0xb3b02E4A9Fb2bD28CC2ff97B0aB3F6B3Ec1eE9D2",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "falcon-finance-ff",
+      "chain": "bnb",
+      "contract": "0xAC23B90A79504865D52B49B327328411a23d4dB2",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "falcon-finance-ff",
+      "chain": "eth",
+      "contract": "0xFA1C09fC8B491B6A4d3Ff53A10CAd29381b3F949",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "first-digital-usd",
+      "chain": "arb",
+      "contract": "0x93C9932E4afa59201F0B5E63f7d816516F1669fE",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "frax",
+      "chain": "bnb",
+      "contract": "0x90C97F71E18723b0Cf0dfa30ee176Ab653E89F40",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "gho",
+      "chain": "arb",
+      "contract": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "gho",
+      "chain": "base",
+      "contract": "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "global-dollar",
+      "chain": "arb",
+      "contract": "0x004B506865409877C9fA29bfb1ebA929984B9bbC",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "hashnote-usyc",
+      "chain": "bnb",
+      "contract": "0x8D0fA28f221eB5735BC71d3a0Da67EE5bC821311",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "hashnote-usyc",
+      "chain": "eth",
+      "contract": "0x136471a34f6ef19fE571EFFC1CA711fdb8E49f2b",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "htx-dao",
+      "chain": "bnb",
+      "contract": "0x61EC85aB89377db65762E234C946b5c25A56E99e",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "htx-dao",
+      "chain": "eth",
+      "contract": "0x61EC85aB89377db65762E234C946b5c25A56E99e",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "internet-computer",
+      "chain": "base",
+      "contract": "0x00f3C42833C3170159af4E92dbb451Fb3F708917",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "internet-computer",
+      "chain": "eth",
+      "contract": "0x00f3C42833C3170159af4E92dbb451Fb3F708917",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "janus-henderson-anemoy-aaa-clo-fund",
+      "chain": "base",
+      "contract": "0x5a0F93D040De44e78F251b03c43be9CF317Dcf64",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "janus-henderson-anemoy-aaa-clo-fund",
+      "chain": "bnb",
+      "contract": "0x58F93d6b1EF2F44eC379Cb975657C132CBeD3B6b",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "janus-henderson-anemoy-aaa-clo-fund",
+      "chain": "eth",
+      "contract": "0x5a0F93D040De44e78F251b03c43be9CF317Dcf64",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "janus-henderson-anemoy-treasury-fund",
+      "chain": "base",
+      "contract": "0x8c213ee79581Ff4984583C6a801e5263418C4b86",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "janus-henderson-anemoy-treasury-fund",
+      "chain": "eth",
+      "contract": "0x8c213ee79581Ff4984583C6a801e5263418C4b86",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "kinesis-gold",
+      "chain": "eth",
+      "contract": "0x14DAB79fD7B7B3f748d434812Fd6a9Aac460EA52",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "kinesis-silver",
+      "chain": "eth",
+      "contract": "0x56Ba8B58B7d1f6d384A1C4dD553F39ebc8741B8e",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "kite-2",
+      "chain": "bnb",
+      "contract": "0x904567252D8F48555b7447c67dCA23F0372E16be",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "kite-2",
+      "chain": "eth",
+      "contract": "0x118B70dF4F06Fa5678E7d543e6066e028C8ea0c0",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "lighter",
+      "chain": "eth",
+      "contract": "0x232CE3bd40fCd6f80f3d55A522d03f25Df784Ee2",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "memecore",
+      "chain": "bnb",
+      "contract": "0x22b1458e780F8fA71E2F84502cEe8B5A3cc731Fa",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "midnight-3",
+      "chain": "bnb",
+      "contract": "0xFe930c2d63AeD9b82fC4DBC801920dD2c1a3224F",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "morpho",
+      "chain": "arb",
+      "contract": "0x40BD670A58238e6E230c430BBb5cE6ec0d40df48",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "olympus",
+      "chain": "arb",
+      "contract": "0xf0cb2dc0db5e6c66B9a70Ac27B06b878da017028",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "olympus",
+      "chain": "base",
+      "contract": "0x060cb087a9730E13aa191f31A6d86bFF8DfcdCC0",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "olympus",
+      "chain": "eth",
+      "contract": "0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ousg",
+      "chain": "eth",
+      "contract": "0x1B19C19393e2d034D8Ff31ff34c81252FcBbee92",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pancakeswap-token",
+      "chain": "arb",
+      "contract": "0x1b896893dfc86bb67Cf57767298b9073D2c1bA2c",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "paypal-usd",
+      "chain": "arb",
+      "contract": "0x46850aD61C2B7d64d08c9C754F45254596696984",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pendle",
+      "chain": "base",
+      "contract": "0xA99F6e6785Da0F5d6fB42495Fe424BCE029Eeb3E",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pepe",
+      "chain": "arb",
+      "contract": "0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pepe",
+      "chain": "bnb",
+      "contract": "0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pieverse",
+      "chain": "bnb",
+      "contract": "0x0E63B9C287E32A05E6b9AB8ee8dF88A2760225A9",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pieverse",
+      "chain": "eth",
+      "contract": "0x0E63B9C287E32A05E6b9AB8ee8dF88A2760225A9",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pudgy-penguins",
+      "chain": "bnb",
+      "contract": "0x6418c0dd099a9FDA397C766304CDd918233E8847",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "pudgy-penguins",
+      "chain": "eth",
+      "contract": "0x6418c0dd099a9FDA397C766304CDd918233E8847",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "rain",
+      "chain": "arb",
+      "contract": "0x25118290e6A5f4139381D072181157035864099d",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "re-protocol-reusd",
+      "chain": "arb",
+      "contract": "0x76cE01F0Ef25AA66cC5F1E546a005e4A63B25609",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "re-protocol-reusd",
+      "chain": "base",
+      "contract": "0x7D214438D0F27AfCcC23B3d1e1a53906aCE5CFEa",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "re-protocol-reusd",
+      "chain": "bnb",
+      "contract": "0xbA9425EC55ee0E72216D18e0ad8BBbA2553bFb60",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "re-protocol-reusd",
+      "chain": "eth",
+      "contract": "0x5086bf358635B81D8C47C66d1C8b9E567Db70c72",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "render-token",
+      "chain": "eth",
+      "contract": "0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24",
+      "reason": "symbol mismatch: RNDR"
+    },
+    {
+      "id": "ribbita-by-virtuals",
+      "chain": "base",
+      "contract": "0xA4A2E2ca3fBfE21aed83471D28b6f65A233C6e00",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "ripple-usd",
+      "chain": "eth",
+      "contract": "0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "safo",
+      "chain": "arb",
+      "contract": "0x0C709396739b9cFB72bcea6ac691Ce0Ddf66479C",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "safo",
+      "chain": "base",
+      "contract": "0x0BB754d8940e283D9Ff6855ab5dAfBC14165c059",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "safo",
+      "chain": "eth",
+      "contract": "0xcBaDe7D9BdEe88411CB6cbCbB29952b742036992",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "societe-generale-forge-eurcv",
+      "chain": "eth",
+      "contract": "0x5F7827FDeb7c20b443265Fc2F40845B715385Ff2",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "sofiusd",
+      "chain": "eth",
+      "contract": "0x0CB6d03B0aC88A463F67B7Ad99f9f3ec4678092E",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "spiko-amundi-overnight-swap-fund-eur",
+      "chain": "arb",
+      "contract": "0x1412632f2b89E87bFa20C1318A43CeD25F1D7b76",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "spiko-amundi-overnight-swap-fund-eur",
+      "chain": "base",
+      "contract": "0xD879846CbE20751bDE8a9342a3CCa00A3E56CA47",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "spiko-amundi-overnight-swap-fund-eur",
+      "chain": "eth",
+      "contract": "0x0990b149e915cb08E2143a5c6f669c907edDC8B0",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "stable-2",
+      "chain": "bnb",
+      "contract": "0x011EBe7d75E2C9D1E0bD0be0bEf5C36f0A90075F",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "superstate-short-duration-us-government-securities-fund-ustb",
+      "chain": "eth",
+      "contract": "0x43415eB6ff9DB7E26A15b704e7A3eDCe97d31C4e",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "syrup",
+      "chain": "base",
+      "contract": "0x688AEe022AA544f150678B8E5720b6b96a9E9a2F",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "the-open-network",
+      "chain": "bnb",
+      "contract": "0x76A797A59Ba2C17726896976B7B3747BfD1d220f",
+      "reason": "symbol mismatch: TONCOIN"
+    },
+    {
+      "id": "the-open-network",
+      "chain": "eth",
+      "contract": "0x582d872A1B094FC48F5DE31D3B73F2D9bE47def1",
+      "reason": "symbol mismatch: TONCOIN"
+    },
+    {
+      "id": "true-usd",
+      "chain": "trx",
+      "contract": "TUpMhErZL2fhh4sVNULAbNKLokS4GjC1F4",
+      "reason": "symbol mismatch: TrueUSD"
+    },
+    {
+      "id": "unibase",
+      "chain": "bnb",
+      "contract": "0x40b8129B786D766267A7a118cF8C07E31CDB6Fde",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "unibase",
+      "chain": "eth",
+      "contract": "0x6944E1DF6Bf5972305f9Ab25dF47ef10De01bcc8",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usa",
+      "chain": "eth",
+      "contract": "0x07041776f5007ACa2A54844F50503a18A72A8b68",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usdai",
+      "chain": "arb",
+      "contract": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usdai",
+      "chain": "base",
+      "contract": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usdai",
+      "chain": "eth",
+      "contract": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usdd",
+      "chain": "bnb",
+      "contract": "0x45E51bc23D592EB2DBA86da3985299f7895d66Ba",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "useless-3",
+      "chain": "bnb",
+      "contract": "0xbA38B3C706f7A515Ff7C8Db04Daa0A134eC46D2b",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usual-usd",
+      "chain": "arb",
+      "contract": "0x35f1C5cB7Fb977E669fD244C567Da99d8a3a6850",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usual-usd",
+      "chain": "base",
+      "contract": "0x758a3e0b1F842C9306B783f8A4078C6C8C03a270",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "usual-usd",
+      "chain": "bnb",
+      "contract": "0x758a3e0b1F842C9306B783f8A4078C6C8C03a270",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "whitebit",
+      "chain": "eth",
+      "contract": "0x925206b8a707096Ed26ae47C84747fE0bb734F59",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "whitebit",
+      "chain": "trx",
+      "contract": "TFptbWaARrWTX5Yvy3gNG5Lm8BmhPx82Bt",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "world-liberty-financial",
+      "chain": "bnb",
+      "contract": "0x47474747477b199288bF72a1D702f7Fe0Fb1DEeA",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "zama",
+      "chain": "bnb",
+      "contract": "0x6907A5986C4950Bdaf2F81828Ec0737ce787519f",
+      "reason": "no Trust Wallet asset record"
+    },
+    {
+      "id": "zama",
+      "chain": "eth",
+      "contract": "0xA12CC123ba206d4031D1c7f6223D1C2Ec249f4f3",
+      "reason": "no Trust Wallet asset record"
+    }
+  ]
+}

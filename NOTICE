@@ -1,0 +1,20 @@
+FrostBit DEX
+Copyright (C) 2026 FrostBit contributors
+
+Except where a file or directory states otherwise, project-authored source
+code is licensed under the GNU General Public License version 3 only
+(SPDX identifier: GPL-3.0-only). The complete license text is in LICENSE.
+
+Files that carry their own license notice remain governed by that notice.
+In particular, the Solidity sources marked SPDX-License-Identifier: MIT are
+licensed under the MIT License documented in solidity/LICENSE.md. Third-party
+components retain their upstream copyright and license terms; this notice does
+not relicense them.
+
+FrostBit DEX release policy requires every binary, container image, or other
+object-code distribution to preserve these notices and make the exact
+Corresponding Source available in accordance with GPLv3. Dependency manifests
+and lockfiles identify third-party components, whose required notices and
+license texts must also accompany distributed artifacts.
+
+This NOTICE is informational and does not replace any license text.

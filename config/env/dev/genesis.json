@@ -1,0 +1,25 @@
+{
+  "chain_id": 1001,
+  "alloc": {
+    "default": {
+      "balances": {
+        "FB": { "balance": "1000000000000000000", "miner_locked_balance": "100000000000000000" },
+        "br_ccaab438b63c9a2913367629acc716c34ca8150e8716ee09b0e7b99b62d10eef": { "balance": "10000000000" },
+        "br_a153833490eecf5ae32863cbe5530924df7090f38cc5dc0b78a0902cd4e1d523": { "balance": "10000000000000000000" },
+        "br_564c190d78ad8821849346fe31191ebae3cc9c632b0453d3e3da2814408b0cac": { "balance": "10000000000000000000" },
+        "br_7e019f1cf2f59bd3eb11b1a70fbb43722b2fdfce2ed1ec303f4baeb5eebbcb59": { "balance": "10000000000000000000" },
+        "br_98c6c97b3bd3ce355c895e34c3b377c7c6871bf332e5f716f056416f5ec28781": { "balance": "10000000000000000000" },
+        "br_d31024e716e6ee951fa0ae81582c15f4fc94277a862c82933bce05b440106a80": { "balance": "10000000000000" },
+        "br_0b63cbe952e7eecff35617de184ffc5ef1f30edd5dc5e0f25a68a1d309f4f711": { "balance": "500000000000" },
+        "br_988fcc87a61c5c002dc6366918177eb29f20f1b580bd268faced1bea060bfb3f": { "balance": "500000000000" },
+        "br_9c31e0c8cae1900a9981294cc1a7ac21baec7fed08dbcb5b216bc9a8df0c2fe9": { "balance": "500000000000" },
+        "br_718d932d6adfb5e61bfbbbb7b266e13884b6604908067bbe8d5bad1a7159159c": { "balance": "500000000000" },
+        "br_1ca2d9f343b88dc4b28709084ee17579446f3d11136d9c0e987d84630988af34": { "balance": "500000000000" },
+        "br_f3afdf03b2095db42ca286f2cd89ac532d269528e00f5fb73c84199e21be4b52": { "balance": "500000000000" },
+        "br_eec49f4a77457ec6759408320f869364981bedec9419bcefa9a62e1cb3a00426": { "balance": "500000000000000000000000" },
+        "br_47f9c19894776f5aa8386cd3302eec75d69e7aa2fc54fa7fa8c3a6900c2f3cff": { "balance": "500000000000000000000000" },
+        "br_ae5cb03ede5e3fcea7fe0b5ba32ee7562813d1d2ab923143bbd48da6d5d8714a": { "balance": "500000000000000000000000" }
+      }
+    }
+  }
+}

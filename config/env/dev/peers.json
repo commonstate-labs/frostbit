@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "kind": "public-peer-manifest",
+  "_notice": "PUBLIC EXAMPLE ONLY — NO SECRETS. Run cmd/network-init to create fresh local identities under .local/; never reuse generated dev keys for funds.",
+  "chain_id": 1001,
+  "genesis_validators": [],
+  "bootstrap_endpoints": []
+}

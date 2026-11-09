@@ -1,0 +1,24 @@
+package types
+
+                                               
+               
+                                               
+
+type EventType string
+
+const (
+	EventPreferenceChanged EventType = "snowball.preference"
+	EventBlockFinalized    EventType = "block.finalized"
+	EventBlockReceived     EventType = "block.received"
+	EventQueryComplete     EventType = "query.complete"
+	EventSyncComplete      EventType = "sync.complete"
+	EventNewBlock          EventType = "block.new"
+)
+
+type BaseEvent struct {
+	EventType EventType
+	EventData interface{}
+}
+
+func (e BaseEvent) Type() EventType   { return e.EventType }
+func (e BaseEvent) Data() interface{} { return e.EventData }

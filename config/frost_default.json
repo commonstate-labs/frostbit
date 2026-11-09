@@ -1,0 +1,88 @@
+{
+    "enabled": false,
+    "committee": {
+        "topN": 175,
+        "thresholdRatio": 1.0,
+        "epochBlocks": 100
+    },
+    "vault": {
+        "defaultK": 4,
+        "minK": 4,
+        "maxK": 100,
+        "count": 1,
+        "thresholdRatio": 0.75,
+        "maturityBlocks": 864000,
+        "scaleMinerMultiplier": 100,
+        "committeeTermBlocks": 120960
+    },
+    "timeouts": {
+        "nonceCommitBlocks": 2,
+        "sigShareBlocks": 3,
+        "aggregatorRotateBlocks": 5,
+        "sessionMaxBlocks": 60
+    },
+    "withdraw": {
+        "maxInFlightPerChainAsset": 1
+    },
+    "transition": {
+        "triggerChangeRatio": 0.2,
+        "pauseWithdrawDuringSwitch": true,
+        "confirmBlocks": 200,
+        "dkgCommitWindowBlocks": 20,
+        "dkgSharingWindowBlocks": 20,
+        "dkgDisputeWindowBlocks": 20
+    },
+    "chains": {
+        "btc": {
+            "signAlgo": "SCHNORR_SECP256K1_BIP340",
+            "frostVariant": "frost-secp256k1",
+            "vaultsPerChain": 1,
+            "feeSatsPerVByte": 25
+        },
+        "eth": {
+            "signAlgo": "SCHNORR_ALT_BN128",
+            "frostVariant": "frost-bn128",
+            "vaultsPerChain": 1,
+            "gasPriceGwei": 30,
+            "gasLimit": 180000,
+            "authorityProtocol": 3
+        },
+        "bnb": {
+            "signAlgo": "SCHNORR_ALT_BN128",
+            "frostVariant": "frost-bn128",
+            "vaultsPerChain": 1,
+            "gasPriceGwei": 3,
+            "gasLimit": 180000,
+            "authorityProtocol": 3
+        },
+        "base": {
+            "signAlgo": "SCHNORR_ALT_BN128",
+            "frostVariant": "frost-bn128",
+            "vaultsPerChain": 1,
+            "gasPriceGwei": 1,
+            "gasLimit": 180000,
+            "authorityProtocol": 3
+        },
+        "arb": {
+            "signAlgo": "SCHNORR_ALT_BN128",
+            "frostVariant": "frost-bn128",
+            "vaultsPerChain": 1,
+            "gasPriceGwei": 1,
+            "gasLimit": 180000,
+            "authorityProtocol": 3
+        },
+        "trx": {
+            "signAlgo": "SCHNORR_ALT_BN128",
+            "chainId": 728126428,
+            "frostVariant": "frost-bn128",
+            "vaultsPerChain": 1,
+            "feeLimitSun": 30000000,
+            "authorityProtocol": 3
+        }
+    },
+    "guardian": {
+        "btcPublicKey": "",
+        "accountPublicKey": "",
+        "endpoint": ""
+    }
+}

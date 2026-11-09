@@ -1,0 +1,10 @@
+# Never commit material generated while provisioning a real node.
+*.hex
+*.key
+secure-node.env
+secret_fetch
+secret_fetch.pub
+*.secret_fetch
+*.secret_fetch.pub
+trusted-server-known-hosts
+secrets/

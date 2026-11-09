@@ -1,0 +1,62 @@
+{
+    "enabled": false,
+    "committee": {
+        "topN": 175,
+        "thresholdRatio": 1.0,
+        "epochBlocks": 100
+    },
+    "vault": {
+        "defaultK": 4,
+        "minK": 4,
+        "count": 1,
+        "maxK": 100,
+        "thresholdRatio": 0.75,
+        "maturityBlocks": 30,
+        "scaleMinerMultiplier": 1,
+        "committeeTermBlocks": 120960
+    },
+    "transition": {
+        "triggerChangeRatio": 0.2,
+        "pauseWithdrawDuringSwitch": true,
+        "confirmBlocks": 10,
+        "dkgCommitWindowBlocks": 5,
+        "dkgSharingWindowBlocks": 5,
+        "dkgDisputeWindowBlocks": 5
+    },
+    "chains": {
+        "btc": {
+            "vaultsPerChain": 1,
+            "btcNetwork": "mainnet",
+            "feeSatsPerVByte": 25
+        },
+        "eth": {
+            "vaultsPerChain": 1,
+            "chainId": 1,
+            "authorityProtocol": 3
+        },
+        "bnb": {
+            "vaultsPerChain": 1,
+            "chainId": 56,
+            "authorityProtocol": 3
+        },
+        "base": {
+            "vaultsPerChain": 1,
+            "chainId": 8453,
+            "authorityProtocol": 3
+        },
+        "arb": {
+            "vaultsPerChain": 1,
+            "chainId": 42161,
+            "authorityProtocol": 3
+        },
+        "trx": {
+            "vaultsPerChain": 1,
+            "authorityProtocol": 3
+        }
+    },
+    "guardian": {
+        "btcPublicKey": "",
+        "accountPublicKey": "",
+        "endpoint": ""
+    }
+}

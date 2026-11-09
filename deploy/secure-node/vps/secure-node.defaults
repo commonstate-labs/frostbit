@@ -1,0 +1,16 @@
+# PUBLIC EXAMPLE ONLY — NO SECRETS. Copy these non-secret settings to the
+                                                                              
+                                                                           
+DEX_MINER_ADDRESS=fbc1qw508d6qejxtdg4y5r3zarvary0c5xw7kng2fs8
+DEX_BIN=/opt/dex/bin/node
+DEX_CONFIG_DIR=/etc/dex/miner
+DEX_PEERS_FILE=/etc/dex/miner/peers.json
+DEX_DATA_DIR=/var/lib/dex/miners/fbc1qw508d6qejxtdg4y5r3zarvary0c5xw7kng2fs8
+DEX_BOOTSTRAP_MODE=genesis
+DEX_ADVERTISE_ADDR=miner-a.example.com:6000
+DEX_SECRET_HOST=trusted.example.com
+DEX_SECRET_PORT=22
+DEX_SECRET_IDENTITY_FILE=/var/lib/dex/ssh/fbc1qw508d6qejxtdg4y5r3zarvary0c5xw7kng2fs8.secret_fetch
+DEX_SECRET_KNOWN_HOSTS=/etc/dex/trusted-server-known-hosts
+DEX_SECRET_FETCH_TIMEOUT_SECONDS=20
+DEX_LOG_FILE=/var/log/dex/fbc1qw508d6qejxtdg4y5r3zarvary0c5xw7kng2fs8.log

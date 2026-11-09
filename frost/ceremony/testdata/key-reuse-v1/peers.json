@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "public-peer-manifest",
+  "_notice": "PUBLIC NETWORK MANIFEST — NO SECRETS. Generated node keys are stored separately under secrets/ and must never be committed or reused for valuable networks.",
+  "chain_id": 51025,
+  "genesis_validators": [
+    {
+      "address": "fbc1q8jqq8pxfwtcjt5c4q4mkmmswec4lk7587vj4vr",
+      "reward_address": "fbc1q8jqq8pxfwtcjt5c4q4mkmmswec4lk7587vj4vr",
+      "secp_public_key": "02fc0a1c91bf4961866f35e35ca719687ef35f3444f00d03d48069fa60978b69b8",
+      "bls_public_key": "3ab37f4cefa26499aedf1d16bda8c6ee79336cd2b8bab40d77e3a8b7a1cb0ed63c0541fa044b67ac64202993a96412fe7aa56b25461406d6bd24a1204a5e5d0265ee75da8c711e9b655569c2531faca0b19d905dba744697eb772b3f9ce0d54e887ec8a0ba82d23e0c9db8e30d8e7f0192c9d56be82b4cb6776eaadc525c6ee2",
+      "is_miner": true
+    },
+    {
+      "address": "fbc1qrp2yqectt96lztyyw26rn982vm03uhx750y3pq",
+      "reward_address": "fbc1qrp2yqectt96lztyyw26rn982vm03uhx750y3pq",
+      "secp_public_key": "039ee73783c9700738d218a2f24b8cfb72d2fec4c89844720ba0616eb7a7af611b",
+      "bls_public_key": "868ff3be12b20ef3a0ee9bfa8882f2b174713efa67b86efc2368691698a162d75e8970424c5c3dc1633e27e839c531077efe482cc85526492b8e9b196c5b9b9913bc8708801b3999686715a2ae020bac673d0af80969379351dc49aeed7e7c2035ffcbf0acae75368c8774ad0adcfed44e7f702e87547f8bd9fd8e744ce55857",
+      "is_miner": true
+    },
+    {
+      "address": "fbc1qsprcmguf3u78g728xm3vjdms4tgr6v48xcrktz",
+      "reward_address": "fbc1qsprcmguf3u78g728xm3vjdms4tgr6v48xcrktz",
+      "secp_public_key": "0255f63bfd4ba373d80a46648cda26308d1694fdc0a27017a0b57279392da91377",
+      "bls_public_key": "3526b9bbef7eaec079a61c0bb28fb705a3b7d62f5694874663aa66bdc2cdb4517b6a94cf2f0e14c81d07b3d9879bdfc5f11816a01b518dbc7b32df5d7e3e1c8a743ae7dc30b9e72388bdf56230b56d05e4d8ecd0386f5c45e6334ebc68150e5f35af84fdb0d0e705c7362bcc3609f484764223659a6f873d81d18c17596b5f0c",
+      "is_miner": true
+    },
+    {
+      "address": "fbc1qssgyq3l5fu9d7t6sk0a4v6gfls68jd0qgt63ha",
+      "reward_address": "fbc1qssgyq3l5fu9d7t6sk0a4v6gfls68jd0qgt63ha",
+      "secp_public_key": "036d5e42dbd52fb449f6e24c1a1ab5692f91c39c7da59a9ec94805766dece0dd56",
+      "bls_public_key": "7d83465016b13f0e613b513ac4187449adae360a3bc8e3c6341ea90ac8eb16323b37f58913999efa6f65c44ed438bc592c38f176548cf6160f2899bdc13f15d32e940a1077db22fa8b8dd047c6fa7066172a6515a81e3874f2e325efe8011f6e8d4ffed9a430713c6ec4fc30cd45aff2c9e274c514033b41c9fbb7aaa7577c72",
+      "is_miner": true
+    },
+    {
+      "address": "fbc1qztf442acw35yyee4c0tfqvkhsqhtnrgymh76ml",
+      "reward_address": "fbc1qztf442acw35yyee4c0tfqvkhsqhtnrgymh76ml",
+      "secp_public_key": "022b89ffc4bedacaad5915381bddc4b15f19c8be96279332a3bf72e0f953c0cfb3",
+      "bls_public_key": "0a9ebda538689fc50d63a37cce60851136f40e4c51c02c357ec2a9e2625e26598a10914bc6be1718ff4fef2ce91b8c0698cdf4d15a875e95c894cec30c3476c47e1de877ab032475b865b64db25c31d9fc0e491c386660a209fddf435cba75b04492005cd0d6b0813008142d49e48203f7733df78718ca2b888ced6e29e1c784",
+      "is_miner": true
+    }
+  ],
+  "bootstrap_endpoints": [
+    {
+      "address": "fbc1q8jqq8pxfwtcjt5c4q4mkmmswec4lk7587vj4vr",
+      "endpoint": "52.128.238.162:19000"
+    },
+    {
+      "address": "fbc1qrp2yqectt96lztyyw26rn982vm03uhx750y3pq",
+      "endpoint": "216.118.251.6:19000"
+    },
+    {
+      "address": "fbc1qsprcmguf3u78g728xm3vjdms4tgr6v48xcrktz",
+      "endpoint": "52.128.244.130:19000"
+    },
+    {
+      "address": "fbc1qssgyq3l5fu9d7t6sk0a4v6gfls68jd0qgt63ha",
+      "endpoint": "180.178.58.2:19000"
+    },
+    {
+      "address": "fbc1qztf442acw35yyee4c0tfqvkhsqhtnrgymh76ml",
+      "endpoint": "52.128.238.74:19000"
+    }
+  ]
+}
