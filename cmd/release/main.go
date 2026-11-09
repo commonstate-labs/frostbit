@@ -124,8 +124,9 @@ func main() {
 	copyReleaseConfig(root, staging, envName, mode)
 	if !*skipFrontend {
 		must(stageFrontendBuildInputs(root, buildWorkspace), "stage shared frontend build inputs")
-		explorerDist := buildFrontend(root, buildWorkspace)
+		// Explorer imports the wallet icon from the staged wallet project.
 		walletDist := buildWallet(root, buildWorkspace)
+		explorerDist := buildFrontend(root, buildWorkspace)
 		must(stageFrontendAssets(staging, explorerDist, walletDist), "stage frontend assets")
 	}
 
