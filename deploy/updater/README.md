@@ -1,6 +1,8 @@
 # 节点内置 GitHub 自动升级
 
-升级逻辑是主节点中的后台 goroutine，`--auto-update=true` 默认开启，不安装独立升级程序或 systemd 服务。唯一发布来源固定为 `davidLeeeeeeeeeeee/dex` 的正式、不可变 GitHub Release。
+升级逻辑是主节点中的后台 goroutine，`--auto-update=true` 默认开启，不安装独立升级程序或 systemd 服务。唯一发布来源固定为 `commonstate-labs/frostbit` 的正式、不可变 GitHub Release。
+
+从旧发布源迁移时，先停机，再手工替换原启动入口为已验证的新版本。启动新版本时用 `--auto-update-dir` 指定全新的缓存目录，保留旧缓存供回退。旧缓存中的清单绑定旧仓库，复用该目录可能使新版本拒绝启动。如需回退，恢复旧入口和原缓存路径。
 
 ## 参数
 

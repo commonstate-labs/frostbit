@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	Repository      = "davidLeeeeeeeeeeee/dex"
+	Repository      = "commonstate-labs/frostbit"
 	SchemaVersion   = 1
 	DatabaseVersion = 1
 )
