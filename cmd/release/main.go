@@ -123,6 +123,7 @@ func main() {
 	must(os.Chmod(quickNodePath, 0o555), "make published-image launcher executable")
 	copyReleaseConfig(root, staging, envName, mode)
 	if !*skipFrontend {
+		must(stageFrontendBuildInputs(root, buildWorkspace), "stage shared frontend build inputs")
 		explorerDist := buildFrontend(root, buildWorkspace)
 		walletDist := buildWallet(root, buildWorkspace)
 		must(stageFrontendAssets(staging, explorerDist, walletDist), "stage frontend assets")
@@ -670,6 +671,38 @@ func validatePublicReleaseJSON(name string, data []byte) error {
 	return nil
 }
 
+func stageFrontendBuildInputs(root, buildWorkspace string) error {
+	iconDir := filepath.Join("shared", "assets", "top200-token-icons")
+	for _, directory := range []string{"config", "shared", filepath.Dir(iconDir), iconDir} {
+		if err := requireRegularDirectory(filepath.Join(root, directory)); err != nil {
+			return err
+		}
+	}
+
+	files := []string{
+		"config/genesis.json",
+		"shared/assetMetadata.mjs",
+		"shared/assetMetadata.d.mts",
+		"shared/top200TokenIcons.mjs",
+		"shared/top200TokenIcons.d.mts",
+	}
+	icons, err := os.ReadDir(filepath.Join(root, iconDir))
+	if err != nil {
+		return err
+	}
+	for _, icon := range icons {
+		if filepath.Ext(icon.Name()) == ".png" {
+			files = append(files, filepath.Join(iconDir, icon.Name()))
+		}
+	}
+	for _, name := range files {
+		if err := copyRegularFileChecked(filepath.Join(root, name), filepath.Join(buildWorkspace, name)); err != nil {
+			return fmt.Errorf("copy %s: %w", name, err)
+		}
+	}
+	return nil
+}
+
 func buildFrontend(root, buildWorkspace string) string {
 	dir, err := prepareCleanNPMProject(
 		filepath.Join(root, "explorer"),
@@ -764,7 +797,11 @@ func copyTree(src, dst string) {
 	must(copyTreeChecked(src, dst), "copyTree "+src)
 }
 
-var releaseLegalFiles = []string{"LICENSE", "NOTICE"}
+var releaseLegalFiles = []string{
+	"LICENSE",
+	"NOTICE",
+	"shared/assets/top200-token-icons/TRUSTWALLET-LICENSE",
+}
 
 func stageReleaseLegalFiles(root, staging string) error {
 	for _, name := range releaseLegalFiles {

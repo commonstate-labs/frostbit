@@ -76,8 +76,46 @@ func TestCoordinatedManifestCannotClaimRollbackSafe(t *testing.T) {
 	}
 }
 
-func TestReleaseArchiveKeepsExecutablesSeparateFromStaticDirectories(t *testing.T) {
+func TestStageFrontendBuildInputsCopiesOnlyRequiredPublicFiles(t *testing.T) {
+	root, workspace := t.TempDir(), t.TempDir()
+	inputs := []string{
+		"config/genesis.json",
+		"shared/assetMetadata.mjs",
+		"shared/assetMetadata.d.mts",
+		"shared/top200TokenIcons.mjs",
+		"shared/top200TokenIcons.d.mts",
+		"shared/assets/top200-token-icons/example.png",
+	}
+	excluded := []string{
+		"config/operator.json",
+		"shared/private.mjs",
+		"shared/assets/other.png",
+		"shared/assets/top200-token-icons/README.md",
+	}
+	for _, name := range append(inputs, excluded...) {
+		writeTestFile(t, filepath.Join(root, name), name)
+	}
+	if err := stageFrontendBuildInputs(root, workspace); err != nil {
+		t.Fatal(err)
+	}
+	for _, name := range inputs {
+		data, err := os.ReadFile(filepath.Join(workspace, name))
+		if err != nil || string(data) != name {
+			t.Errorf("staged %s = %q, %v", name, data, err)
+		}
+	}
+	for _, name := range excluded {
+		if _, err := os.Lstat(filepath.Join(workspace, name)); !os.IsNotExist(err) {
+			t.Errorf("expected %s to be excluded, stat error = %v", name, err)
+		}
+	}
+}
+
+func TestReleaseArchiveContainsRuntimeAssetsAndNotices(t *testing.T) {
 	staging, explorerDist, walletDist := t.TempDir(), t.TempDir(), t.TempDir()
+	if err := stageReleaseLegalFiles(filepath.Join("..", ".."), staging); err != nil {
+		t.Fatal(err)
+	}
 	writeTestFile(t, filepath.Join(staging, "explorer"), "explorer executable")
 	writeTestFile(t, filepath.Join(staging, "dex"), "node executable")
 	writeTestFile(t, filepath.Join(explorerDist, "index.html"), "frontend")
@@ -94,7 +132,15 @@ func TestReleaseArchiveKeepsExecutablesSeparateFromStaticDirectories(t *testing.
 		t.Fatal(err)
 	}
 	defer reader.Close()
-	want := map[string]bool{"dex/explorer": false, "dex/explorer_web/dist/index.html": false, "dex/dex": false, "dex/wallet/manifest.json": false}
+	want := map[string]bool{
+		"dex/explorer": false,
+		"dex/explorer_web/dist/index.html": false,
+		"dex/dex": false,
+		"dex/wallet/manifest.json": false,
+		"dex/LICENSE": false,
+		"dex/NOTICE": false,
+		"dex/shared/assets/top200-token-icons/TRUSTWALLET-LICENSE": false,
+	}
 	for _, file := range reader.File {
 		if _, ok := want[file.Name]; ok {
 			if file.FileInfo().IsDir() {

@@ -235,7 +235,10 @@ func TestReleaseInventoryUsesExplicitValidatedCopies(t *testing.T) {
 		"validatePublicReleaseJSON(name, data)",
 		"copyRegularFileChecked",
 		"stageReleaseLegalFiles(root, staging)",
-		`[]string{"LICENSE", "NOTICE"}`,
+		"var releaseLegalFiles = []string{",
+		`"LICENSE"`,
+		`"NOTICE"`,
+		`"shared/assets/top200-token-icons/TRUSTWALLET-LICENSE"`,
 		"prepareCleanNPMProject",
 		"copyTreeChecked",
 	} {
