@@ -17,10 +17,10 @@ import (
 
 const ImportCleanupSupported = true
 
-// ImportSource identifies the open file from which the plaintext key was read.
+                                                                               
 type ImportSource struct{ snapshot *cleanupFile }
 
-// VerifiedKeystore identifies the open file whose exact bytes were decrypted.
+                                                                              
 type VerifiedKeystore struct{ snapshot *cleanupFile }
 
 type cleanupFile struct {
@@ -58,8 +58,8 @@ func (f *cleanupFile) close() {
 }
 
 func cleanupKeyDigest(key []byte) [sha256.Size]byte {
-	// Keep this proof separate from the bare SHA-256 used to derive the
-	// miner's BLS private scalar from the secp256k1 key.
+	                                                                    
+	                                                     
 	const tag = "dex/nodekey/import-cleanup/v1\x00"
 	var input [len(tag) + 32]byte
 	copy(input[:], tag)
@@ -108,8 +108,8 @@ func checkCleanupDirectory(fd int) error {
 	if err := unix.Fstat(fd, &st); err != nil {
 		return err
 	}
-	// A root-owned sticky directory (for example /tmp) also protects each
-	// entry owned by root or the node account from other users' renames.
+	                                                                      
+	                                                                     
 	stickyRoot := st.Uid == 0 && st.Mode&unix.S_ISVTX != 0
 	if !cleanupOwnerTrusted(st.Uid) || st.Mode&0o022 != 0 && !stickyRoot {
 		return errors.New("key directory permits renames by an untrusted user")
@@ -217,9 +217,9 @@ func (f *cleanupFile) verifyPath() error {
 	return nil
 }
 
-// RemoveVerifiedImportSource consumes both receipts. The directory walk and
-// unlinkat protect against other users. The node account and root are trusted
-// to leave both paths alone during the final checks and unlink.
+                                                                            
+                                                                              
+                                                                
 func RemoveVerifiedImportSource(ctx context.Context, source *ImportSource, verified *VerifiedKeystore) (removed bool, err error) {
 	defer source.Close()
 	defer verified.Close()
@@ -260,7 +260,7 @@ func RemoveVerifiedImportSource(ctx context.Context, source *ImportSource, verif
 	if err := unix.Unlinkat(int(plain.parent.Fd()), filepath.Base(plain.path), 0); err != nil {
 		return false, fmt.Errorf("remove plaintext source: %w", err)
 	}
-	// Drop our reference to the unlinked plaintext before syncing its directory.
+	                                                                             
 	_ = plain.file.Close()
 	plain.file = nil
 	if err := plain.parent.Sync(); err != nil {

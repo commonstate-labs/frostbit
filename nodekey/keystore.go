@@ -1,4 +1,4 @@
-// Package nodekey 负责节点身份的加密文件与启动解锁，不保留解锁后的私钥。
+                                                                                                    
 package nodekey
 
 import (
@@ -22,11 +22,11 @@ const (
 	MaxKeystoreBytes   = 64 * 1024
 	MaxPrivateKeyBytes = 4096
 	MaxPassphraseBytes = 1024
-	// 新建使用更长口令；字节数只是下限，实际应使用随机生成的长口令。
+	                                                                                                
 	MinNewPassphraseBytes = 12
 )
 
-// Metadata 只包含公开格式信息；EthereumAddress 不是 DEX 的 fbc 地址。
+                                                                                      
 type Metadata struct {
 	Version         int    `json:"version"`
 	EthereumAddress string `json:"ethereum_address"`
@@ -59,7 +59,7 @@ type encryptedFile struct {
 	} `json:"crypto"`
 }
 
-// Wipe 清理调用者拥有的字节缓冲；不承诺擦除 Go 或依赖库的全部临时副本。
+                                                                                                      
 func Wipe(data []byte) { clear(data); runtime.KeepAlive(data) }
 
 func clearPrivateKey(key *ecdsa.PrivateKey) {
@@ -90,7 +90,7 @@ func validateHex(name, value string, minBytes, maxBytes int) error {
 	return nil
 }
 
-// inspectJSON 在 Geth 解密前限制资源，并重新编码，避免两次 JSON 解析对参数产生不同解释。
+                                                                                                                        
 func inspectJSON(raw []byte) (*encryptedFile, []byte, error) {
 	if len(raw) == 0 || len(raw) > MaxKeystoreBytes {
 		return nil, nil, errors.New("keystore is empty or exceeds size limit")
@@ -108,7 +108,7 @@ func inspectJSON(raw []byte) (*encryptedFile, []byte, error) {
 		return nil, nil, errors.New("only Geth V3 scrypt/aes-128-ctr keystores are supported")
 	}
 	p := f.Crypto.KDFParams
-	// 生产入口只接受标准强度且有界的配置；轻量导入须先离线重新加密。
+	                                                                                                
 	if p.N != gethkeystore.StandardScryptN || p.R != 8 || p.P != gethkeystore.StandardScryptP || p.DKLen != 32 {
 		return nil, nil, errors.New("keystore requires standard scrypt parameters (N=262144 r=8 p=1 dklen=32)")
 	}
@@ -161,7 +161,7 @@ func readFile(path string, limit int64, private bool) ([]byte, error) {
 	return raw, nil
 }
 
-// InspectFile 检查公开格式及 KDF 资源上限，不读取口令、不执行解密。
+                                                                                            
 func InspectFile(path string) (Metadata, error) {
 	raw, err := readFile(path, MaxKeystoreBytes, false)
 	if err != nil {
@@ -175,7 +175,7 @@ func InspectFile(path string) (Metadata, error) {
 	return Metadata{f.Version, f.Address, f.Crypto.Cipher, f.Crypto.KDF, p.N, p.R, p.P}, nil
 }
 
-// ReadEncryptedFile 解锁后只返回严格 32 字节标量，调用者负责消费后 Wipe。
+                                                                                                
 func ReadEncryptedFile(path string, password []byte) ([]byte, error) {
 	if err := validatePassword(password); err != nil {
 		return nil, err
@@ -187,13 +187,13 @@ func ReadEncryptedFile(path string, password []byte) ([]byte, error) {
 	return decryptKeyFile(raw, password)
 }
 
-// Both readers validate the password before opening the file.
+                                                              
 func decryptKeyFile(raw, password []byte) ([]byte, error) {
 	f, canonical, err := inspectJSON(raw)
 	if err != nil {
 		return nil, err
 	}
-	// Geth 当前接口要求 string；只在此短作用域转换，不写入任何长期结构体。
+	                                                                                                   
 	key, err := gethkeystore.DecryptKey(canonical, string(password))
 	if err != nil {
 		return nil, errors.New("cannot unlock keystore: wrong passphrase or invalid file")
@@ -205,7 +205,7 @@ func decryptKeyFile(raw, password []byte) ([]byte, error) {
 	return key.PrivateKey.D.FillBytes(make([]byte, 32)), nil
 }
 
-// EncryptFile 使用标准 scrypt 创建新密文，不覆盖目标，也不删除原始文件。
+                                                                                                  
 func EncryptFile(path string, key32, password []byte) error {
 	if err := validatePassword(password); err != nil {
 		return err
@@ -252,7 +252,7 @@ func encryptFile(path string, key32, password []byte, n, p int) error {
 	return nil
 }
 
-// ReadPrivateKeyFile 只供显式导入使用；严格接受一个 hex token，不返回字符串。
+                                                                                                     
 func ReadPrivateKeyFile(path string) ([]byte, error) {
 	raw, err := readFile(path, MaxPrivateKeyBytes, true)
 	if err != nil {

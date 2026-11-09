@@ -10,7 +10,7 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-// ReadPassphraseTTY 只从控制终端无回显读取；systemd 无TTY时明确失败。
+                                                                                         
 func ReadPassphraseTTY(prompt string) ([]byte, error) {
 	f, err := os.OpenFile("/dev/tty", os.O_RDWR, 0)
 	if err != nil {

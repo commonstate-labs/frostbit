@@ -7,7 +7,7 @@ cd "$ROOT"
 
 mapfile -t GO_PACKAGES < <(go list -buildvcs=false ./... | awk '$0 != "dex/tmp"')
 mapfile -t GO_BUILD_PACKAGES < <(go list -buildvcs=false -f '{{if or .GoFiles .CgoFiles}}{{.ImportPath}}{{end}}' ./... | awk 'NF && $0 != "dex/tmp"')
-if (( ${                                                               
+if (( ${#GO_PACKAGES[@]} == 0 || ${#GO_BUILD_PACKAGES[@]} == 0 )); then
   echo "FAILED: no Go packages discovered" >&2
   exit 1
 fi

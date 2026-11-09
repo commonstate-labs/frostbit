@@ -11,7 +11,7 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-// 逐层 openat，持有父目录句柄，拒绝路径任一部分的符号链接。
+                                                                                     
 func openSafe(path string, flags int, perm os.FileMode) (*os.File, error) {
 	abs, err := filepath.Abs(path)
 	if err != nil {
@@ -29,8 +29,8 @@ func openSafe(path string, flags int, perm os.FileMode) (*os.File, error) {
 	return os.NewFile(uintptr(fd), abs), nil
 }
 
-// openKeyParent takes an absolute, cleaned path. Cleanup supplies a validator
-// for each opened directory so the same walk also checks who may rename entries.
+                                                                              
+                                                                                 
 func openKeyParent(abs string, validateDirectory func(int) error) (int, error) {
 	if abs == "/" {
 		return -1, errors.New("key path must name a file")

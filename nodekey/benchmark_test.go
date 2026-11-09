@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// 两个基准只比较单身份启动加载成本；均不接触 StateDB，也不包含签名热路径。
+                                                                                                           
 func BenchmarkReadPrivateKeyFile(b *testing.B) {
 	path := filepath.Join(b.TempDir(), "test-only-original.hex")
 	if err := os.WriteFile(path, []byte(hex.EncodeToString(dummyKey())), 0o600); err != nil {

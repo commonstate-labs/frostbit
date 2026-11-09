@@ -15,7 +15,7 @@ func openSafe(path string, flags int, perm os.FileMode) (*os.File, error) {
 	if err != nil {
 		return nil, err
 	}
-	// Windows 的目录 ACL 由操作者管理；拒绝现有路径中的 reparse points。
+	                                                                                        
 	for current := abs; ; current = filepath.Dir(current) {
 		p, e := windows.UTF16PtrFromString(current)
 		if e != nil {
@@ -56,5 +56,5 @@ func openSafe(path string, flags int, perm os.FileMode) (*os.File, error) {
 	return os.NewFile(uintptr(h), abs), nil
 }
 
-// Unix mode bits 不代表 Windows ACL；密文文件继承目标目录 ACL。
+                                                                               
 func checkFilePermissions(os.FileMode, bool) error { return nil }

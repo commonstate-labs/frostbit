@@ -72,7 +72,7 @@ func TestNewPasswordMinimumAndReadCompatibility(t *testing.T) {
 			t.Fatal("invalid new passphrase created an output")
 		}
 	}
-	// 历史标准 KDF 文件可能使用短口令，读取仍允许解锁，便于显式重新导入。
+	                                                                                                     
 	path := filepath.Join(t.TempDir(), "legacy-standard.json")
 	if err := encryptFile(path, dummyKey(), []byte("x"), gethkeystore.StandardScryptN, gethkeystore.StandardScryptP); err != nil {
 		t.Fatal(err)
@@ -193,7 +193,7 @@ func TestKeystorePreflightBounds(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			// 直接检查预检拒绝，保证这些参数不会进入 KDF。
+			                                                                   
 			if _, _, err := inspectJSON(mutated); err == nil {
 				t.Fatal("unsafe parameters passed preflight")
 			}

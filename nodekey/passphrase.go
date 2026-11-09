@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-// ReadPassphraseFD 消费并关闭显式继承的FD；不从环境或非TTY标准输入猜测口令。
+                                                                                                       
 func ReadPassphraseFD(fd int) ([]byte, error) {
 	if fd < 3 {
 		return nil, errors.New("passphrase FD must be an inherited descriptor >= 3")
@@ -41,7 +41,7 @@ func normalizePassphrase(raw []byte) ([]byte, error) {
 	return raw, nil
 }
 
-// readBounded 只分配一次，额外一个字节用于检测超长；返回切片未使用的尾部始终为零。
+                                                                                                                     
 func readBounded(r io.Reader, limit int) ([]byte, error) {
 	buffer := make([]byte, limit+1)
 	n, err := io.ReadFull(r, buffer)
@@ -53,7 +53,7 @@ func readBounded(r io.Reader, limit int) ([]byte, error) {
 }
 
 func readTerminalLine(f *os.File) ([]byte, error) {
-	// 一次分配有界缓冲，避免 append 扩容留下多份口令副本。
+	                                                                             
 	data := make([]byte, 0, MaxPassphraseBytes+2)
 	var one [1]byte
 	defer Wipe(one[:])
