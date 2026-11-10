@@ -1,0 +1,35 @@
+name: v0.8.4 exact source verification
+
+on:
+  push:
+    branches: [codex/v0.8.4-release-check]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      GOFLAGS: "-buildvcs=false -p=1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d5fffeb78743373ca3cad078f0b5ab5f46be49dd
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify the exact release source
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = d5fffeb78743373ca3cad078f0b5ab5f46be49dd
+          test -z "$(git status --porcelain)"
+          git rev-parse HEAD
+          go env GOFLAGS
+          bash scripts/verify-public.sh
