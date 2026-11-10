@@ -170,11 +170,13 @@ func TestPushHTTPTraceRealSlowResponse(t *testing.T) {
 		t.Run(protocol, func(t *testing.T) {
 			logger := logs.NewNodeLogger(t.Name(), 20)
 			defer logs.SetThreadLogger(logger)()
+			// Keep the body open independently of transport cancellation.
+			releaseBody := make(chan struct{})
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 				_, _ = io.Copy(io.Discard, r.Body)
 				w.WriteHeader(http.StatusOK)
 				w.(http.Flusher).Flush()
-				<-r.Context().Done()
+				<-releaseBody
 			})
 			var client *http.Client
 			var target string
@@ -206,6 +208,7 @@ func TestPushHTTPTraceRealSlowResponse(t *testing.T) {
 				defer transport.Close()
 				client, target = &http.Client{Transport: transport}, conn.LocalAddr().String()
 			}
+			defer close(releaseBody)
 			payload := []byte("PRIVATE_PUSH_PAYLOAD_AND_NONCE")
 			task := &SendTask{Target: target, NodeAddress: "test-node", TraceKind: "push", TraceRequestID: 16, TraceHeight: 88, Timeout: 300 * time.Millisecond, Message: &pushQueryMsg{requestData: payload}}
 			started := time.Now()

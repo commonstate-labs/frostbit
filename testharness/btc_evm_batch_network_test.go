@@ -2,8 +2,10 @@ package testharness
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"sync"
+	"time"
 
 	frostruntime "dex/frost/runtime"
 	"dex/frost/runtime/roast"
@@ -97,7 +99,30 @@ func (n *batchRoastNetwork) run(ctx context.Context) {
 				return
 			case delivery := <-n.queue:
 				env := delivery.envelope
-				if err := n.nodes[delivery.to].HandleRoastEnvelope(&roast.Envelope{SessionID: env.SessionID, Kind: env.Kind, From: env.From, Chain: env.Chain, VaultID: env.VaultID, SignAlgo: pb.SignAlgo(env.SignAlgo), Epoch: env.Epoch, Round: env.Round, Payload: env.Payload, Tweaks: env.Tweaks}); err != nil {
+				manager := n.nodes[delivery.to]
+				message := &roast.Envelope{
+					SessionID: env.SessionID,
+					Kind:      env.Kind,
+					From:      env.From,
+					Chain:     env.Chain,
+					VaultID:   env.VaultID,
+					SignAlgo:  pb.SignAlgo(env.SignAlgo),
+					Epoch:     env.Epoch,
+					Round:     env.Round,
+					Payload:   env.Payload,
+					Tweaks:    env.Tweaks,
+				}
+				err := manager.HandleRoastEnvelope(message)
+				// Model the production sender's retry when a share arrives before the coordinator is ready.
+				for retry := 0; retry < 20 && env.Kind == "SigShare" && errors.Is(err, roast.ErrRoastStateNotReady); retry++ {
+					select {
+					case <-time.After(10 * time.Millisecond):
+					case <-ctx.Done():
+						return
+					}
+					err = manager.HandleRoastEnvelope(message)
+				}
+				if err != nil {
 					select {
 					case n.errors <- fmt.Errorf("%s %s %s: %w", env.Chain, env.Kind, delivery.to, err):
 					case <-ctx.Done():

@@ -202,12 +202,15 @@ func TestResponseBodyReadsHonorTaskDeadline(t *testing.T) {
 		{"service sync", &serviceSyncRequestMessage{from: 1, to: 1}, doSendServiceSyncRequest},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
-			server := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			// Keep the body open independently of transport cancellation.
+			releaseBody := make(chan struct{})
+			server := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 				w.WriteHeader(http.StatusOK)
 				w.(http.Flusher).Flush()
-				<-r.Context().Done()
+				<-releaseBody
 			}))
 			defer server.Close()
+			defer close(releaseBody)
 			client := server.Client()                                                          
 			start := time.Now()
 			err := tc.send(&SendTask{Target: strings.TrimPrefix(server.URL, "https://"), Message: tc.message, Timeout: 100 * time.Millisecond}, client)
@@ -230,16 +233,18 @@ func TestHTTP3ResponseBodyReadHonorsTaskDeadline(t *testing.T) {
 		t.Fatal(err)
 	}
 	defer conn.Close()
-	server := &http3.Server{TLSConfig: tlsConfig, Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	releaseBody := make(chan struct{})
+	server := &http3.Server{TLSConfig: tlsConfig, Handler: http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.(http.Flusher).Flush()
-		<-r.Context().Done()
+		<-releaseBody
 	})}
 	serveDone := make(chan struct{})
 	go func() { _ = server.Serve(conn); close(serveDone) }()
 	defer func() { _ = server.Close(); <-serveDone }()
 	transport := &http3.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, DisableCompression: true}
 	defer transport.Close()
+	defer close(releaseBody)
 	start := time.Now()
 	err = doSendHeightQuery(&SendTask{Target: conn.LocalAddr().String(), Message: &heightQueryMessage{}, Timeout: 100 * time.Millisecond}, &http.Client{Transport: transport})
 	if !errors.Is(err, context.DeadlineExceeded) {

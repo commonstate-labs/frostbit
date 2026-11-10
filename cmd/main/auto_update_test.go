@@ -159,19 +159,29 @@ func TestUpdateConfirmationRequiresProgressAndResetsHealthWindow(t *testing.T) {
 	if err := waitNodeUpdateHealthy(context.Background(), func() (uint64, error) { return 100, nil }, time.Millisecond, 8*time.Millisecond, time.Millisecond); !errors.Is(err, context.DeadlineExceeded) {
 		t.Fatalf("frozen chain confirmed from historical height: %v", err)
 	}
-	calls, firstRecovered := 0, 0
+	const stableFor = 20 * time.Millisecond
+	var recoveredAt time.Time
+	calls := 0
 	err := waitNodeUpdateHealthy(context.Background(), func() (uint64, error) {
 		calls++
-		if calls == 3 {
-			return uint64(calls), errors.New("sync resumed")
+		switch calls {
+		case 1, 2:
+			return 100, nil
+		case 3:
+			return 0, errors.New("sync resumed")
+		case 4:
+			// A new window must establish its own height baseline.
+			recoveredAt = time.Now()
+			return 99, nil
+		default:
+			return 100, nil
 		}
-		if calls == 4 {
-			firstRecovered = calls
-		}
-		return uint64(calls), nil
-	}, 5*time.Millisecond, time.Second, time.Millisecond)
-	if err != nil || firstRecovered != 4 || calls < firstRecovered+3 {
-		t.Fatalf("health window was not reset: calls=%d first=%d err=%v", calls, firstRecovered, err)
+	}, stableFor, time.Second, time.Millisecond)
+	if err != nil {
+		t.Fatalf("health confirmation after recovery: %v", err)
+	}
+	if recoveredAt.IsZero() || time.Since(recoveredAt) < stableFor {
+		t.Fatal("confirmed without a full healthy window after recovery")
 	}
 }
 
