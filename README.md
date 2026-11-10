@@ -2,7 +2,7 @@
 
 # FrostBit DEX
 
-FrostBit is a fully decentralized blockchain and on-chain trading system with decentralized order matching and custody of funds. It includes spot and perpetual trading, FROST cross-chain vaults, an Explorer, and a browser wallet.
+FrostBit is a fully decentralized blockchain and on-chain trading system. It features decentralized order matching and custody of funds, with a design that supports large node networks and high transaction throughput. It includes spot and perpetual trading, FROST cross-chain vaults, an Explorer, and a browser wallet.
 
 [Open Explorer](https://frostbit.io/) · [Docs Center](https://frostbit.io/#docs_center/docs-home) · [Download a release](https://github.com/commonstate-labs/frostbit/releases/latest)
 
