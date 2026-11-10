@@ -126,6 +126,36 @@ export const englishDocs: EnglishDocPage[] = [
     ],
   },
   {
+    id: 'wallet-extension',
+    title: 'Install and Use the Wallet Extension',
+    summary: 'Install FrostBit Wallet in Chrome or Edge, create or restore an account, and connect to Explorer to review signing requests.',
+    sections: [
+      {
+        heading: 'Download and install',
+        bullets: [
+          'Download and extract `frostbit-wallet-<version>.zip` from [Frostbit Releases](https://github.com/commonstate-labs/frostbit/releases/latest). The full Linux release also includes a `wallet/` directory.',
+          'Open `chrome://extensions/` in Chrome or `edge://extensions/` in Edge. Turn on Developer mode, choose Load unpacked, and select the extracted `wallet` directory that contains `manifest.json`. Open FrostBit Wallet from the toolbar.',
+          'Before updating, check your recovery phrase and private key backups. Update the files in the existing installation directory, then select Reload on the extensions page. Changing the directory can create a new extension ID.',
+        ],
+      },
+      {
+        heading: 'Build from source',
+        body: 'Download `frostbit-<version>-source.zip` from the same release and enter the extracted source root that contains `go.mod`. Run these commands with Node.js 22.12 or a later 22.x version, then use Load unpacked to select `wallet/dist/`.',
+        codeLabel: 'Bash',
+        code: `npm --prefix wallet ci
+npm --prefix wallet run build`,
+      },
+      {
+        heading: 'Create, restore, and connect',
+        bullets: [
+          'Open the extension and select Create / Import Wallet. To create a wallet, generate and back up the recovery phrase offline, then set a wallet password. To restore, import the recovery phrase or use the private key import to restore an account backed up separately. Enter credentials only in the extension you have verified. Compare the full `fbc1…` address to confirm the account.',
+          'In wallet Settings, choose the network and save its Explorer URL if needed. The extension supports the [FrostBit website](https://frostbit.io/) and local pages on `http://localhost` or `http://127.0.0.1`, such as `http://127.0.0.1:8080`.',
+          'Unlock the wallet, refresh the page, and select Connect Wallet. Check the requesting site before approving the connection. Before signing, review the network, signer, action, recipient, asset, amount, and fees. Save the TxID after submission and check the final result in Explorer. See [Connect a Wallet](#docs_center/wallet-connect).',
+        ],
+      },
+    ],
+  },
+  {
     id: 'wallet-connect',
     title: 'Connect a Wallet',
     summary: 'Your DEX wallet provides identity and transaction signatures. An external wallet pays for deposits or claims withdrawals on the selected external network. Verify both accounts and networks.',
@@ -575,6 +605,44 @@ export const englishDocs: EnglishDocPage[] = [
       {
         heading: 'What to provide for investigation',
         body: 'Provide network, DEX account, asset ID or contract, amount, time, request ID, external hash, current stage, and full error. For deposits, state whether you used automatic watching, manual reporting, or an account-chain contract deposit. Never send private keys, seed phrases, or wallet passwords.',
+      },
+    ],
+  },
+  {
+    id: 'explorer-backend',
+    title: 'Install and Run the Explorer Backend',
+    summary: 'Run the Explorer backend and website on Linux, connect to an existing Frostbit node, and check index progress.',
+    sections: [
+      {
+        heading: 'Use the release bundle',
+        body: 'Download `dex-<version>-linux-amd64.zip` from [Frostbit Releases](https://github.com/commonstate-labs/frostbit/releases/latest), extract it, and enter `dex/`. The backend executable is `explorer` and the website is in `explorer_web/dist/`. Prepare the public runtime configuration for the target network, including `config.json` and `genesis.json`, and select a trusted node that is running and reachable.',
+      },
+      {
+        heading: 'Start locally',
+        body: 'Set `CONFIG_DIR` to the network configuration directory and `NODE` to your node address. `--nodes` takes comma-separated `host:port` addresses. Choose one of them for `--sync-node`. Set `--data-dir` to a separate Explorer index directory.',
+        codeLabel: 'Bash',
+        code: `CONFIG_DIR=/path/to/network-config
+NODE=127.0.0.1:6000
+./explorer \\
+  --config-dir="$CONFIG_DIR" --listen=127.0.0.1:8080 \\
+  --nodes="$NODE" --sync-node="$NODE" \\
+  --web-dir=./explorer_web/dist --data-dir=./explorer_data \\
+  --ip-tls=false --admin-listen=""`,
+      },
+      {
+        heading: 'Check the service and index',
+        body: 'Open [http://127.0.0.1:8080](http://127.0.0.1:8080) in a browser. Check the node list at `/api/nodes` and compare the sync status and `sync_height` at `/api/sync/status` with the target node height. The website can become available while the index is still catching up.',
+        codeLabel: 'Bash',
+        code: `curl -fsS http://127.0.0.1:8080/api/nodes
+curl -fsS http://127.0.0.1:8080/api/sync/status`,
+      },
+      {
+        heading: 'Build from source',
+        body: 'Download `frostbit-<version>-source.zip` from the same release and enter its source root. Use Go 1.24 and Node.js 22.12 or a later 22.x version. After building, run the same start command with `./frostbit-explorer` as the executable and `./explorer/dist` as `--web-dir`.',
+        codeLabel: 'Bash',
+        code: `npm --prefix explorer ci
+npm --prefix explorer run build
+go build -mod=readonly -trimpath -o ./frostbit-explorer ./cmd/explorer`,
       },
     ],
   },
@@ -1187,6 +1255,7 @@ export const englishTreeTitles: Record<string, string> = {
   'roles-entry-node': 'Roles and Entry Points',
   'core-concepts-node': 'Core Concepts',
   account: 'Accounts and Assets',
+  'wallet-extension-node': 'Install and Use the Wallet Extension',
   'wallet-connect-node': 'Connect a Wallet',
   'asset-address-node': 'Assets and Addresses',
   'account-rent-node': 'Account Rent',
@@ -1206,6 +1275,7 @@ export const englishTreeTitles: Record<string, string> = {
   'cross-chain-status-node': 'Track Cross-chain Progress',
   'cross-chain-challenge-node': 'Deposit Challenges and Arbitration',
   'explorer-use': 'Using the Explorer',
+  'explorer-backend-node': 'Install and Run the Explorer Backend',
   'search-records-node': 'Search Transactions, Blocks, and Accounts',
   'node-health-node': 'Node Health',
   'activity-history-node': 'Activity and History',

@@ -67,6 +67,7 @@ const zhDocs: DocPage[] = [
         heading: '从一件具体的事开始',
         bullets: [
           '新用户从 [第一次使用](#docs_center/first-use) 开始，完成钱包连接、资金准备和首笔操作。',
+          '需要安装组件时，参阅 [Explorer 后端](#docs_center/explorer-backend) 和 [钱包插件](#docs_center/wallet-extension) 教程。',
           '准备运行节点时，先看 [推荐配置](#docs_center/node-mining-hardware)，再按 [部署步骤](#docs_center/node-mining-deploy-join) 完成同步和首次登记。',
           '已经操作但结果不确定时，先查 [常见问题](#docs_center/faq)，保留原交易或请求 ID。',
           '左侧搜索可以检索正文；每篇文章的“复制链接”可直接分享当前章节。切换中英文会保留当前文章。',
@@ -201,6 +202,36 @@ const zhDocs: DocPage[] = [
           '记录 DEX 交易 ID；跨链还要保存充值外链哈希或提现 ID。连接成功、签名完成和请求已提交都不是最终成功。',
           '订单看成交与未成交数量；充值看“已完成入账”；账户链提现看“外链 Vault 已确认执行成功”及对应外链记录。',
           '请求状态不明时先查询原记录。只有确认失败或明确未提交后，才修正问题重试，避免重复付款或创建第二笔订单。',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wallet-extension',
+    title: '安装与使用钱包插件',
+    summary: '在 Chrome 或 Edge 安装 FrostBit Wallet，创建或恢复账户，再连接 Explorer 核对签名请求。',
+    sections: [
+      {
+        heading: '下载安装',
+        bullets: [
+          '从 [Frostbit Releases](https://github.com/commonstate-labs/frostbit/releases/latest) 下载 `frostbit-wallet-<版本>.zip` 并解压。完整 Linux 发布包也提供 `wallet/` 目录。',
+          'Chrome 打开 `chrome://extensions/`，Edge 打开 `edge://extensions/`。启用“开发者模式”，选择“加载已解压的扩展程序”，打开解压后直接包含 `manifest.json` 的 `wallet` 目录。安装后点击工具栏的 FrostBit Wallet 图标。',
+          '更新前确认助记词和导入私钥的备份。将新版扩展文件放到原安装目录，再在扩展页面点击“重新加载”。更换目录可能生成新的扩展 ID。',
+        ],
+      },
+      {
+        heading: '从源码构建',
+        body: '下载同一 Release 的 `frostbit-<版本>-source.zip`，解压后进入包含 `go.mod` 的源码根目录。用 Node.js 22.12 或更高的 22.x 版本运行以下命令，再加载 `wallet/dist/`。',
+        codeLabel: 'Bash',
+        code: `npm --prefix wallet ci
+npm --prefix wallet run build`,
+      },
+      {
+        heading: '创建、恢复和连接',
+        bullets: [
+          '打开扩展，选择“创建 / 导入钱包”。创建时生成并离线备份助记词，再设置钱包密码。恢复时导入助记词，或用“导入私钥”恢复独立备份的账户。助记词、私钥和密码只在核验过的扩展界面输入。用完整的 `fbc1…` 地址确认账户。',
+          '在钱包设置选择目标网络，按需保存该网络的 Explorer 地址。扩展支持 [FrostBit 网站](https://frostbit.io/) 及本机 `http://localhost`、`http://127.0.0.1` 上的页面，例如 `http://127.0.0.1:8080`。',
+          '解锁钱包，刷新网页并点击“连接钱包”。核对来源站点再批准连接。签名前核对网络、签名账户、操作、收款地址、资产、金额和费用。提交后记录 TxID 并查询最终执行结果。详见 [连接钱包](#docs_center/wallet-connect)。',
         ],
       },
     ],
@@ -713,6 +744,44 @@ const zhDocs: DocPage[] = [
       {
         heading: '提交排查信息',
         body: '提供所用网络、DEX 账户、资产标识或合约、金额、时间、请求 ID、外链哈希、当前状态和完整错误。充值还要说明使用自动监听、手动申报还是账户链合约充值；不要提供私钥、助记词或钱包密码。',
+      },
+    ],
+  },
+  {
+    id: 'explorer-backend',
+    title: '安装与运行 Explorer 后端',
+    summary: '在 Linux 上启动 Explorer 后端和网页，连接已有的 Frostbit 节点并检查索引同步。',
+    sections: [
+      {
+        heading: '使用发布包',
+        body: '从 [Frostbit Releases](https://github.com/commonstate-labs/frostbit/releases/latest) 下载 `dex-<版本>-linux-amd64.zip`，解压后进入 `dex/`。后端可执行文件是 `explorer`，配套网页在 `explorer_web/dist/`。准备目标网络的公开运行配置，包括 `config.json` 和 `genesis.json`，并选一个已经运行、可访问的受信节点。',
+      },
+      {
+        heading: '在本机启动',
+        body: '将 `CONFIG_DIR` 改成实际网络配置目录，`NODE` 改成你的节点地址。`--nodes` 接受逗号分隔的 `主机:端口`，`--sync-node` 要选其中一个。索引写入 Explorer 自己的 `--data-dir`。',
+        codeLabel: 'Bash',
+        code: `CONFIG_DIR=/path/to/network-config
+NODE=127.0.0.1:6000
+./explorer \\
+  --config-dir="$CONFIG_DIR" --listen=127.0.0.1:8080 \\
+  --nodes="$NODE" --sync-node="$NODE" \\
+  --web-dir=./explorer_web/dist --data-dir=./explorer_data \\
+  --ip-tls=false --admin-listen=""`,
+      },
+      {
+        heading: '检查服务和索引',
+        body: '打开 [http://127.0.0.1:8080](http://127.0.0.1:8080)。用 `/api/nodes` 检查节点列表，再用 `/api/sync/status` 查看同步状态和 `sync_height`，与目标节点的区块高度对照。网页能打开后，索引仍可能需要时间追上节点。',
+        codeLabel: 'Bash',
+        code: `curl -fsS http://127.0.0.1:8080/api/nodes
+curl -fsS http://127.0.0.1:8080/api/sync/status`,
+      },
+      {
+        heading: '从源码构建',
+        body: '从同一 Release 下载 `frostbit-<版本>-source.zip`，进入解压后的源码根目录，使用 Go 1.24 和 Node.js 22.12 或更高的 22.x 版本。构建完成后沿用启动命令，将 `./explorer` 换成 `./frostbit-explorer`，将 `--web-dir` 改为 `./explorer/dist`。',
+        codeLabel: 'Bash',
+        code: `npm --prefix explorer ci
+npm --prefix explorer run build
+go build -mod=readonly -trimpath -o ./frostbit-explorer ./cmd/explorer`,
       },
     ],
   },
@@ -1519,6 +1588,7 @@ const zhDocTree: DocTreeNode[] = [
     id: 'account',
     title: '账户与资产',
     children: [
+      { id: 'wallet-extension-node', title: '安装与使用钱包插件', docId: 'wallet-extension' },
       { id: 'wallet-connect-node', title: '连接钱包', docId: 'wallet-connect' },
       { id: 'asset-address-node', title: '资产与地址', docId: 'asset-address' },
       { id: 'account-rent-node', title: '账户租金', docId: 'account-rent' },
@@ -1563,6 +1633,7 @@ const zhDocTree: DocTreeNode[] = [
     id: 'explorer-use',
     title: '浏览器使用',
     children: [
+      { id: 'explorer-backend-node', title: '安装与运行 Explorer 后端', docId: 'explorer-backend' },
       { id: 'search-records-node', title: '查询交易、区块和账户', docId: 'search-records' },
       { id: 'node-health-node', title: '节点健康', docId: 'node-health' },
       { id: 'activity-history-node', title: '活动与历史', docId: 'activity-history' },

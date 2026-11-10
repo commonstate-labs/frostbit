@@ -58,6 +58,23 @@ describe('documentation navigation', () => {
     expect(location.hash).toBe('#docs_center/node-mining-hardware')
   })
 
+  it.each([
+    ['explorer-backend', '安装与运行 Explorer 后端', 'Install and Run the Explorer Backend', '/api/sync/status', './cmd/explorer'],
+    ['wallet-extension', '安装与使用钱包插件', 'Install and Use the Wallet Extension', 'manifest.json', 'wallet/dist/'],
+  ])('opens the %s guide in both languages', async (docId, zhTitle, enTitle, useStep, buildStep) => {
+    history.replaceState(null, '', '/#docs_center/' + docId)
+    const i18n = mount()
+    expect(article().getAttribute('aria-label')).toBe(zhTitle)
+    expect(article().textContent).toContain(useStep)
+    expect(article().textContent).toContain(buildStep)
+    i18n.global.locale.value = 'en'
+    await flush()
+    expect(article().getAttribute('aria-label')).toBe(enTitle)
+    expect(article().textContent).toContain(useStep)
+    expect(article().textContent).toContain(buildStep)
+    expect(location.hash).toBe('#docs_center/' + docId)
+  })
+
   it('explains the 51025 deposit bond and net credit in both languages', async () => {
     history.replaceState(null, '', '/#docs_center/deposit-flow')
     const i18n = mount()
