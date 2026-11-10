@@ -58,7 +58,13 @@ type publicationFixture struct {
 func newPublicationFixture(t *testing.T) *publicationFixture {
 	t.Helper()
 	f := &publicationFixture{}
-	for _, name := range []string{"complete.zip", "dex-node-v1.2.3-linux-amd64", "dex-update-linux-amd64.json"} {
+	for _, name := range []string{
+		"complete.zip",
+		"dex-node-v1.2.3-linux-amd64",
+		"dex-update-linux-amd64.json",
+		"frostbit-wallet-v1.2.3.zip",
+		"frostbit-v1.2.3-source.zip",
+	} {
 		path := filepath.Join(t.TempDir(), name)
 		if err := os.WriteFile(path, []byte("contents of "+name), 0o600); err != nil {
 			t.Fatal(err)
@@ -77,6 +83,10 @@ func newPublicationFixture(t *testing.T) *publicationFixture {
 		w.Header().Set("Content-Type", "application/json")
 		prefix := "/repos/" + updater.Repository
 		switch {
+		case r.Method == "GET" && r.URL.Path == prefix:
+			_ = json.NewEncoder(w).Encode(map[string]any{"full_name": updater.Repository, "private": false})
+		case r.Method == "GET" && r.URL.Path == prefix+"/git/ref/heads/main":
+			_ = json.NewEncoder(w).Encode(map[string]any{"ref": "refs/heads/main", "object": map[string]string{"type": "commit", "sha": strings.Repeat("a", 40)}})
 		case r.Method == "GET" && r.URL.Path == prefix+"/immutable-releases":
 			if f.disabled {
 				w.WriteHeader(http.StatusNotFound)
@@ -84,7 +94,7 @@ func newPublicationFixture(t *testing.T) *publicationFixture {
 			}
 			_, _ = io.WriteString(w, `{"enabled":true}`)
 		case r.Method == "GET" && r.URL.Path == prefix+"/git/ref/tags/v1.2.3":
-			if !f.published && !f.existingTag && !(f.wrongTagCommit && f.uploads == 3) {
+			if !f.published && !f.existingTag && !(f.wrongTagCommit && f.uploads == len(f.assets)) {
 				w.WriteHeader(http.StatusNotFound)
 				return
 			}
@@ -127,7 +137,7 @@ func newPublicationFixture(t *testing.T) *publicationFixture {
 			w.WriteHeader(http.StatusCreated)
 			_ = json.NewEncoder(w).Encode(map[string]any{"name": r.URL.Query().Get("name"), "size": len(body), "digest": digest})
 		case r.Method == "PATCH" && r.URL.Path == prefix+"/releases/17":
-			if f.uploads != 3 {
+			if f.uploads != len(f.assets) {
 				t.Errorf("published after %d uploads", f.uploads)
 			}
 			var input map[string]any
@@ -155,8 +165,10 @@ func TestPublishUploadsCompleteDraftBeforeVisibility(t *testing.T) {
 		t.Fatal(err)
 	}
 	prefix := "/repos/" + updater.Repository
-	want := []string{"GET " + prefix + "/immutable-releases", "GET " + prefix + "/git/ref/tags/v1.2.3", "POST " + prefix + "/releases",
-		"POST /uploads", "POST /uploads", "POST /uploads", "GET " + prefix + "/git/ref/tags/v1.2.3", "PATCH " + prefix + "/releases/17", "GET " + prefix + "/git/ref/tags/v1.2.3"}
+	want := []string{"GET " + prefix, "GET " + prefix + "/git/ref/heads/main",
+		"GET " + prefix + "/immutable-releases", "GET " + prefix + "/git/ref/tags/v1.2.3", "POST " + prefix + "/releases",
+		"POST /uploads", "POST /uploads", "POST /uploads", "POST /uploads", "POST /uploads",
+		"GET " + prefix + "/git/ref/tags/v1.2.3", "PATCH " + prefix + "/releases/17", "GET " + prefix + "/git/ref/tags/v1.2.3"}
 	if !reflect.DeepEqual(f.events, want) {
 		t.Fatalf("publication sequence\ngot: %v\nwant: %v", f.events, want)
 	}
@@ -195,6 +207,43 @@ func TestPublishConfirmsImmutableResult(t *testing.T) {
 	f.mutablePublished = true
 	if err := f.publisher.Publish("v1.2.3", strings.Repeat("a", 40), f.assets); err == nil || !strings.Contains(err.Error(), "immutable") {
 		t.Fatalf("mutable published result accepted: %v", err)
+	}
+}
+
+func TestVerifyPublicSourceRequiresExactVisibleMain(t *testing.T) {
+	commit := strings.Repeat("a", 40)
+	publicRepo := `{"full_name":"` + updater.Repository + `","private":false}`
+	mainRef := `{"ref":"refs/heads/main","object":{"type":"commit","sha":"` + commit + `"}}`
+	for _, tc := range []struct {
+		name, repo, ref string
+		wantOK          bool
+	}{
+		{"exact public main", publicRepo, mainRef, true},
+		{"different repository", `{"full_name":"private/repo","private":false}`, mainRef, false},
+		{"private repository", `{"full_name":"` + updater.Repository + `","private":true}`, mainRef, false},
+		{"missing visibility", `{"full_name":"` + updater.Repository + `"}`, mainRef, false},
+		{"different head", publicRepo, strings.Replace(mainRef, commit, strings.Repeat("b", 40), 1), false},
+		{"different branch", publicRepo, strings.Replace(mainRef, "refs/heads/main", "refs/heads/dev", 1), false},
+		{"different object type", publicRepo, strings.Replace(mainRef, `"commit"`, `"tag"`, 1), false},
+		{"missing commit", publicRepo, `{"ref":"refs/heads/main","object":{"type":"commit"}}`, false},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				switch r.URL.Path {
+				case "/repos/" + updater.Repository:
+					_, _ = io.WriteString(w, tc.repo)
+				case "/repos/" + updater.Repository + "/git/ref/heads/main":
+					_, _ = io.WriteString(w, tc.ref)
+				default:
+					w.WriteHeader(http.StatusNotFound)
+				}
+			}))
+			defer server.Close()
+			p := githubPublisher{client: server.Client(), apiURL: server.URL}
+			if err := p.verifyPublicSource(commit); (err == nil) != tc.wantOK {
+				t.Fatalf("verifyPublicSource = %v, want success: %v", err, tc.wantOK)
+			}
+		})
 	}
 }
 

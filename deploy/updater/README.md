@@ -41,6 +41,8 @@ go run -mod=readonly ./cmd/release --goos linux --goarch amd64 --env prod --vers
 
 发布机 `GITHUB_TOKEN` 需要 `Contents:write` 和查询不可变设置的 `Administration:read` 权限；节点读取令牌不需要这些写权限。发布工具绑定完整 commit 和真实版本，先创建草稿，上传完整 ZIP、裸节点程序及平台清单，再正式发布并确认不可变状态。失败保留草稿。发行包中没有额外 updater 二进制或安装器。
 
+从公开仓库的干净 checkout 发布。本地 HEAD 须和官方仓库的 `main` 一致。Release 还附有从同一公开提交生成的 `frostbit-<version>-source.zip`，其中包含 Explorer 后端、钱包源码和共享依赖。独立的 `frostbit-wallet-<version>.zip` 使用同次构建的钱包扩展，解压后在浏览器里加载包含 `manifest.json` 的 `wallet/` 目录。
+
 首版每个 Release 发布一个平台；缺少对应平台清单的节点保持当前版本。协议变更使用 `--upgrade-mode=coordinated`，沿用全网协调部署和确定激活高度，节点内升级器拒绝自主安装。自动错峰不等于全网批次协调，不能保证升级期间不断块。
 
 ## 验证与性能

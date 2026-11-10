@@ -59,26 +59,28 @@ func main() {
 		fatal(err.Error())
 	}
 	repo := strings.TrimSpace(*publishRepo)
-	githubToken := strings.TrimSpace(os.Getenv("GITHUB_TOKEN"))
 
 	if err := validateReleaseTarget(*targetOS); err != nil {
 		fatal(err.Error())
 	}
 
-	var token string
+	commit := gitFullCommit(root)
+	var publisher *githubPublisher
 	if *publish {
 		validatePublishRepo(repo)
-		token = githubToken
+		token := strings.TrimSpace(os.Getenv("GITHUB_TOKEN"))
 		if token == "" {
 			fatal("--publish requires GITHUB_TOKEN in the runtime environment")
 		}
 		must(requireCleanPublishTree(root), "verify release source")
+		publisher = newGitHubPublisher(token)
+		must(publisher.verifyPublicSource(commit), "verify official public source")
 	}
 
 	ver := *version
 	if ver == "" {
 		if *publish {
-			ver, err = newGitHubPublisher(token).NextVersion()
+			ver, err = publisher.NextVersion()
 			must(err, "resolve next release version")
 			fmt.Printf("Next release version: %s\n", ver)
 		} else {
@@ -98,9 +100,8 @@ func main() {
 	if err := validateUpgradeMode(*upgradeMode); err != nil {
 		fatal(err.Error())
 	}
-	commit := gitFullCommit(root)
 	if *publish {
-		must(newGitHubPublisher(token).Preflight(ver), "verify immutable release configuration")
+		must(publisher.Preflight(ver), "verify immutable release configuration")
 	}
 
 	dist := filepath.Join(root, "dist")
@@ -134,11 +135,23 @@ func main() {
 	if out == "" {
 		out = filepath.Join(dist, fmt.Sprintf("dex-%s-%s-%s.zip", ver, *targetOS, *targetArch))
 	}
-	mkdir(filepath.Dir(out))
-	must(zipTree(staging, out, "dex"), "package release archive")
+	outputDir := filepath.Dir(out)
+	walletName := walletArchiveName(ver)
+	sourceName := sourceArchiveName(ver)
+	if (!*skipFrontend && strings.EqualFold(filepath.Base(out), walletName)) ||
+		(*publish && strings.EqualFold(filepath.Base(out), sourceName)) {
+		fatal("--output conflicts with a supplementary release archive name")
+	}
+	mkdir(outputDir)
 	assets := []string{out}
+	if !*skipFrontend {
+		walletArchive := filepath.Join(outputDir, walletName)
+		must(packageWalletArchive(root, filepath.Join(staging, "wallet"), walletArchive), "package standalone wallet")
+		assets = append(assets, walletArchive)
+	}
+	must(zipTree(staging, out, "dex"), "package release archive")
 	if !*skipBackend && ver != "dev" {
-		updateAssets, assetErr := stageUpdateAssets(staging, filepath.Dir(out), filepath.Join(root, "config", "env", envName), ver, commit, *targetOS, *targetArch, *upgradeMode)
+		updateAssets, assetErr := stageUpdateAssets(staging, outputDir, filepath.Join(root, "config", "env", envName), ver, commit, *targetOS, *targetArch, *upgradeMode)
 		must(assetErr, "stage automatic update assets")
 		assets = append(assets, updateAssets...)
 	}
@@ -155,7 +168,10 @@ func main() {
 		if gitFullCommit(root) != commit {
 			fatal("HEAD changed during the release build")
 		}
-		must(newGitHubPublisher(token).Publish(ver, commit, assets), "publish immutable release")
+		sourceArchive := filepath.Join(outputDir, sourceName)
+		must(archiveReleaseSource(root, sourceArchive, ver, commit), "package exact public release source")
+		assets = append(assets, sourceArchive)
+		must(publisher.Publish(ver, commit, assets), "publish immutable release")
 		fmt.Printf("Released %s → https://github.com/%s/releases/tag/%s\n", ver, repo, ver)
 	}
 }

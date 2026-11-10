@@ -33,7 +33,7 @@ func validateUpgradeMode(mode string) error {
 }
 
 func requireCleanPublishTree(root string) error {
-	status, err := cleanCommandOutput(root, "git", "status", "--porcelain", "--untracked-files=normal")
+	status, err := cleanCommandOutput(root, "git", "--no-replace-objects", "status", "--porcelain", "--untracked-files=normal")
 	if err != nil {
 		return errors.New("cannot verify release source working tree")
 	}
@@ -51,6 +51,34 @@ func stageFrontendAssets(staging, explorerDist, walletDist string) error {
 		return err
 	}
 	return copyTreeChecked(walletDist, filepath.Join(staging, "wallet"))
+}
+
+func walletArchiveName(tag string) string {
+	return "frostbit-wallet-" + tag + ".zip"
+}
+
+func sourceArchiveName(tag string) string {
+	return "frostbit-" + tag + "-source.zip"
+}
+
+func packageWalletArchive(root, walletDir, output string) error {
+	if err := stageReleaseLegalFiles(root, walletDir); err != nil {
+		return err
+	}
+	return zipTree(walletDir, output, "wallet")
+}
+
+func archiveReleaseSource(root, output, tag, commit string) error {
+	output, err := filepath.Abs(output)
+	if err != nil {
+		return err
+	}
+	_, err = cleanCommandOutput(root, "git", "--no-replace-objects", "archive", "--format=zip",
+		"--prefix=frostbit-"+tag+"/", "--output="+output, commit)
+	if err != nil {
+		return fmt.Errorf("archive release commit %s: %w", commit, err)
+	}
+	return nil
 }
 
                                                                               

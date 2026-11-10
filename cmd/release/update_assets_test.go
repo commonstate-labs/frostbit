@@ -5,6 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
+	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -153,6 +154,110 @@ func TestReleaseArchiveContainsRuntimeAssetsAndNotices(t *testing.T) {
 		if !found {
 			t.Errorf("archive missing %s", name)
 		}
+	}
+}
+
+func TestStandaloneWalletArchiveContainsExtensionAndNotices(t *testing.T) {
+	staging := t.TempDir()
+	wallet := filepath.Join(staging, "wallet")
+	writeTestFile(t, filepath.Join(wallet, "manifest.json"), `{"manifest_version":3}`)
+	writeTestFile(t, filepath.Join(wallet, "popup", "index.html"), "wallet popup")
+	writeTestFile(t, filepath.Join(staging, "dex"), "excluded node executable")
+	archive := filepath.Join(t.TempDir(), walletArchiveName("v1.2.3"))
+	if err := packageWalletArchive(filepath.Join("..", ".."), wallet, archive); err != nil {
+		t.Fatal(err)
+	}
+	reader, err := zip.OpenReader(archive)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer reader.Close()
+	want := map[string]bool{
+		"wallet/manifest.json": false,
+		"wallet/popup/index.html": false,
+		"wallet/LICENSE": false,
+		"wallet/NOTICE": false,
+		"wallet/shared/assets/top200-token-icons/TRUSTWALLET-LICENSE": false,
+	}
+	for _, file := range reader.File {
+		if file.FileInfo().IsDir() {
+			continue
+		}
+		if _, exists := want[file.Name]; !exists {
+			t.Errorf("unexpected wallet archive file %s", file.Name)
+		}
+		want[file.Name] = true
+	}
+	for name, found := range want {
+		if !found {
+			t.Errorf("wallet archive missing %s", name)
+		}
+	}
+}
+
+func TestReleaseSourceArchiveUsesOnlyTheSelectedCommit(t *testing.T) {
+	if _, err := exec.LookPath("git"); err != nil {
+		t.Skip("git unavailable")
+	}
+	root := t.TempDir()
+	git := func(args ...string) {
+		t.Helper()
+		cmd := exec.Command("git", args...)
+		cmd.Dir = root
+		if raw, err := cmd.CombinedOutput(); err != nil {
+			t.Fatalf("git %v: %v: %s", args, err, raw)
+		}
+	}
+	git("init")
+	source := filepath.Join(root, "cmd", "explorer", "main.go")
+	writeTestFile(t, source, "committed source")
+	git("add", ".")
+	git("-c", "user.name=Release Test", "-c", "user.email=release@example.invalid", "-c", "commit.gpgSign=false", "commit", "-m", "initial")
+	commit := gitFullCommit(root)
+	writeTestFile(t, source, "newer source")
+	untracked := filepath.Join(root, "wallet", "private.txt")
+	writeTestFile(t, untracked, "untracked file")
+	git("add", "cmd")
+	git("-c", "user.name=Release Test", "-c", "user.email=release@example.invalid", "-c", "commit.gpgSign=false", "commit", "-m", "replacement")
+	git("replace", commit, gitFullCommit(root))
+
+	archive := filepath.Join(t.TempDir(), sourceArchiveName("v1.2.3"))
+	if err := archiveReleaseSource(root, archive, "v1.2.3", commit); err != nil {
+		t.Fatal(err)
+	}
+	reader, err := zip.OpenReader(archive)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer reader.Close()
+	got := make(map[string]string)
+	for _, file := range reader.File {
+		if file.FileInfo().IsDir() {
+			continue
+		}
+		f, err := file.Open()
+		if err != nil {
+			t.Fatal(err)
+		}
+		data, err := io.ReadAll(f)
+		_ = f.Close()
+		if err != nil {
+			t.Fatal(err)
+		}
+		got[file.Name] = string(data)
+	}
+	if len(got) != 1 || got["frostbit-v1.2.3/cmd/explorer/main.go"] != "committed source" {
+		t.Fatalf("archive contains the wrong source tree: %v", got)
+	}
+	if err := os.Remove(untracked); err != nil {
+		t.Fatal(err)
+	}
+	git("switch", "--detach", commit)
+	if status, err := cleanCommandOutput(root, "git", "status", "--porcelain"); err != nil || len(status) != 0 {
+		t.Fatalf("replacement checkout should appear clean with replacements enabled: %s, %v", status, err)
+	}
+	if err := requireCleanPublishTree(root); err == nil {
+		t.Fatal("replacement checkout accepted as exact release source")
 	}
 }
 

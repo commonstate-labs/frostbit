@@ -167,11 +167,34 @@ func (p *githubPublisher) Preflight(tag string) error {
 	return errors.New("release tag already exists; publish a new version instead of replacing it")
 }
 
-func (p *githubPublisher) verifyTagCommit(tag, commit string, allowAbsent bool) error {
-	var ref struct {
-		Ref    string                     `json:"ref"`
-		Object struct{ Type, SHA string } `json:"object"`
+type githubGitRef struct {
+	Ref    string                     `json:"ref"`
+	Object struct{ Type, SHA string } `json:"object"`
+}
+
+func (p *githubPublisher) verifyPublicSource(commit string) error {
+	var repo struct {
+		FullName string `json:"full_name"`
+		Private  *bool  `json:"private"`
 	}
+	if err := p.request(http.MethodGet, p.endpoint(""), nil, 0, "", http.StatusOK, &repo); err != nil {
+		return fmt.Errorf("verify official repository visibility: %w", err)
+	}
+	if repo.FullName != updater.Repository || repo.Private == nil || *repo.Private {
+		return errors.New("GitHub did not confirm the exact official repository is public")
+	}
+	var ref githubGitRef
+	if err := p.request(http.MethodGet, p.endpoint("/git/ref/heads/main"), nil, 0, "", http.StatusOK, &ref); err != nil {
+		return fmt.Errorf("verify official main commit: %w", err)
+	}
+	if ref.Ref != "refs/heads/main" || ref.Object.Type != "commit" || ref.Object.SHA != commit {
+		return errors.New("the release build commit must match the exact official public main commit")
+	}
+	return nil
+}
+
+func (p *githubPublisher) verifyTagCommit(tag, commit string, allowAbsent bool) error {
+	var ref githubGitRef
 	err := p.request(http.MethodGet, p.endpoint("/git/ref/tags/"+url.PathEscape(tag)), nil, 0, "", http.StatusOK, &ref)
 	var status githubStatusError
 	if allowAbsent && errors.As(err, &status) && status.status == http.StatusNotFound {
@@ -193,8 +216,8 @@ func (p *githubPublisher) Publish(tag, commit string, assets []string) error {
 	if _, err := hex.DecodeString(commit); err != nil {
 		return errors.New("invalid build commit")
 	}
-	if len(assets) < 3 {
-		return errors.New("publishing requires the complete archive, node binary and update manifest")
+	if len(assets) < 5 {
+		return errors.New("publishing requires the complete archive, node binary, update manifest, wallet ZIP and source ZIP")
 	}
 	seen := make(map[string]bool, len(assets))
 	for _, asset := range assets {
@@ -206,6 +229,12 @@ func (p *githubPublisher) Publish(tag, commit string, assets []string) error {
 			return fmt.Errorf("duplicate release asset %q", name)
 		}
 		seen[name] = true
+	}
+	if !seen[walletArchiveName(tag)] || !seen[sourceArchiveName(tag)] {
+		return errors.New("publishing requires the versioned wallet and source ZIPs")
+	}
+	if err := p.verifyPublicSource(commit); err != nil {
+		return err
 	}
 	if err := p.Preflight(tag); err != nil {
 		return err
