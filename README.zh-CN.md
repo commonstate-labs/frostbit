@@ -2,7 +2,7 @@
 
 # FrostBit DEX
 
-FrostBit 是用 Go 编写的区块链与链上交易系统，提供现货、永续合约、FROST 跨链金库、Explorer 和浏览器钱包。
+FrostBit 是一个完全去中心化的区块链与链上交易系统，包括撮合系统的去中心化和托管资金的去中心化。系统提供现货、永续合约、FROST 跨链金库、Explorer 和浏览器钱包。
 
 [打开 Explorer](https://frostbit.io/) · [文档中心](https://frostbit.io/#docs_center/docs-home) · [下载正式发布](https://github.com/commonstate-labs/frostbit/releases/latest)
 
